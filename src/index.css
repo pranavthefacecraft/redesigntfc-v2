@@ -1,7 +1,274 @@
 @import "tailwindcss";
-
+@theme {
+  --color-customred: #bf1736;
+  --color-custompurple: #b1acf5;
+}
 
 body {
   margin: 0;
   padding: 0;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem 1rem;
+  background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10; /* Ensure the header is above other elements */
+}
+
+.logo {
+  position: relative;
+  width: 210px;
+  height: 23px;
+}
+
+.logo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 2s ease-in-out; /* Adjust the duration as needed */
+}
+
+.logo img.fade-out {
+  opacity: 0;
+}
+
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.9); */
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the modal is above other elements */
+  opacity: 0;
+  /* transition: opacity 0.5s ease 1s; */
+}
+
+/* .menu-modal.open {
+  opacity: 1;
+} */
+
+.close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.menu-content {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.menu-items {
+  flex: 1;
+  color: #fff;
+}
+
+.menu-items ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-items li {
+  margin: 1rem 0;
+  font-family: "futura-pt", sans-serif;
+  font-size: 5rem; /* Tailwind CSS text-2xl */
+
+  font-weight: 700;
+  color: #e3342f; /* Tailwind CSS text-customred */
+}
+
+.menu-items a {
+  color: #fff;
+
+  text-decoration: none;
+}
+
+.menu-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-images img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cube {
+  position: relative;
+  width: 206px;
+  margin: 0px auto;
+  margin-top: 0px;
+  min-height: 91px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.square,
+.square2,
+.square3 {
+  width: 40px;
+  height: 40px;
+  background: #c5232800;
+  border: solid 2px #666699;
+  float: left;
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+}
+
+.square {
+  top: 36px;
+  right: 44px;
+  transform: skew(180deg, 210deg);
+}
+
+.square2 {
+  top: 35px;
+  right: 3px;
+  transform: skew(180deg, 150deg);
+}
+
+.square3 {
+  width: 48px;
+  height: 40px;
+  top: 8px;
+  right: 62px;
+  transform: rotate(150deg) translate(-40px, -16px) skew(30deg, 0deg);
+}
+
+.cube.rotate-menu {
+  transform: rotateY(-90deg);
+}
+
+.cube.rotate-close {
+  transform: rotateY(0deg);
+}
+
+.cube.hover-menu .square,
+.cube.hover-menu .square3 {
+  display: none;
+}
+
+.cube.hover-menu .square2 {
+  width: 48px;
+  height: 48px;
+  transform: none;
+  top: 0;
+  right: 0;
+  background: #66669900;
+  border: solid 2px #666699;
+  transition:
+    width 0s ease,
+    height 0.5s ease;
+}
+
+
+.font-secondary {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-futura-PT-Light {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.Futura-PT-Light-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.Futura-PT-Book {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Futura-PT-Book-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.Futura-PT-Medium {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.Futura-PT-Medium-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.Futura-PT-Demi {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.Futura-PT-Demi-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.Futura-PT-Heavy {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.Futura-PT-Heavy-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.Futura-PT-Extra-Bold {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.Futura-PT-Extra-Bold-Oblique {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.Futura-PT-Bold {
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.Futura-PT-Bold-Oblique {
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }

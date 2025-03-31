@@ -61,7 +61,7 @@ const Video = () => {
         ref={cursor}
         className="pointer-events-none absolute h-20 w-20 -translate-x-1/2 -translate-y-1/2 scale-0"
       >
-        <img src="images/play-icon.png" className="absolute inset-0" />
+        <img src="/assets/play-icon.png" className="absolute inset-0" />
       </div>
     </div>
   );

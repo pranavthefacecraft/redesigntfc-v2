@@ -16,14 +16,14 @@ const Slider = () => {
   return (
     <div className="solit-el-1 h-full absolute inset-0 flex items-center justify-center bg-black z-1000">
       <img
-        src="solit/slider-bg.jpg"
+        src="/assets/solit/slider-bg.jpg"
         className="pointer-events-none absolute bottom-0 left-0 h-full w-full object-cover select-none"
       />
 
       <div className="bg-red-500">
         <div className="no-drag relative">
           <img
-            src="solit/phone-cover.png"
+            src="/assets/solit/phone-cover.png"
             className="no-drag pointer-events-none relative z-50 w-28 select-none lg:h-[420px] lg:w-[unset] xl:h-[540px]"
           />
 
@@ -76,54 +76,54 @@ const Slider = () => {
             >
               {/* 3 Previous Duplicates */}
               <SwiperSlide>
-                <Slide image="solit/row1.jpg" />
+                <Slide image="/assets/solit/row1.jpg" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/row3.jpg" />
+                <Slide image="/assets/solit/row3.jpg" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/row4.jpg" />
+                <Slide image="/assets/solit/row4.jpg" />
               </SwiperSlide>
 
               {/* Actual Slides */}
 
               <SwiperSlide>
-                <Slide image="solit/slide1.png" />
+                <Slide image="/assets/solit/slide1.png" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/slide2.png" />
+                <Slide image="/assets/solit/slide2.png" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/slide3.png" />
+                <Slide image="/assets/solit/slide3.png" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/row1.jpg" />
+                <Slide image="/assets/solit/row1.jpg" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/row3.jpg" />
+                <Slide image="/assets/solit/row3.jpg" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/row4.jpg" />
+                <Slide image="/assets/solit/row4.jpg" />
               </SwiperSlide>
 
               {/* 3 Next Duplicates */}
               <SwiperSlide>
-                <Slide image="solit/slide1.png" />
+                <Slide image="/assets/solit/slide1.png" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/slide2.png" />
+                <Slide image="/assets/solit/slide2.png" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <Slide image="solit/slide3.png" />
+                <Slide image="/assets/solit/slide3.png" />
               </SwiperSlide>
             </Swiper>
           </div>

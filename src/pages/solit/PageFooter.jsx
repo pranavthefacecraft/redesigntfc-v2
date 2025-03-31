@@ -35,7 +35,7 @@ class CustomEffect extends Effect {
 const Scene = ({ titleSize }) => {
   const { size, gl, scene } = useThree();
   const [particleAlpha] = useTexture(
-    ["../src/assets/solit/footer-particle.png"],
+    ["/assets/solit/footer-particle.png"],
     (loaded) => {
       loaded.forEach((texture) => {
         texture.flipY = false;
@@ -483,7 +483,7 @@ const PageFooter = () => {
                 {/* Whatsapp */}
                 <div className="footer-detail shrink-0">
                   <img
-                    src="solit/thumb_whatsapp.png"
+                    src="/assets/solit/thumb_whatsapp.png"
                     className="h-12 lg:h-16"
                   />
 
@@ -520,7 +520,7 @@ const PageFooter = () => {
             {/* Background image */}
             <img
               id="footer-bg"
-              src="solit/thumb_BG.png"
+              src="/assets/solit/thumb_BG.png"
               className="pointer-events-none absolute top-0 left-0 -z-50 h-full w-full origin-bottom object-cover"
             />
           </div>

@@ -36,7 +36,7 @@ const MainText = () => {
     <div className="lg:px-8 xl:px-16">
       <p
         ref={text}
-        className="Futura-PT-Book text-[30px] sm:leading-20 md:text-5xl md:leading-20 lg:text-5xl lg:leading-20 xl:text-text-[70px] xl:leading-20 2xl:text-[70px] 2xl:leading-[84px]"
+        className="font-secondary text-[30px] sm:leading-20 md:text-5xl md:leading-20 lg:text-5xl lg:leading-20 xl:text-text-[70px] xl:leading-20 2xl:text-[70px] 2xl:leading-[84px]"
         style={{ fontKerning: "none" }}
       >
         Solit Hub in Littau offers affordable co-working spaces for young
