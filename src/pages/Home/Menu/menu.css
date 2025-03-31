@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "Futura";
+    src: url("/public/Fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+    font-family: "Monserrat";
+    src: url("/public/Fonts/Montserrat-SemiBold.ttf");
+}
+
+.title {
+    font-family: Futura;
+}
+
+.footertext {
+    font-family: Monserrat;
+}
+
+.container .cube-container .cube {
+    transform-style: preserve-3d;
+    transform: translateZ(-150px) rotateX(-25deg) rotateY(-50deg);
+}
+
+.container .cube-container .cube .face.front {
+    transform: rotateY(0deg) translateZ(150px);
+}
+
+.container .cube-container .cube .face.back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.container .cube-container .cube .face.top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.container .cube-container .cube .face.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.container .cube-container .cube .face.left {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.container .cube-container .cube .face.right {
+    transform: rotateY(-90deg) translateZ(150px);
+}
