@@ -56,7 +56,7 @@ const Solit = () => {
           <div className="absolute inset-0 opacity-100">
             <GridDistortion
               // imageSrc="https://picsum.photos/1920/1080?grayscale"
-              imageSrc="../src/assets/solit/griddistortion.jpg"
+              imageSrc="/assets/solit/griddistortion.jpg"
               grid={10}
               mouse={0.15}
               strength={0.15}
@@ -127,8 +127,8 @@ const Solit = () => {
           </Display>
 
           <RowDisplay
-            image1="solit/row1.jpg"
-            image2="solit/row2.jpg"
+            image1="/assets/solit/row1.jpg"
+            image2="/assets/solit/row2.jpg"
             classes="solit-el-1"
           />
 
@@ -141,14 +141,14 @@ const Solit = () => {
           />
 
           <RowDisplay
-            image1="solit/row3.jpg"
-            image2="solit/row4.jpg"
+            image1="/assets/solit/row3.jpg"
+            image2="/assets/solit/row4.jpg"
             classes="solit-el-1"
           />
 
           <RowDisplay
-            image1="solit/row5.jpg"
-            image2="solit/row6.jpg"
+            image1="/assets/solit/row5.jpg"
+            image2="/assets/solit/row6.jpg"
             classes="solit-el-1"
           />
 
@@ -164,7 +164,7 @@ const Solit = () => {
 
           <Display>
             <img
-              src="solit/overlay.jpg"
+              src="/assets/solit/overlay.jpg"
               className="solit-el-1 absolute top-0 left-0 h-full w-full object-cover"
             />
 
@@ -181,9 +181,7 @@ const Solit = () => {
 
           <Title content="Explore more projects" size="md" centered />
 
-          <MoreProjects />
-
-          <Separator />
+          
         </div>
       </div>
 

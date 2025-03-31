@@ -3,7 +3,7 @@ body{
   background-image: none;
 }
 #main-image-solit {
-  background-image: url("../../assets/solit/main.jpg");
+  background-image: url("/assets/solit/main.jpg");
 }
 
 .parallax {
