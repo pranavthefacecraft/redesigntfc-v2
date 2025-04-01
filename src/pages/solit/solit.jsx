@@ -2,9 +2,11 @@ import "./Solit.css";
 import Display from "../common/Display.jsx";
 import Text from "../common/Text.jsx";
 import Section from "../common/Section.jsx";
+import SectionIdea from "../common/SectionIdea.jsx";
 import RowDisplay from "../common/RowDisplay.jsx";
 import Separator from "../common/Separator.jsx";
 import Title from "../common/Title.jsx";
+import TitleMoreProjects from "../common/TitleMoreProjects.jsx";
 import PageHeader from "../common/PageHeader.jsx";
 import PageBreadcrumbs from "./PageBreadcrumbs.jsx";
 
@@ -20,6 +22,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import GridDistortion from "../common/GridDistortion.jsx";
+import Sectionidea from "../common/SectionIdea.jsx";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -112,7 +115,7 @@ const Solit = () => {
 
         {/* Second container */}
         <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
-          <Section
+          <Sectionidea
             title={{
               content: "Idea to creation",
               size: "md",
@@ -132,7 +135,7 @@ const Solit = () => {
             classes="solit-el-1"
           />
 
-          <Section
+          <Sectionidea
             title={{
               content: "Social Media, Visual Content",
               size: "md",
@@ -152,7 +155,7 @@ const Solit = () => {
             classes="solit-el-1"
           />
 
-          <Section
+          <Sectionidea
             title={{
               content: "Design System",
               size: "md",
@@ -160,7 +163,7 @@ const Solit = () => {
             text="The favicon we created encapsulates the brand’s identity. By incorporating the green color from the palette white color from the logo, and the customized typeface from the Visby font (used in the logo); the favicon serves as a miniature representation of the brand’s visual language. The elements support brand recognition. "
           />
 
-          <Separator />
+          
 
           <Display>
             <img
@@ -173,14 +176,30 @@ const Solit = () => {
                 Are you ready to transform your brand?
               </h3>
 
-              <h4 className="text-customred sm:text-[30px] md:text-[30px] lg:absolute lg:right-16 lg:bottom-40 lg:text-[30px] xl:right-24 xl:bottom-24 xl:text-[30px] 2xl:text-[30px]">
+              <h4 className="Futura-PT-Medium text-customred sm:text-[30px] md:text-[30px] lg:absolute lg:right-16 lg:bottom-40 lg:text-[30px] xl:right-24 xl:bottom-24 xl:text-[30px] 2xl:text-[30px]">
                 Let’s work together
               </h4>
             </div>
           </Display>
 
-          <Title content="Explore more projects" size="md" centered />
+         
+         
+          
+        </div>
+        <div className="h-full w-full">
+            <div className="marquee-container">
+              <TitleMoreProjects content="Explore more projects. " size="md" centered />
+              <TitleMoreProjects content="Explore more projects. " size="md" centered />
+              <TitleMoreProjects content="Explore more projects. " size="md" centered />
+              <TitleMoreProjects content="Explore more projects. " size="md" centered />
+              <TitleMoreProjects content="Explore more projects. " size="md" centered />
+              <TitleMoreProjects content="Explore more projects. " size="md" centered />
+              <TitleMoreProjects content="Explore more projects. " size="md" centered />
+            </div>
 
+          <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
+          <MoreProjects />
+          </div>
           
         </div>
       </div>

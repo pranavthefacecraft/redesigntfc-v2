@@ -69,7 +69,7 @@ const MoreProjects = () => {
           <CubeCard
             title="Tanda"
             images={[
-              "tanda/main.png",
+              "/assets/tanda/main.png",
               // "tanda/tab-bg-v1.png",
               // "tanda/tab-bg-v2.png",
               // "tanda/laptop.png",
@@ -79,10 +79,10 @@ const MoreProjects = () => {
             color="#b1acf5"
           />
 
-          <CubeCard title="Solit" images={["solit/main.png"]} color="#b1acf5" />
+          <CubeCard title="Solit" images={["/assets/solit/main.png"]} color="#b1acf5" />
           <CubeCard
             title="Towork"
-            images={["solit/icon.png"]}
+            images={["/assets/solit/icon.png"]}
             color="#b1acf5"
           />
         </div>
@@ -90,18 +90,18 @@ const MoreProjects = () => {
         <div className="flex w-full flex-col gap-0 md:flex-row lg:gap-0 xl:gap-0">
           <CubeCard
             title="Title1"
-            images={["solit/row1.jpg"]}
+            images={["/assets/solit/row1.jpg"]}
             color="#b1acf5"
           />
 
           <CubeCard
             title="Title2"
-            images={["tanda/tab-bg-v1.png"]}
+            images={["/assets/tanda/tab-bg-v1.png"]}
             color="#b1acf5"
           />
           <CubeCard
             title="Title3"
-            images={["tanda/laptop.png"]}
+            images={["/assets/tanda/laptop.png"]}
             color="#b1acf5"
           />
         </div>
