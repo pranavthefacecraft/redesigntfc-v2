@@ -35,7 +35,7 @@ class CustomEffect extends Effect {
 const Scene = ({ titleSize }) => {
   const { size, gl, scene } = useThree();
   const [particleAlpha] = useTexture(
-    ["/assets/solit/footer-particle.png"],
+    ["/assets/solit/footer-particle-v1.png"],
     (loaded) => {
       loaded.forEach((texture) => {
         texture.flipY = false;
@@ -417,7 +417,7 @@ const PageFooter = () => {
           </h2>
 
           <div className="absolute top-0 left-0 flex h-screen w-full items-center justify-center">
-            <div className="absolute inset-0 bg-white">
+            <div className="absolute inset-0">
               <Canvas
                 gl={{
                   powerPreference: "high-performance",
