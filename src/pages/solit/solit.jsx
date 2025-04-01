@@ -53,7 +53,6 @@ const Solit = () => {
 
   return (
     <>
-    
       <div ref={container} className="w-full overflow-hidden">
         <div className="absolute top-0 left-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh]">
           <div className="absolute inset-0 opacity-100">
@@ -71,7 +70,7 @@ const Solit = () => {
 
         {/* First container */}
         <div className=" pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-20">
-          <PageBreadcrumbs/>
+          <PageBreadcrumbs />
 
           <ProjectTag />
 
@@ -83,7 +82,7 @@ const Solit = () => {
           </Display>
         </div>
 
-        <div className="z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-32">
+        <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <MainText />
 
           <Display>
@@ -114,7 +113,7 @@ const Solit = () => {
         <Idea />
 
         {/* Second container */}
-        <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
+        <div className="z-50 container mx-auto flex flex-col items-center 2xl:pt-[130px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Idea to creation",
@@ -123,17 +122,42 @@ const Solit = () => {
             text="We created a 20-second brand awareness video, designed to be easily adaptable for social media platforms. The video effectively encapsulates Solit Hub’s brand message and identity, making it a versatile tool for Various digital channels. The brand identity reflects the slogan ‘Create at Solit, Thrive in Luzern’."
             expanded={false}
           />
-
+        </div>
+        <div className="z-50 container mx-auto flex flex-col items-center 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           {/* Slider */}
           <Display>
             <Slider />
           </Display>
+        </div>
+        <div className="z-50 container mx-auto flex flex-col items-center 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
+            {/* Image1 */}
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
+              <img
+                src="/assets/solit/row1.jpg"
+                className="absolute top-0 left-0 h-full w-full object-cover"
+              />
+            </div>
 
-          <RowDisplay
-            image1="/assets/solit/row1.jpg"
-            image2="/assets/solit/row2.jpg"
-            classes="solit-el-1"
-          />
+            {/* Image2 */}
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
+            <div className="relative h-full aspect-square w-full">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute top-0 left-0 h-full w-full object-cover"
+                    src="/assets/solit/solit_socmediapost_3.mp4"
+                    type="video/mp4"
+                  ></video>
+                </div>
+
+              {/* Icon videos */}
+              
+            </div>
+          </div>
+         
 
           <Sectionidea
             title={{
@@ -163,8 +187,6 @@ const Solit = () => {
             text="The favicon we created encapsulates the brand’s identity. By incorporating the green color from the palette white color from the logo, and the customized typeface from the Visby font (used in the logo); the favicon serves as a miniature representation of the brand’s visual language. The elements support brand recognition. "
           />
 
-          
-
           <Display>
             <img
               src="/assets/solit/overlay.jpg"
@@ -181,26 +203,54 @@ const Solit = () => {
               </h4>
             </div>
           </Display>
-
-         
-         
-          
         </div>
         <div className="h-full w-full">
-            <div className="marquee-container">
-              <TitleMoreProjects content="Explore more projects. " size="md" centered />
-              <TitleMoreProjects content="Explore more projects. " size="md" centered />
-              <TitleMoreProjects content="Explore more projects. " size="md" centered />
-              <TitleMoreProjects content="Explore more projects. " size="md" centered />
-              <TitleMoreProjects content="Explore more projects. " size="md" centered />
-              <TitleMoreProjects content="Explore more projects. " size="md" centered />
-              <TitleMoreProjects content="Explore more projects. " size="md" centered />
-            </div>
+          <div className="marquee-container">
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+          </div>
 
           <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
-          <MoreProjects />
+            <MoreProjects />
           </div>
-          
         </div>
       </div>
 
