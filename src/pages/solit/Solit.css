@@ -48,6 +48,7 @@ body{
   white-space: nowrap;
   position: relative;
   width: max-content;
+  font-family: Futura-PT-Heavy, sans-serif;
 }
 
 .marquee-container > * {

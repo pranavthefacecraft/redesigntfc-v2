@@ -1,7 +1,7 @@
 const styles = {
-  sm: "Futura-PT-Demi uppercase text-xl",
-  md: "Futura-PT-Demi uppercase text-[50px] leading-none lg:text-[40px] xl:text-[40px] 2xl:text-[148px]",
-  lg: "Futura-PT-Demi uppercase text-2xl md:text-[50px] lg:text-[50px] xl:text-[50px] 2xl:text-[50px]",
+  sm: "Futura-PT-Heavy uppercase text-xl",
+  md: "Futura-PT-Heavy uppercase text-[50px] leading-none lg:text-[40px] xl:text-[40px] 2xl:text-[148px]",
+  lg: "Futura-PT-Heavy uppercase text-2xl md:text-[50px] lg:text-[50px] xl:text-[50px] 2xl:text-[50px]",
 };
 
 const TitleMoreProjects = ({ content, size = "md", centered = false, color = "black" }) => {

@@ -35,7 +35,7 @@ class CustomEffect extends Effect {
 const Scene = ({ titleSize }) => {
   const { size, gl, scene } = useThree();
   const [particleAlpha] = useTexture(
-    ["/assets/solit/footer-particle-v1.png"],
+    ["/assets/solit/footer-particle-v3.png"],
     (loaded) => {
       loaded.forEach((texture) => {
         texture.flipY = false;
@@ -407,17 +407,17 @@ const PageFooter = () => {
       <div ref={wrapper} className="relative h-screen w-full overflow-hidden">
         <div
           ref={containerRef}
-          className="absolute inset-0 flex flex-col items-center gap-4 bg-orange-300 lg:flex-row lg:justify-between"
+          className="absolute inset-0 flex flex-col items-center gap-4 lg:flex-row lg:justify-between"
         >
           <h2
             ref={titleRef}
-            className="Futura-PT-Heavy text-customred pointer-events-none absolute top-1/2 left-1/2 z-[60] -translate-x-1/2 -translate-y-1/2 text-center text-4xl md:text-4xl lg:text-5xl xl:text-8xl"
+            className="Futura-PT-Heavy text-white pointer-events-none absolute top-1/2 left-1/2 z-[60] -translate-x-1/2 -translate-y-1/2 text-center text-4xl md:text-4xl lg:text-5xl xl:text-9xl"
           >
             ELEVATE YOUR <br /> BRAND
           </h2>
 
           <div className="absolute top-0 left-0 flex h-screen w-full items-center justify-center">
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-black">
               <Canvas
                 gl={{
                   powerPreference: "high-performance",
