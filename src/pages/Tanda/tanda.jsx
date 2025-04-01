@@ -12,7 +12,7 @@ import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
 import MoreProjects from "./MoreProjects.jsx";
-import PageFooter from "./PageFooter.jsx";
+import PageFooter from "../common/PageFooter.jsx";
 import Video from "./Video.jsx";
 import BackgroundImageWithIconText from "./testimonial.jsx"; // Import the new component
 import { useRef, useEffect } from "react";
@@ -89,7 +89,7 @@ const Tanda = () => {
           </Display>
         </div>
 
-        <div className="z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-32">
+        <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <MainText />
 
           <Display>
