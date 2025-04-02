@@ -109,7 +109,7 @@ const SketchFinal = () => {
     >
       {/* Image1 */}
       <img
-        src="/assets/tanda/sketch-b4.png"
+        src="/assets/tanda/sketch-b4-v1.png"
         className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full object-cover select-none"
         draggable="false"
         ref={clippedImage}
@@ -117,7 +117,7 @@ const SketchFinal = () => {
 
       {/* Image2 */}
       <img
-        src="/assets/tanda/sketch-after.png"
+        src="/assets/tanda/sketch-after-v1.png"
         className="pointer-events-none absolute top-0 left-0 h-full w-full object-cover select-none"
         draggable="false"
       />
