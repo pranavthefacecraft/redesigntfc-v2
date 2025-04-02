@@ -441,33 +441,35 @@ const PageFooter = () => {
             <div className="absolute inset-0 z-50 mx-auto flex flex-col items-center justify-between gap-y-12 p-8 lg:w-fit lg:px-0 lg:py-24">
               {/* Links */}
               <div className="font-primary relative flex cursor-pointer flex-wrap items-center justify-center gap-6 font-light text-white lg:text-xl">
-                <a href="#" className="footer-link">
+                <a href="#" className="footer-link hover:text-[#bf1736]">
                   HOME
                 </a>
-                <a href="#" className="footer-link">
+                <a href="#" className="footer-link hover:text-[#bf1736]">
                   WORK
                 </a>
-                <a href="#" className="footer-link">
+                <a href="#" className="footer-link hover:text-[#bf1736]">
                   AGENCY
                 </a>
-                <a href="#" className="footer-link">
+                <a href="#" className="footer-link hover:text-[#bf1736]">
                   SERVICES
                 </a>
-                <a href="#" className="footer-link">
+                <a href="#" className="footer-link hover:text-[#bf1736]">
                   CONTACT
                 </a>
               </div>
 
               {/* Title */}
               <div className="relative">
+                  
                 <h2 className="Futura-PT-Heavy pointer-events-none relative translate-y-0 text-center text-4xl text-white opacity-0 md:text-4xl lg:text-8xl xl:text-[144px]">
                   ELEVATE YOUR <br /> BRAND
                 </h2>
+                <img src="/assets/cloud.png" title="" alt="" className="absolute -right-30 -top-14"/>
 
                 {/* Contact */}
                 <div className="absolute top-full right-0 left-0 flex flex-col items-center gap-y-2 mt-30 text-white lg:-right-16 lg:-left-16 lg:-mt-2 lg:-translate-y-full lg:flex-row lg:justify-between xl:-mt-3">
                   <p className="footer-detail font-light underline opacity-60 lg:text-lg xl:text-2xl">
-                    hello@thefacecraft.com
+                    <a href="mailto:hello@thefacecraft.com" className="text-white hover:text-[#bf1736]">hello@thefacecraft.com</a>
                   </p>
 
                   <div className="footer-detail h-12 w-36 flex items-center justify-around text-red-500 text-2xl">
@@ -511,8 +513,8 @@ const PageFooter = () => {
 
                 {/* Terms of service */}
                 <div className="footer-detail mt-2 flex w-full items-center justify-center gap-x-4 text-white opacity-90 lg:w-fit lg:flex-col lg:items-start lg:gap-y-2">
-                  <a href="#">Privacy Policy</a>
-                  <a href="#">Terms of Service</a>
+                  <a href="#" className="hover:text-[#bf1736]">Privacy Policy</a>
+                  <a href="#" className="hover:text-[#bf1736]">Terms of Service</a>
                 </div>
               </div>
             </div>
