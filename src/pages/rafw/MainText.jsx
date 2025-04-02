@@ -36,7 +36,7 @@ const MainText = () => {
     <div className="lg:px-8 xl:px-16">
       <p
         ref={text}
-        className="text-white Futura-PT-Book text-[30px] sm:leading-20 md:text-5xl md:leading-20 lg:text-5xl lg:leading-20 xl:text-text-[70px] xl:leading-20 2xl:text-[70px] 2xl:leading-[84px]"
+        className="text-white font-secondary text-[30px] sm:leading-20 md:text-5xl md:leading-20 lg:text-5xl lg:leading-20 xl:text-text-[70px] xl:leading-20 2xl:text-[70px] 2xl:leading-[98px]"
         style={{ fontKerning: "none" }}
       >
         We partnered with RAFW restaurant to help them create a whole new sustainability site. We crafted a modern, clear, and visually stunning design centered on user experience. We ensured every element reflected the restaurant's unique personality and culinary experience.

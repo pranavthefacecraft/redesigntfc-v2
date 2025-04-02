@@ -53,7 +53,6 @@ const Solit = () => {
 
   return (
     <>
-      
       <div ref={container} className="w-full overflow-hidden bg-black">
         <div className="absolute top-0 left-0 z-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh]">
           <div className="absolute inset-0 opacity-100">
@@ -171,12 +170,10 @@ const Solit = () => {
             text="To boost engagement and create a fresh, youthful brand character, we produced six short video posts for social media. These videos featured people answering questions about what Solit means to them, adding an element of fun and personal connection to the brand. This approach not only heightens engagement but also aligns perfectly with the target market of young creative businesses."
             textColor="white"
           />
-          <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
-            {/* Image1 */}
-
-            {/* Image2 */}
-            <div className="relative aspect-[4/5] h-[880px] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
-              <div className="">
+          <div className="flex w-full flex-col items-start gap-8 lg:gap-16 xl:gap-16">
+            {/* First Video */}
+            <div className="relative w-[80%]">
+              <div className="border">
                 <video
                   autoPlay
                   loop
@@ -188,12 +185,43 @@ const Solit = () => {
                 ></video>
               </div>
             </div>
-            
+            </div>
+            {/* Second Video */}
+            <div className="flex w-full flex-col items-end gap-8 lg:gap-16 xl:gap-16">
+            <div className="relative w-[80%]">
+              <div className="">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="top-0 left-0 w-auto rounded-3xl"
+                  src="/assets/rafw/Tab-Dashboard.mp4"
+                  type="video/mp4"
+                ></video>
+              </div>
+            </div>
           </div>
+          
 
-         
+          {/* Images Side by Side */}
+          <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
+            {/* Left Image - 40% width */}
+            <div className="relative w-full lg:w-[34%] overflow-hidden rounded-2xl">
+              <img
+                src="/assets/rafw/get-your-table.png"
+                className="top-0 left-0 h-full w-full"
+              />
+            </div>
 
-         
+            {/* Right Image - 60% width */}
+            <div className="relative w-full lg:w-[66%] overflow-hidden rounded-2xl">
+              <img
+                src="/assets/rafw/Tab.png"
+                className="top-0 left-0 h-full w-full"
+              />
+            </div>
+          </div>
 
           <Display>
             <img
@@ -211,55 +239,64 @@ const Solit = () => {
               </h4>
             </div>
           </Display>
-
-          <div className="h-full w-full">
-          <div className="marquee-container">
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-          </div>
-
-          <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
-            <MoreProjects />
-          </div>
         </div>
+        <div className="w-full mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-30 xl:pb-32 2xl:pt-40">
+          <div className="h-full w-full">
+            <div className="marquee-container">
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+              <TitleMoreProjects
+                content="Explore more projects&nbsp; . &nbsp;"
+                size="md"
+                centered
+                color="white"
+              />
+            </div>
+
+            <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
+              <MoreProjects />
+            </div>
+          </div>
         </div>
       </div>
 
