@@ -4,6 +4,14 @@
   --color-custompurple: #b1acf5;
 }
 
+@font-face {
+  font-family: 'NeometricBold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/Fonts/Neometric-Alt-Bold-Regular.woff') format('woff');
+  }
+
+
 body {
   margin: 0;
   padding: 0;
