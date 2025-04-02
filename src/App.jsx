@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/home'
 import Solit from './pages/solit/solit';
 import Tanda from './pages/Tanda/tanda';
-import Rafw from './pages/Rafw/Rafw';
+import Rafw from './pages/rafw/Rafw';
 
 import './App.css'
 
