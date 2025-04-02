@@ -4,6 +4,7 @@ import Home from './pages/Home/home'
 import Solit from './pages/solit/solit';
 import Tanda from './pages/Tanda/tanda';
 import Rafw from './pages/rafw/Rafw';
+import Towork from './pages/towork/towork';
 
 import './App.css'
 
@@ -15,6 +16,7 @@ function App() {
       <Route path="/solit" element={<Solit />} />
       <Route path="/tanda" element={<Tanda />} />
       <Route path="/rafw" element={<Rafw />} />
+      <Route path="/towork" element={<Towork />} />
     </Routes>
   </Router>
   )
