@@ -26,6 +26,7 @@ import "react-before-after-slider-component/dist/build.css";
 import BackgroundImageWithVideos from "./BackgroundImageWithVideos.jsx";
 import SketchFinal from "./SketchFinal.jsx";
 import TandaLogo from "/assets/tanda/tanda-logo.png"; // Adjust the path as needed
+import TitleMoreProjects from "../common/TitleMoreProjects.jsx";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -367,9 +368,57 @@ services simply and engagingly. The challenge was to balance simplicity and deta
             </div>
           </Display>
 
-          <Title content="Explore more projects" size="md" centered />
+          
+        </div>
+        <div className="h-full w-full">
+          <div className="marquee-container">
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+          </div>
 
-          <MoreProjects />
+          <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
+            <MoreProjects />
+          </div>
+
+          
         </div>
       </div>
 
