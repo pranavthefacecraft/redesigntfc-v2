@@ -91,7 +91,7 @@ const Video = () => {
         poster="/assets/tanda/poster-image.png"
         muted
       >
-        <source src="/assets/tanda/tanda_r4_subtitles_sfx.mp4" type="video/mp4" />
+        <source src="/assets/towork/towork-showreel-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

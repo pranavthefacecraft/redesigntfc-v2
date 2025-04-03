@@ -25,7 +25,12 @@ import BeforeAfterSlider from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
 import BackgroundImageWithVideos from "./BackgroundImageWithVideos.jsx";
 import SketchFinal from "./SketchFinal.jsx";
-import TandaLogo from "/assets/tanda/tanda-logo.png"; // Adjust the path as needed
+import mobileInHand from "/assets/towork/mobile-in-hand.png"; // Adjust the path as needed
+import ToworkMotto from "/assets/towork/towork-motto.png"; // Adjust the path as needed
+import ManImage from "/assets/towork/man.png"; // Adjust the path as needed
+import WomanWithPhone from "/assets/towork/womanwithphone.png"; // Adjust the path as needed
+import ToworkLogo from "/assets/towork/towork-logo.png"; // Adjust the path as needed
+import TitleMoreProjects from "../common/TitleMoreProjects.jsx";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -39,27 +44,27 @@ const Tanda = () => {
   const inlineStyles = {
     gridItem1: {
       backgroundColor: "#5AC076",
-      padding: "20px",
+      padding: "0px",
       textAlign: "center",
       display: "flex", // Enable Flexbox
       justifyContent: "center", // Horizontally center
-      alignItems: "center", // Vertically center
+      alignItems: "flex-start", // Vertically center
       fontFamily: "NeometricBold, sans-serif",
     },
     gridItem2: {},
     gridItem3: {
       backgroundColor: "#000000",
-      padding: "20px",
+      padding: "0px",
       textAlign: "center",
       display: "flex", // Enable Flexbox
       justifyContent: "center", // Horizontally center
-      alignItems: "center", // Vertically center
+      alignItems: "flex-start", // Vertically center
       fontFamily: "NeometricBold, sans-serif",
       height: "444px",
     },
     gridItem4: {
       fontFamily: "NeometricBold, sans-serif",
-      height: "444px",
+      
     },
     heading: {
       fontFamily: "NeometricBold, sans-serif",
@@ -151,8 +156,7 @@ const Tanda = () => {
               content: "Challenge",
               size: "md",
             }}
-            text="The video had to communicate the complexity of TANDA’s
-services simply and engagingly. The challenge was to balance simplicity and detail and ensure that the message resonated with the target audience. It required distilling intricate concepts into visually appealing, digestible elements while maintaining TANDA’s client-focused brand."
+            text="Finding the right talent for gray-collar jobs can be challenging due to skill gaps, high attrition rates, and the lack of a structured hiring process. Employers often struggle to connect with qualified candidates, while job seekers face difficulties in accessing reliable opportunities."
             expanded={false}
           />
 
@@ -161,71 +165,99 @@ services simply and engagingly. The challenge was to balance simplicity and deta
               content: "Results",
               size: "md",
             }}
-            text="We improved the brand’s digital presence through an integrated approach, including targeted social media campaigns and engaging video content. This resonated well with young, creative businesses, resulting in positive client feedback. The project demonstrates the impact of a well-crafted digital strategy on a brand’s image and market position."
+            text="Our job portal addresses these challenges by streamlining recruitment, offering skill-based job matching, and providing a seamless hiring experience. As a result, businesses can quickly fill positions with competent workers, and job seekers gain access to better career opportunities, leading to increased employment rates and workforce stability."
             expanded={false}
           />
         </div>
 
         {/* Full-width container with 2x2 grid */}
-        <div className="w-full max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 p-0">
+        <div className="w-full max-w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 p-0 overflow-hidden">
           {/* Grid Item 1 */}
           <div style={inlineStyles.gridItem1}>
-            <h3 className="text-[80px]" style={inlineStyles.heading}>
-              Neometric
-            </h3>
+            <img
+              src={mobileInHand}
+              alt="TandaLogo"
+              className="w-full h-full mx-auto object-cover"
+            />
           </div>
 
           {/* Grid Item 2 */}
-          <div className="text-center py-36">
+          <div className="text-center py-0">
             <img
-              src={TandaLogo}
+              src={ToworkMotto}
               alt="TandaLogo"
-              className="w-64 h-auto mx-auto"
+              className="w-full h-auto mx-auto object-cover"
             />
           </div>
 
           {/* Grid Item 3 */}
           <div className="" style={inlineStyles.gridItem3}>
-            <h3 className="text-[80px] text-white" style={inlineStyles.heading}>
-              Aa
-            </h3>
+            <img
+              src={ManImage}
+              alt="TandaLogo"
+              className="w-full h-auto mx-auto object-cover"
+            />
           </div>
 
           {/* Grid Item 4 */}
-          <div className="bg-gray-100 p-0" style={inlineStyles.gridItem4}>
-            <div className="grid grid-rows-2 grid-cols-2 gap-0">
+          <div className="" style={inlineStyles.gridItem3}>
+            <img
+              src={WomanWithPhone}
+              alt="TandaLogo"
+              className="w-full h-auto mx-auto object-cover"
+            />
+          </div>
+
+          {/* Grid Item 5 */}
+          <div className="" style={inlineStyles.gridItem3}>
+            <div className="grid grid-rows-2 grid-cols-1 gap-0">
               {/* Row 1, Column 1 */}
-              <div
-                className="bg-[#5AC076] text-start px-7 py-7"
-                style={{ height: "300px" }}
-              >
-                <p>#5AC076</p>
+              <div className="">
+                <img
+                  src={ToworkLogo}
+                  alt="TandaLogo"
+                  className="w-full h-auto mx-auto object-cover"
+                />
               </div>
 
               {/* Row 1, Column 2 */}
-              <div
-                className="bg-[#17412C] text-start px-7 py-7"
-                style={{ height: "300px" }}
-              >
-                <p className="text-white">#17412C</p>
-              </div>
-
-              {/* Row 2, Column 1 */}
-              <div
-                className="bg-[#F1C051] text-start px-7 py-7"
-                style={{ height: "144px" }}
-              >
-                <p>#F1C051</p>
-              </div>
-
-              {/* Row 2, Column 2 */}
-              <div
-                className="bg-[#FF8B8B] text-start px-7 py-7"
-                style={{ height: "144px" }}
-              >
-                <p>#FF8B8B</p>
+              <div className="bg-[#ffffff] text-start">
+                <video
+                  ref={videoRef}
+                  className="relative top-0 left-0 h-full w-full object-cover"
+                  
+                  poster=""
+                  muted
+                  autoPlay
+                  loop
+                >
+                  <source
+                    src="/assets/towork/grid-video-v1.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
+          </div>
+
+          {/* Grid Item 6 */}
+          <div className="bg-gray-100 p-0 border" >
+          <video
+                  ref={videoRef}
+                  className="relative top-0 left-0 h-[670px] w-full object-cover"
+                  
+                  poster=""
+                  muted
+                  autoPlay
+                  loop
+                >
+                  <source
+                    src="/assets/towork/Colors.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
           </div>
         </div>
 
@@ -233,122 +265,66 @@ services simply and engagingly. The challenge was to balance simplicity and deta
         <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px] 2xl:pt-[130px]">
           <Section
             title={{
-              content: "Amplifying Tanda’s Digital Presence, Ignite Growth",
+              content: "Amplifying Gray-Collar Hiring, Igniting Growth",
               size: "md",
             }}
-            text="We craft impactful digital branding strategies that propel your business forward.  Our approach focuses on building a strong online presence that resonates with your target audience and drives measurable results. From targeted content creation to strategic social media campaigns, we empower your brand to thrive in the digital landscape. Let us help you unlock your growth potential."
+            text="In today’s fast-evolving job market, connecting skilled gray-collar workers with the right employers is crucial for business success and workforce stability. Our job portal enhances the hiring process by leveraging digital solutions to bridge the gap between talent and opportunity. With advanced job-matching algorithms, seamless onboarding, and industry-specific listings, we empower both job seekers and employers to achieve their goals efficiently. By revolutionizing gray-collar recruitment, we drive growth, improve workforce retention, and create a more structured and accessible job market."
             expanded={false}
           />
           <Display>
             <img
-              src="/assets/tanda/section-2a-2048x1365.png"
+              src="/assets/towork/laptopwithtowork.png"
               className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
             />
           </Display>
 
-          {/* <RowDisplay
-            image1="tanda/laptop.png"
-            image2="tanda/tab-bg-v2.png"
+         <RowDisplay
+            image1="/assets/towork/tabwithtowork.png"
+            image2="/assets/towork/man-sitting-on-chair.png"
             classes="solit-el-1"
-          /> */}
+          /> 
 
-          {/* Row Display */}
-          <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
-            {/* Image1 */}
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
-              <img
-                src="/assets/tanda/laptop.png"
-                className="absolute top-0 left-0 h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Image2 */}
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
-              <img
-                src="/assets/tanda/tab-bg-v2.png"
-                className="absolute top-0 left-0 h-full w-full object-cover"
-              />
-
-              {/* Icon videos */}
-              <div className="absolute top-[20%] bottom-[20%] left-[22%] flex w-[12%] flex-col items-center justify-around">
-                <div className="relative aspect-square w-full">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute top-0 left-0 h-full w-full object-cover"
-                    src="/assets/tanda/icon1.mp4"
-                    type="video/mp4"
-                  ></video>
-                </div>
-
-                <div className="relative aspect-square w-full">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute top-0 left-0 h-full w-full object-cover"
-                    src="/assets/tanda/icon2.mp4"
-                    type="video/mp4"
-                  ></video>
-                </div>
-
-                <div className="relative aspect-square w-full">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute top-0 left-0 h-full w-full object-cover"
-                    src="/assets/tanda/icon3.mp4"
-                    type="video/mp4"
-                  ></video>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           <Section
             title={{
-              content: "Craft Your Digital Story: Captivating Audiences Online",
+              content: "Revolutionizing Gray-Collar Recruitment for a Better Workforce",
               size: "md",
             }}
-            text="We believe in the power of storytelling. Our creative team develops compelling digital branding solutions that capture the essence of your brand and connect with your audience on a deeper level. We specialize in creating engaging content, designing stunning visuals, and implementing innovative strategies to elevate your brand's digital presence and drive meaningful engagement."
+            text="The gray-collar job sector often faces challenges like inefficient hiring, skill mismatches, and high turnover rates. Our job portal is designed to solve these issues by providing a seamless and efficient recruitment platform. We connect skilled workers with the right opportunities, ensuring businesses find reliable employees while job seekers secure stable careers. With an intuitive interface, smart job-matching technology, and industry-focused solutions, we are transforming gray-collar hiring, making it faster, smarter, and more effective for everyone involved."
           />
         </div>
+        
         <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
-          <Display>
-            <SketchFinal />
+        <Display>
+            <img
+              src="/assets/towork/all-device-size.png"
+              className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
+            />
           </Display>
-          <div className="bg-[#f5f5f5] w-full rounded-4xl pt-44 pb-44">
-            <div className="grid grid-cols-4 gap-0 gap-y-24">
-              {/* Row 1 */}
-              {["icon1", "icon2", "icon3", "icon4", "icon5", "icon6", "icon7", "icon8"].map(
-                (icon, index) => (
-                  <img
-                    key={index}
-                    ref={(el) => (iconsRef.current[index] = el)} // Add ref to each icon
-                    src={`/assets/tanda/${icon}.png`}
-                    alt={`Icon ${index + 1}`}
-                    className="w-16 h-16 mx-auto"
-                  />
-                )
-              )}
-            </div>
-          </div>
+
+          <Display>
+            <img
+              src="/assets/towork/woman-staff.png"
+              className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
+            />
+          </Display>
+          
+          <RowDisplay
+            image1="/assets/towork/become-a-seller.png"
+            image2="/assets/towork/service-page.png"
+            classes="solit-el-1"
+          /> 
+          <Display>
+            <img
+              src="/assets/towork/Phones.png"
+              className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
+            />
+          </Display>
+          
+          
         </div>
-        <div className="z-50 w-full mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
-          {/* Add Background Image with Icon and Text */}
-          <BackgroundImageWithIconText
-            imageUrl="/assets/tanda/testimony-bg.png"
-            icon={FaQuoteRight}
-            text="the animation in our ad, in our case it was very very successful. They key to that success is your process.  "
-            secondImageUrl="/assets/tanda/person.png"
-            iconImageUrl="/assets/tanda/double-quotes.png"
-          />
-        </div>
+        
         <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
           <Display>
             <img
@@ -367,7 +343,48 @@ services simply and engagingly. The challenge was to balance simplicity and deta
             </div>
           </Display>
 
-          <Title content="Explore more projects" size="md" centered />
+          <div className="marquee-container">
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+            <TitleMoreProjects
+              content="Explore more projects&nbsp; . &nbsp;"
+              size="md"
+              centered
+            />
+          </div>
 
           <MoreProjects />
         </div>
