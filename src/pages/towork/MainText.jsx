@@ -39,7 +39,7 @@ const MainText = () => {
         className="font-secondary text-[30px] sm:leading-20 md:text-5xl md:leading-20 lg:text-5xl lg:leading-20 xl:text-text-[70px] xl:leading-20 2xl:text-[70px] 2xl:leading-[98px]"
         style={{ fontKerning: "none" }}
       >
-        TANDA Digital’s animated brand video showcases their LinkedIn and AI expertise with dynamic visuals, an engaging script, and the slogan "Leads Delivered, Success Achieved," positioning them as a leader in digital growth.
+        Whether you're a technician, supervisor, nurse, or skilled worker, our platform helps you find job opportunities that match your expertise. We bridge the gap between employers and job seekers, ensuring a seamless hiring experience.
       </p>
     </div>
   );
