@@ -82,7 +82,7 @@ const Solit = () => {
           </Display>
         </div>
 
-        <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        <div className="border z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-0 lg:px-0 lg:py-0 lg:pb-[130px] xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <MainText />
 
           <Display>
@@ -113,7 +113,7 @@ const Solit = () => {
         <Idea />
 
         {/* Second container */}
-        <div className="z-50 container mx-auto flex flex-col items-center 2xl:pt-[130px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-0 2xl:pt-[130px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-28  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Idea to creation",
@@ -158,7 +158,7 @@ const Solit = () => {
             </div>
           </div>
          
-
+          <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-0 2xl:pt-[130px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-28  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Social Media, Visual Content",
@@ -166,7 +166,7 @@ const Solit = () => {
             }}
             text="To boost engagement and create a fresh, youthful brand character, we produced six short video posts for social media. These videos featured people answering questions about what Solit means to them, adding an element of fun and personal connection to the brand. This approach not only heightens engagement but also aligns perfectly with the target market of young creative businesses."
           />
-
+          </div>
           <RowDisplay
             image1="/assets/solit/row3.jpg"
             image2="/assets/solit/row4.jpg"
@@ -178,7 +178,7 @@ const Solit = () => {
             image2="/assets/solit/row6.jpg"
             classes="solit-el-1"
           />
-
+<div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-0 2xl:pt-[130px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-28  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Design System",
@@ -186,7 +186,7 @@ const Solit = () => {
             }}
             text="The favicon we created encapsulates the brand’s identity. By incorporating the green color from the palette white color from the logo, and the customized typeface from the Visby font (used in the logo); the favicon serves as a miniature representation of the brand’s visual language. The elements support brand recognition. "
           />
-
+</div>
           <Display>
             <img
               src="/assets/solit/overlay.jpg"
