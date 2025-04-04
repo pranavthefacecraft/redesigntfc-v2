@@ -6,7 +6,7 @@ const Slide = ({ image }) => {
     <div className="relative h-full w-full overflow-hidden border border-transparent lg:border-4 xl:border-6">
       <img
         src={image}
-        className="h-full w-full object-cover select-none lg:rounded-[39px]"
+        className="h-full w-full object-cover select-none rounded-[39px] lg:rounded-[39px]"
       />
     </div>
   );
@@ -24,13 +24,13 @@ const Slider = () => {
         <div className="no-drag relative">
           <img
             src="/assets/solit/phone-cover.png"
-            className="no-drag pointer-events-none relative z-50 w-28 select-none lg:h-[420px] lg:w-[unset] xl:h-[700px]"
+            className="no-drag pointer-events-none relative z-50 select-none h-[320px] lg:h-[420px] lg:w-[unset] xl:h-[700px]"
           />
 
           <div className="absolute inset-0">
             <Swiper
               className="h-full !overflow-visible"
-              spaceBetween={5}
+              spaceBetween={35}
               slidesPerView={1}
               initialSlide={2}
               longSwipes={false}

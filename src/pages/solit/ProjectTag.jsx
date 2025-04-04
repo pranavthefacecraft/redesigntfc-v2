@@ -24,7 +24,7 @@ const ProjectTag = () => {
           <Entry title="Service" text="Branding, Social Media, Videography" />
         </div>
 
-        <h4 className="text-customred Futura-PT-Medium sm:text-[30px] md:text-[30px] lg:text-[30px] xl:text-[30px] 2xl:text-[30px]">
+        <h4 className="text-customred Futura-PT-Medium text-[20px] sm:text-[20px] md:text-[20px] lg:text-[20px] xl:text-[30px] 2xl:text-[30px]">
           Coworking Space
         </h4>
       </div>
