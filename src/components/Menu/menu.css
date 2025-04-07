@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Futura";
+    src: url("/Fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+    font-family: "Monserrat";
+    src: url("/Fonts/Montserrat-SemiBold.ttf");
+}
+
+.title {
+    font-family: Futura;
+}
+
+.footertext {
+    font-family: Monserrat;
+}
+
+.animation {
+    background-color: aliceblue;
+}
+

@@ -1,7 +1,8 @@
 import './home.css'
 import { Suspense } from 'react';
-import Menu from '../common/Menu/menu'
-import Cards from '../common/Menu/MenuCanvas/cards'
+import Menu from '../../components/Menu/menu'
+import Cards from '../../components/Menu/MenuCanvas/cards'
+import Logo from '../../../../../Structure/src/components/Menu/Logo';
 
 const Home = () => {
   return (
@@ -14,6 +15,8 @@ const Home = () => {
       <Suspense fallback={null}>
       <Cards />
       </Suspense>
+
+      <Logo/>
 
     </div>
   );
