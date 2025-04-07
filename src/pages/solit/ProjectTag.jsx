@@ -1,7 +1,7 @@
 const Entry = ({ title, text }) => {
   return (
     <div className="flex flex-col lg:text-lg">
-      <h5 className="text-customred Futura-PT-Medium mb-5 text-[14px] font-light uppercase sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[20px]">
+      <h5 className="text-customred Futura-PT-Medium mb-5 text-[14px] uppercase sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[20px] 2xl:text-[20px]">
         {title}
       </h5>
       <p className="font-secondary min-w-24 text-white sm:text-[18px] md:text-[18px] lg:text-[18px] xl:text-[18px] 2xl:text-[18px]">
