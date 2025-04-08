@@ -24,7 +24,7 @@ const Slider = () => {
         <div className="no-drag relative">
           <img
             src="/assets/solit/phone-cover.png"
-            className="no-drag pointer-events-none relative z-50 select-none h-[320px] lg:h-[420px] lg:w-[unset] xl:h-[700px]"
+            className="no-drag pointer-events-none relative z-50 select-none h-[320px] lg:w-[unset] lg:h-[550px] xl:h-[530px] 2xl:h-[700px]"
           />
 
           <div className="absolute inset-0">
