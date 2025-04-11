@@ -2,7 +2,7 @@ import './home.css'
 import { Suspense } from 'react';
 import Menu from '../../components/Menu/menu'
 import Cards from '../../components/Menu/MenuCanvas/cards'
-import Logo from '../../../../../Structure/src/components/Menu/Logo';
+import Logo from '../../components/Menu/Logo';
 
 const Home = () => {
   return (
