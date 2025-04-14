@@ -56,33 +56,41 @@ const CubeCard = ({ title, images, color }) => {
   }, []);
 
   return (
-    <div className="cube-card">
-      <div ref={faces} className="cube-faces">
-        <div className="cube-faces-container">
+    <div className="cube-card group">
+      <div ref={faces} className="cube-faces ">
+        <div 
+          className="cube-faces-container" 
+          style={{ animationDelay: `-${Math.random() * 50}s` }}
+        >
           <div
             ref={front}
-            className="cube-face front border text-[140px] text-white"
+            className="cube-face front text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[80px] 2xl:text-[120px] text-white"
           >
             {title}
+            
           </div>
           <div ref={back} className="cube-face back">
             <img src={images[0]} />
           </div>
-          <div ref={right} className="cube-face right border text-[140px] text-white">
-            {title}
+          <div ref={right} className="cube-face right border text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[80px] 2xl:text-[120px] text-white">
+          <img src={images[0]} />
           </div>
           <div ref={left} className="cube-face left">
-            <img src={images[0]} />
+          <img src={images[0]} />
           </div>
-          <div ref={top} className="cube-face top border text-[140px] text-white">
-            {title}
+          <div ref={top} className="cube-face top border text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[80px] 2xl:text-[120px] text-white">
+          <img src={images[0]} />
           </div>
           <div ref={bottom} className="cube-face bottom">
             <img src={images[0]} />
           </div>
+          
         </div>
+        <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 -top-20 flex justify-center items-end text-xl bg-gray-200 text-black font-semibold border-4 rounded-3xl w-[300px] h-[300px] "> <img className="object-cover" src={images[0]} /></div>
       </div>
+      
     </div>
+    
   );
 };
 

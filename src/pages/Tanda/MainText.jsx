@@ -36,7 +36,7 @@ const MainText = () => {
     <div className="lg:px-8 xl:px-16">
       <p
         ref={text}
-        className="font-secondary text-[30px] sm:leading-20 md:text-5xl md:leading-20 lg:text-5xl lg:leading-20 xl:text-text-[70px] xl:leading-20 2xl:text-[70px] 2xl:leading-[98px]"
+        className="font-secondary text-[25px] leading-12 sm:leading-20 md:text-4xl md:leading-16 lg:text-5xl lg:leading-20 xl:text-[50px] xl:leading-20 2xl:text-[70px] 2xl:leading-[98px]"
         style={{ fontKerning: "none" }}
       >
         TANDA Digital’s animated brand video showcases their LinkedIn and AI expertise with dynamic visuals, an engaging script, and the slogan "Leads Delivered, Success Achieved," positioning them as a leader in digital growth.

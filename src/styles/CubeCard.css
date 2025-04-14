@@ -1,0 +1,29 @@
+.cube-card {
+  perspective: 1000px;
+}
+
+.cube-faces {
+  position: relative;
+  width: var(--cube-size, 200px);
+  height: var(--cube-size, 200px);
+  transform-style: preserve-3d;
+}
+
+.cube-faces-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 5s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--active-color, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
