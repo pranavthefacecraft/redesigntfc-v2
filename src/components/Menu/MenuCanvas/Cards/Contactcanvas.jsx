@@ -3,7 +3,8 @@ import { Canvas } from '@react-three/fiber';
 import { useContactStore } from '../../store';
 import { Suspense } from 'react';
 
-import Island from '../Models/Island';
+import { Anne } from '../Models/Anne';
+import Contact from '../Models/Contact';
 
 const canvasVariants = {
   hidden: {
@@ -33,17 +34,19 @@ const ContactCanvas = () => {
   <AnimatePresence>
 
     <motion.div
-      className='fixed top-[7em] right-[15em]  bg-transparent overflow-hidden h-[70vh] w-[40vw] pointer-events-none'
+      className='fixed right-[15em] bg-transparent overflow-hidden h-[100vh] w-[40vw] pointer-events-none'
       variants={canvasVariants}
       initial="hidden"
       animate={ isContactusActive ? "show" : "hidden" }
     >
         <Suspense fallback={null}>
-        <Canvas eventPrefix="client" camera={{ position: [0, 5, 20], fov: 40 }}>
+        <Canvas eventPrefix="client" camera={{ position: [0, 5, 20], fov: 40 }}
+         dpr={[2.0,3.0]}
+        >
 
           <Suspense fallback={null}>
 
-          
+          <Contact/>
           
           </Suspense>
 

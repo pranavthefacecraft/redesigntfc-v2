@@ -30,8 +30,7 @@ const text = {
     y: 0
   },
   enter: {
-    opacity: 1,
-    y: -20.2,
+    y: -19.65,
     opacity: 0.15,
     transition: {
       delay : 0.5,
@@ -125,7 +124,7 @@ const faceVariants = {
 
 const CubeFace = ({ variant, isMenuActive }) => (
   <motion.div
-    className="absolute w-full h-full flex items-center justify-center"
+    className="absolute w-full h-full flex items-center justify-center rounded-[0.6em]"
     style={{
       backfaceVisibility: 'visible',
       transformStyle: 'preserve-3d',

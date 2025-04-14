@@ -94,7 +94,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between h-[100vh] pt-[90px] pr-[40px] pb-[50px] pl-[420px] box-border z-[50]">
+    <div className="flex flex-col justify-between h-[100vh] pt-[90px] pr-[40px] pb-[50px] pl-[425px] box-border z-[50]">
 
       <div className="flex flex-col text-white text-[6.0em] decoration-none">
         {links.map((link, i) => {
@@ -109,7 +109,7 @@ const Nav = () => {
               >
                 <Link 
                   to={link.href} 
-                  className='hover:text-[#efb8b7] duration-300 ease-out'
+                  className='hover:text-[#7767ba] duration-300 ease-out'
                   onMouseEnter={() => handleMouseEnter(i)}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -145,7 +145,8 @@ const Nav = () => {
         <motion.div className="flex flex-row gap-4">
           {socialIcons.map((social, i) => (
             <motion.a
-              className="text-xl text-[#BF1736] text-[1.5em]"
+              key={`social-icon-${i}`}  
+              className={`text-xl relative text-[#BF1736] ${i === 1 ? 'text-[1.5em] top-[-0.09em]' : 'text-[1.5em] top-[0em]'}`}
               href={social.href}
               target="_blank"
               variants={slideIn}

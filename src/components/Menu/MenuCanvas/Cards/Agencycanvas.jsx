@@ -33,7 +33,7 @@ const AgencyCanvas = () => {
   <AnimatePresence>
 
     <motion.div
-      className='fixed top-[7em] right-[15em]  bg-transparent overflow-hidden h-[70vh] w-[40vw] pointer-events-none'
+      className='fixed right-[15em]  bg-transparent overflow-hidden h-[100vh] w-[40vw] pointer-events-none'
       variants={canvasVariants}
       initial="hidden"
       animate={isAgencyActive ? "show" : "hidden"}
@@ -43,7 +43,7 @@ const AgencyCanvas = () => {
         <Canvas eventPrefix="client" camera={{ position: [0, 3, 20], fov: 40 }}
          shadows
          gl={{ antialias: true }}
-         dpr={[1, 2]}
+         dpr={[2.0,3.0]}
          style={{ background: null }}
         >
 
