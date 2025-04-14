@@ -3,6 +3,7 @@ import gsap from "gsap/all";
 import { useRef } from "react";
 import CubeCard from "../common/CubeCard/CubeCard";
 
+
 const ProjectCard = ({ name, image }) => {
   const expandTimeline = useRef();
   const imageRef = useRef();
@@ -76,35 +77,39 @@ const MoreProjects = () => {
               // "tanda/section-2a-2048x1365.png",
               // "tanda/sketch-after.png",
             ]}
-            color="#b1acf5"
+            color="#58567a"
           />
 
-          <CubeCard title="Solit" images={["/assets/solit/main.png"]} color="#b1acf5" />
+          <CubeCard title="Solits" images={["/assets/solit/main.png"]} color="#58567a" />
           <CubeCard
             title="Towork"
             images={["/assets/solit/icon.png"]}
             color="#b1acf5"
           />
+          
         </div>
-
-        <div className="flex w-full flex-col gap-0 md:flex-row lg:gap-0 xl:gap-0">
+        <div className="flex w-full flex-col gap-4 md:flex-row lg:gap-8 xl:gap-16">
           <CubeCard
-            title="Title1"
-            images={["/assets/solit/row1.jpg"]}
-            color="#b1acf5"
+            title="Tanda"
+            images={[
+              "/assets/tanda/main.png",
+              // "tanda/tab-bg-v1.png",
+              // "tanda/tab-bg-v2.png",
+              // "tanda/laptop.png",
+              // "tanda/section-2a-2048x1365.png",
+              // "tanda/sketch-after.png",
+            ]}
+            color="#58567a"
           />
 
+          <CubeCard title="Solit" images={["/assets/solit/main.png"]} color="#58567a" />
           <CubeCard
-            title="Title2"
-            images={["/assets/tanda/tab-bg-v1.png"]}
-            color="#b1acf5"
-          />
-          <CubeCard
-            title="Title3"
-            images={["/assets/tanda/laptop.png"]}
-            color="#b1acf5"
+            title="Towork"
+            images={["/assets/solit/icon.png"]}
+            color="#ff0000"
           />
         </div>
+      
       </div>
     </>
   );

@@ -98,7 +98,7 @@ const Video = () => {
       {/* Cursor */}
       <div
         ref={cursor}
-        className="pointer-events-none absolute h-100 w-100 -translate-x-1/2 -translate-y-1/2 scale-0"
+        className="pointer-events-none absolute h-60 w-60 -translate-x-1/2 -translate-y-1/2 scale-0"
       >
         <img src="/assets/play-icon-black.png" className="absolute inset-0" />
       </div>

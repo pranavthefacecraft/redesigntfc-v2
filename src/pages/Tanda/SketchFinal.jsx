@@ -100,7 +100,7 @@ const SketchFinal = () => {
 
   return (
     <div
-      className="solit-el-1 absolute inset-0 container mx-auto z-1000 h-full"
+      className="solit-el-1 absolute inset-0 container mx-auto z-1000 h-full sm:h-full md:h-full lg:h-[35vh] xl:h-[95vh] 2xl:h-full"
       ref={container}
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}

@@ -56,12 +56,12 @@ const Solit = () => {
   return (
     <>
       <div ref={container} className="w-full overflow-hidden">
-        <div className="absolute top-0 left-0 w-full  h-[73vh] sm:h-[73vh] md:h-[73vh] lg:h-[70vh] xl:h-[95vh] 2xl:h-[100vh]">
+        <div className="absolute top-0 left-0 w-full  h-[650px] sm:h-[500px] md:h-[500px] lg:h-[900px] xl:h-[800px] 2xl:h-[900px]">
           <div className="absolute inset-0 opacity-100">
             <GridDistortion
               // imageSrc="https://picsum.photos/1920/1080?grayscale"
               imageSrc="/assets/solit/griddistortion.jpg"
-              grid={10}
+              grid={12}
               mouse={0.15}
               strength={0.15}
               relaxation={0.9}
@@ -94,7 +94,7 @@ const Solit = () => {
           </Display>
 
           </div>
-          <div className="z-50 container relative mx-auto flex flex-col items-center p-8 sm:p-0 md:p-8 lg:p-8 xl:p-0 2xl:p-0 pb-[90px] sm:lg:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+          <div className="z-50 container relative mx-auto flex flex-col items-center p-8 sm:p-0 md:p-8 lg:p-8 xl:p-0 2xl:p-0 pb-[90px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <div className=" relative sm:relative md:relative lg:relative xl:relative 2xl:absolute w-[100%] sm:w-[55%] md:w-[55%] lg:w-[55%] xl:w-[55%] 2xl:w-[100%] ">
             <h4 className="Futura-PT-Medium text-left font-bold text-[#BF1735] text-[28px] sm:text-[28px] md:text-[28px] lg:text-[28px] xl:text-[28px] 2xl:text-[28px]">About The Project.</h4>
           </div>
@@ -130,13 +130,13 @@ const Solit = () => {
             expanded={false}
           />
         </div>
-        <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[0px] xl:pt-[0px] 2xl:pt-[0px] lg:px-0 lg:py-0 pb-[0px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[35px] gap-y-0  md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[0px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
           {/* Slider */}
           <DisplaySlider>
             <Slider />
           </DisplaySlider>
         </div>
-        <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 pb-0 sm:pb-0 md:pb-0 lg:pb-0 xl:pb-[130px] gap-y-[90px]  md:gap-y-12 lg:gap-y-[130px] xl:gap-y-28 2xl:gap-y-[130px]">
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 pb-0 sm:pb-0 md:pb-0 lg:pb-[130px] xl:pb-[130px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-[90px]  md:gap-y-12 lg:gap-y-[130px] xl:gap-y-28 2xl:gap-y-[130px] ">
           <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
             {/* Image1 */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5] solit-el-1">
@@ -154,7 +154,7 @@ const Solit = () => {
                   loop
                   muted
                   playsInline
-                  className="absolute top-[106px] sm:top-[242px] md:top-[242px] lg:top-[242px] xl:top-[194px] 2xl:top-[234px] left-[107px] sm:left-[244px] md:left-[244px] lg:left-[244px] xl:left-[196px] 2xl:left-[238px] h-[134px] sm:h-[324px] md:h-[324px] lg:h-[324px] xl:h-[260px] 2xl:h-[324px] w-[132px] sm:w-[303px] md:w-[303px] lg:w-[303px] xl:w-[250px] 2xl:w-[303px] object-cover transform-flat rotate-y-18"
+                  className="absolute top-[106px] sm:top-[242px] md:top-[242px] lg:top-[142px] xl:top-[194px] 2xl:top-[234px] left-[107px] sm:left-[244px] md:left-[244px] lg:left-[143px] xl:left-[196px] 2xl:left-[238px] h-[134px] sm:h-[324px] md:h-[324px] lg:h-[187px] xl:h-[260px] 2xl:h-[324px] w-[132px] sm:w-[303px] md:w-[303px] lg:w-[181px] xl:w-[250px] 2xl:w-[303px] object-cover transform-flat rotate-y-18"
                   src="/assets/solit/solit_socmediapost_3.mp4"
                   type="video/mp4"
                 ></video>
@@ -178,7 +178,7 @@ const Solit = () => {
             text="To boost engagement and create a fresh, youthful brand character, we produced six short video posts for social media. These videos featured people answering questions about what Solit means to them, adding an element of fun and personal connection to the brand. This approach not only heightens engagement but also aligns perfectly with the target market of young creative businesses."
           />
           </div>
-          <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8 md:gap-y-12 lg:gap-y-[130px] xl:gap-y-15 2xl:gap-y-[65px]">
+          <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-8 md:gap-y-12 lg:gap-y-[35px] xl:gap-y-15 2xl:gap-y-[65px]">
           <RowDisplay
             image1="/assets/solit/row3.jpg"
             image2="/assets/solit/row4.jpg"
@@ -191,7 +191,7 @@ const Solit = () => {
             classes="solit-el-1"
           />
           </div>
-          <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-[130px] xl:gap-y-28 2xl:gap-y-[130px]">
+          <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[50px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Design System",
