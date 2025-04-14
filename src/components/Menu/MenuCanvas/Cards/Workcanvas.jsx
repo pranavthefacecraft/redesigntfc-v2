@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { useWorkStore } from '../../store';
 import { Suspense } from 'react';
 
-import Island from '../Models/Island';
+import Cube from '../Models/Cube';
 
 const canvasVariants = {
   hidden: {
@@ -33,17 +33,21 @@ const WorkCanvas = () => {
   <AnimatePresence>
 
     <motion.div
-      className='fixed top-[7em] right-[15em] bg-transparent overflow-hidden h-[70vh] w-[40vw] pointer-events-none'
+      className='fixed top-[0em] right-[15em] bg-transparent overflow-hidden h-[100vh] w-[40vw] pointer-events-none'
       variants={canvasVariants}
       initial="hidden"
       animate={ isWorkActive ? "show" : "hidden" }
     >
         <Suspense fallback={null}>
-        <Canvas eventPrefix="client" camera={{ position: [0, 5, 20], fov: 40 }}>
+        <Canvas eventPrefix="client"
+         orthographic
+         camera={{ zoom: 70, near: 10, position: [60, 20, 50] }}
+         dpr={[2.0,2.5]}
+         >
 
           <Suspense fallback={null}>
 
-          
+          <Cube/>
           
           </Suspense>
 
