@@ -86,7 +86,7 @@ const CubeCard = ({ title, images, color }) => {
           </div>
           
         </div>
-        <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 -top-20 -left-20 flex justify-center items-end text-xl bg-gray-200 text-black font-semibold rounded-3xl w-[600px] h-[600px] "> <img className="object-cover w-[600px] h-[600px] rounded-[20px] border-1" src={images[0]} /></div>
+        <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 -top-20 -left-20 flex justify-center items-end text-xl bg-gray-200 text-black font-semibold rounded-3xl w-[600px] h-[600px] "> <img className="object-cover w-[600px] h-[600px] rounded-[20px] border-1" src={images[0]} /></div>
       </div>
       
     </div>
