@@ -71,42 +71,71 @@ const MoreProjects = () => {
             title="Tanda"
             images={[
               "/assets/tanda/main.png",
-              // "tanda/tab-bg-v1.png",
-              // "tanda/tab-bg-v2.png",
-              // "tanda/laptop.png",
+              "/assets/tanda/dark-purple-v2.png",
+              "/assets/tanda/laptop.png",
+              "/assets/tanda/main.png",
               // "tanda/section-2a-2048x1365.png",
               // "tanda/sketch-after.png",
             ]}
-            color="#58567a"
+            color="#b1acf5"
           />
 
-          <CubeCard title="Solits" images={["/assets/solit/main.png"]} color="#58567a" />
+          <CubeCard title="Solit" 
+          images={[
+            "/assets/solit/main.png",
+            "assets/tanda/dark-purple-v2.png",
+            "/assets/solit/icon.png",
+            "/assets/tanda/tab.png",
+            // "tanda/section-2a-2048x1365.png",
+            // "tanda/sketch-after.png",
+          ]}
+          color="#b1acf5" />
+
           <CubeCard
             title="Towork"
-            images={["/assets/solit/icon.png"]}
+            images={[
+              "/assets/towork/laptopwithtowork.png",
+              "assets/tanda/dark-purple-v2.png",
+              "/assets/towork/man-sitting-on-chair.png",
+              "/assets/towork/mobile-in-hand.png",
+              // "tanda/section-2a-2048x1365.png",
+              // "tanda/sketch-after.png",
+            ]}
             color="#b1acf5"
           />
           
         </div>
         <div className="flex w-full flex-col gap-4 md:flex-row lg:gap-8 xl:gap-16">
           <CubeCard
-            title="Tanda"
+            title="Rafw"
             images={[
-              "/assets/tanda/main.png",
-              // "tanda/tab-bg-v1.png",
-              // "tanda/tab-bg-v2.png",
-              // "tanda/laptop.png",
-              // "tanda/section-2a-2048x1365.png",
-              // "tanda/sketch-after.png",
+              "/assets/rafw/hero-image.png",
+            "assets/tanda/dark-purple-v2.png",
+            "/assets/rafw/3-Screens.png",
+            "/assets/rafw/Tab.png",
             ]}
-            color="#58567a"
+            color="#b1acf5"
           />
 
-          <CubeCard title="Solit" images={["/assets/solit/main.png"]} color="#58567a" />
+<CubeCard
+            title="HousingSearch"
+            images={[
+              "/assets/hosuing-search/dream-home.png",
+            "assets/tanda/dark-purple-v2.png",
+            "/assets/hosuing-search/housing-search-hero.png",
+            "/assets/hosuing-search/laptopwithweb.png",
+            ]}
+            color="#b1acf5"
+          />
           <CubeCard
-            title="Towork"
-            images={["/assets/solit/icon.png"]}
-            color="#ff0000"
+            title="StudyEnglish"
+            images={[
+              "/assets/hosuing-search/dream-home.png",
+            "assets/tanda/dark-purple-v2.png",
+            "/assets/hosuing-search/housing-search-hero.png",
+            "/assets/hosuing-search/laptopwithweb.png",
+            ]}
+            color="#b1acf5"
           />
         </div>
       

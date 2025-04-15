@@ -411,7 +411,7 @@ const PageFooter = () => {
         >
           <h2
             ref={titleRef}
-            className="Futura-PT-Heavy text-white pointer-events-none absolute top-1/2 left-1/2 z-[60] -translate-x-1/2 -translate-y-1/2 text-center text-4xl md:text-4xl lg:text-5xl xl:text-9xl"
+            className="Futura-PT-Heavy text-black pointer-events-none absolute top-1/2 left-1/2 z-[60] -translate-x-1/2 -translate-y-1/2 text-center text-4xl md:text-4xl lg:text-5xl xl:text-9xl"
           >
             ELEVATE YOUR <br /> BRAND
           </h2>
@@ -460,7 +460,7 @@ const PageFooter = () => {
 
               {/* Title */}
               <div className="relative">
-                <h2 className="Futura-PT-Heavy pointer-events-none relative translate-y-0 text-center text-4xl text-white opacity-0 md:text-4xl lg:text-8xl xl:text-[144px]">
+                <h2 className="Futura-PT-Heavy pointer-events-none relative translate-y-0 text-center text-4xl text-black opacity-0 md:text-4xl lg:text-8xl xl:text-[144px]">
                   ELEVATE YOUR <br /> BRAND
                 </h2>
 
