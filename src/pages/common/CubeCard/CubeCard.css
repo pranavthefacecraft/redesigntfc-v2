@@ -55,13 +55,13 @@ transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
     transform: rotateX(10deg) rotateY(-10deg) rotateZ(2deg);
   }
 
-  12% {
+  13% {
     /* FRONT */
     transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg);
   }
 
   /*  */
-  17% {
+  16% {
     /* LEFT */
     transform: rotateX(10deg) rotateY(80deg) rotateZ(0deg);
   }
@@ -574,7 +574,7 @@ right: back - bottom
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation: rotate1 20s infinite;
+  animation: rotate1 30s infinite;
 }
 
 .cube-face {
@@ -590,6 +590,7 @@ right: back - bottom
   border: 1px solid var(--active-color);
   /* border-radius: 1rem; */
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .cube-face img {
@@ -603,51 +604,25 @@ right: back - bottom
 }
 
 .front {
-  animation: front-face 5s infinite;
+  animation: front-face 16s infinite;
 }
 
 .left {
-  animation: left-face 5s infinite;
+  animation: left-face 16s infinite;
 }
 
 .back {
-  animation: back-face 5s infinite;
+  animation: back-face 16s infinite;
 }
 
 .top {
-  animation: top-face 5s infinite;
+  animation: top-face 16s infinite;
 }
 
 .bottom {
-  animation: bottom-face 5s infinite;
+  animation: bottom-face 16s infinite;
 }
 
 .right {
-  animation: right-face 5s infinite;
-}
-
-
-
-
-.tooltip {
-  position: absolute;
-  top: -120%; /* Adjust to position the tooltip above the face */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  border-radius: 5px;
-  display: none; /* Initially hidden */
-  z-index: 1000;
-}
-
-.tooltip img {
-  max-width: 100px; /* Adjust the size of the image */
-  height: auto;
-  border-radius: 5px;
-}
-
-.cube-card:hover .tooltip {
-  display: block; /* Show the tooltip on hover */
-  border:1px solid red
+  animation: right-face 16s infinite;
 }

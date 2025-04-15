@@ -35,7 +35,7 @@ class CustomEffect extends Effect {
 const Scene = ({ titleSize }) => {
   const { size, gl, scene } = useThree();
   const [particleAlpha] = useTexture(
-    ["/assets/solit/footer-particle-v3.png"],
+    ["/assets/solit/footer-particle-v5.png"],
     (loaded) => {
       loaded.forEach((texture) => {
         texture.flipY = false;
@@ -411,7 +411,7 @@ const PageFooter = () => {
         >
           <h2
             ref={titleRef}
-            className="Futura-PT-Heavy text-white pointer-events-none absolute top-1/2 left-1/2 z-[60] -translate-x-1/2 -translate-y-1/2 text-center text-4xl md:text-4xl lg:text-5xl xl:text-9xl"
+            className="Futura-PT-Heavy text-white pointer-events-none absolute top-1/2 left-1/2 z-[60] -translate-x-1/2 -translate-y-1/2 text-center text-4xl md:text-4xl lg:text-[60px] xl:text-[60px] 2xl:text-[140px]"
           >
             ELEVATE YOUR <br /> BRAND
           </h2>
