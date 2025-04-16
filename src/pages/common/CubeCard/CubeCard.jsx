@@ -56,7 +56,7 @@ const CubeCard = ({ title, images, color }) => {
   }, []);
 
   return (
-    <div className="cube-card group">
+    <div className="cube-card w-[100%] sm:w-[100%] md:w-[100%] lg:w-[100%] xl:w-[60%] 2xl:w-[60%] group">
       <div ref={faces} className="cube-faces ">
         <div 
           className="cube-faces-container" 
@@ -64,12 +64,12 @@ const CubeCard = ({ title, images, color }) => {
         >
           <div
             ref={front}
-            className="cube-face front text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[60px] 2xl:text-[60px] text-white leading-5"
+            className="uppercase cube-face front text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[60px] 2xl:text-[100px] text-white leading-[100px] text-center"
           >
             {title}
             
           </div>
-          <div ref={back} className="cube-face back border text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[60px] 2xl:text-[60px] text-white leading-5">
+          <div ref={back} className="uppercase cube-face back border text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[60px] 2xl:text-[100px] text-white leading-[100px] text-center">
           {title}
           </div>
           <div ref={right} className="cube-face right border text-[40px] sm:text-[40px] md:text-[40px] lg:text-[80px] xl:text-[80px] 2xl:text-[120px] text-white">
@@ -86,7 +86,7 @@ const CubeCard = ({ title, images, color }) => {
           </div>
           
         </div>
-        <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 -top-20 -left-20 flex justify-center items-end text-xl bg-gray-200 text-black font-semibold rounded-3xl w-[600px] h-[600px] "> <img className="object-cover w-[600px] h-[600px] rounded-[20px] border-1" src={images[0]} /></div>
+        <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 -top-20 -left-20 flex justify-center items-end text-xl bg-gray-200 text-black font-semibold rounded-3xl w-[800px] h-[800px] "> <img className="object-cover w-[800px] h-[800px] rounded-[20px] border-1" src={images[0]} /></div>
       </div>
       
     </div>

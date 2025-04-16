@@ -1,16 +1,17 @@
 .cube-card {
-  width: 100%;
+ 
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 0rem;
   font-family: "futura-pt", sans-serif;
+  border:0px solid red;
 }
 
 .cube-faces {
   width: 100%;
   aspect-ratio: 1;
   perspective: 9700px;
-  transform: scale(0.8);
+  transform: scale(0.5);
 
   --shadow-color-1: #7b76c4;
   --shadow-color-2: #7b76c4;
