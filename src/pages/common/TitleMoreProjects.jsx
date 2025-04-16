@@ -8,7 +8,7 @@ const TitleMoreProjects = ({ content, size = "md", centered = false, color = "bl
   return (
     <h3 className={`${styles[size]} ${centered ? "text-center" : "text-left"}`} style={{ color }}>
       {content}
-      <img src="/assets/solit/arrow-down.gif" className="inline-block w-50 h-50" />
+      <img src="/assets/solit/arrow-down.gif" className="inline-block w-15 sm:w-20 md:w-50 lg:w-50 xl:w-50 2xl:w-50 h-15 sm:h-20 md:h-50 lg:h-50 xl:h-50 2xl:h-50" />
     </h3>
   );
 };

@@ -120,7 +120,7 @@ const Solit = () => {
         <Idea />
 
         {/* Second container */}
-        <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-8 2xl:p-0 lg:px-0 lg:py-0 pt-[90px] sm:lg:pt-[130px] md:pt-[130px] lg:pt-[130px] xl:pt-[130px] 2xl:pt-[130px] pb-[30px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-8 2xl:p-0 lg:px-0 lg:py-0 pt-[80px] sm:pt-[0px] md:pt-[130px] lg:pt-[130px] xl:pt-[130px] 2xl:pt-[130px] pb-[30px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Idea to creation",
@@ -136,7 +136,7 @@ const Solit = () => {
             <Slider />
           </DisplaySlider>
         </div>
-        <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 pb-0 sm:pb-0 md:pb-0 lg:pb-[130px] xl:pb-[130px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-[90px]  md:gap-y-12 lg:gap-y-[130px] xl:gap-y-28 2xl:gap-y-[130px] ">
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[0px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
           <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
             {/* Image1 */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5] solit-el-1">
@@ -163,7 +163,8 @@ const Solit = () => {
               {/* Icon videos */}
             </div>
           </div>
-
+            </div>
+            <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-8 2xl:p-0 lg:px-0 lg:py-0 pt-[80px] sm:pt-[0px] md:pt-[130px] lg:pt-[130px] xl:pt-[130px] 2xl:pt-[130px] pb-[30px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: (
@@ -217,7 +218,7 @@ const Solit = () => {
           </Display>
         </div>
         <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
-          <div className="marquee-container border-0 pt-20">
+          <div className="marquee-container border-0 pt-10 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-20 2xl:pt-20">
             <TitleMoreProjects
               content="Explore more projects"
               size="md"
