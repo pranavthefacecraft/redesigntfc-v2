@@ -65,8 +65,8 @@ const ProjectCard = ({ name, image }) => {
 const MoreProjects = () => {
   return (
     <>
-      <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-0 xl:gap-y-20 xl:pb-0">
-        <div className="flex w-full flex-col gap-4 md:flex-row lg:gap-8 xl:gap-16">
+      <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-0 xl:gap-y-0 xl:pb-0">
+        <div className="flex w-full flex-col gap-0 md:flex-row lg:gap-0 xl:gap-0">
           <CubeCard
             title="Tanda"
             images={[
@@ -85,7 +85,7 @@ const MoreProjects = () => {
             "/assets/solit/main.png",
             "assets/tanda/dark-purple-v2.png",
             "/assets/solit/icon.png",
-            "/assets/tanda/tab.png",
+            "/assets/solit/tab.png",
             // "tanda/section-2a-2048x1365.png",
             // "tanda/sketch-after.png",
           ]}
@@ -105,7 +105,7 @@ const MoreProjects = () => {
           />
           
         </div>
-        <div className="flex w-full flex-col gap-4 md:flex-row lg:gap-8 xl:gap-16">
+        <div className="flex w-full flex-col gap-4 md:flex-row lg:gap-0 xl:gap-0">
           <CubeCard
             title="Rafw"
             images={[
@@ -118,7 +118,7 @@ const MoreProjects = () => {
           />
 
 <CubeCard
-            title="HousingSearch"
+            title="Housing Search"
             images={[
               "/assets/hosuing-search/dream-home.png",
             "assets/tanda/dark-purple-v2.png",
@@ -128,7 +128,41 @@ const MoreProjects = () => {
             color="#b1acf5"
           />
           <CubeCard
-            title="StudyEnglish"
+            title="Study English"
+            images={[
+              "/assets/hosuing-search/dream-home.png",
+            "assets/tanda/dark-purple-v2.png",
+            "/assets/hosuing-search/housing-search-hero.png",
+            "/assets/hosuing-search/laptopwithweb.png",
+            ]}
+            color="#b1acf5"
+          />
+        </div>
+
+        <div className="flex w-full flex-col gap-0 md:flex-row lg:gap-0 xl:gap-0">
+          <CubeCard
+            title="Rafw"
+            images={[
+              "/assets/rafw/hero-image.png",
+            "assets/tanda/dark-purple-v2.png",
+            "/assets/rafw/3-Screens.png",
+            "/assets/rafw/Tab.png",
+            ]}
+            color="#b1acf5"
+          />
+
+<CubeCard
+            title="Housing Search"
+            images={[
+              "/assets/hosuing-search/dream-home.png",
+            "assets/tanda/dark-purple-v2.png",
+            "/assets/hosuing-search/housing-search-hero.png",
+            "/assets/hosuing-search/laptopwithweb.png",
+            ]}
+            color="#b1acf5"
+          />
+          <CubeCard
+            title="Study English"
             images={[
               "/assets/hosuing-search/dream-home.png",
             "assets/tanda/dark-purple-v2.png",

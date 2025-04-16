@@ -16,7 +16,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
-import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -40,7 +40,7 @@ const Scene = ({ titleSize }) => {
       loaded.forEach((texture) => {
         texture.flipY = false;
       });
-    },
+    }
   );
 
   // Refs and states
@@ -77,15 +77,15 @@ const Scene = ({ titleSize }) => {
     let geometry = new THREE.BufferGeometry();
     geometry.setAttribute(
       "position",
-      new THREE.BufferAttribute(new Float32Array(positions), 3),
+      new THREE.BufferAttribute(new Float32Array(positions), 3)
     );
     geometry.setAttribute(
       "aOffset",
-      new THREE.BufferAttribute(new Float32Array(offsets), 1),
+      new THREE.BufferAttribute(new Float32Array(offsets), 1)
     );
     geometry.setAttribute(
       "aEven",
-      new THREE.BufferAttribute(new Float32Array(evens), 1),
+      new THREE.BufferAttribute(new Float32Array(evens), 1)
     );
 
     return geometry;
@@ -280,6 +280,21 @@ const PageFooter = () => {
   const titleRef = useRef();
 
   const [titleSize, setTitleSize] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    setMousePosition({ x, y });
+  };
+
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    setMousePosition({ x: 0, y: 0 });
+  };
 
   useEffect(() => {
     let onResize = () => {
@@ -341,7 +356,7 @@ const PageFooter = () => {
         opacity: 1,
         y: 0,
       },
-      "<",
+      "<"
     );
 
     tl.to(
@@ -351,7 +366,7 @@ const PageFooter = () => {
         scale: 1.2,
         ease: "power4.in",
       },
-      "<",
+      "<"
     );
 
     tl.fromTo(
@@ -364,7 +379,7 @@ const PageFooter = () => {
         opacity: 1,
         y: 0,
         stagger: 0.04,
-      },
+      }
     );
 
     tl.fromTo(
@@ -380,7 +395,7 @@ const PageFooter = () => {
         x: 0, // Move to the center
         stagger: 0.04,
         ease: "power2.out", // Smooth easing
-      },
+      }
     );
 
     tl.fromTo(
@@ -393,7 +408,7 @@ const PageFooter = () => {
         opacity: 1,
         y: 0,
         stagger: 0.04,
-      },
+      }
     );
 
     ScrollTrigger.create({
@@ -474,36 +489,54 @@ const PageFooter = () => {
                 </a>
               </div>
               <div
-  className="cloud-img relative bottom-0 w-full text-right right-0"
-  
->
+                className="cloud-img relative bottom-0 w-full text-right right-0"
+                onMouseMove={handleMouseMove}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <img
                   src="/assets/cloud.png"
                   title=""
                   alt=""
-                  className="pointer-events-none absolute -z-50 w-[400px] origin-bottom -top-10 right-0"
-                  
+                  className={`pointer-events-none relative -z-50 w-[400px] origin-bottom -top-10 right-0 transition-transform duration-300 ${
+                    isHovering ? "scale-105" : ""
+                  }`}
+                  style={{
+                    transform: isHovering
+                      ? `translate(${mousePosition.x * 0.1}px, ${
+                          mousePosition.y * 0.1
+                        }px)`
+                      : "translate(0, 0)",
+                  }}
                 />
               </div>
               {/* Title */}
               <div className="relative">
-                  
                 <h2 className="Futura-PT-Heavy pointer-events-none relative translate-y-0 text-center text-4xl text-white opacity-0 md:text-4xl lg:text-8xl xl:text-[144px]">
                   ELEVATE YOUR <br /> BRAND
                 </h2>
-                
 
                 {/* Contact */}
                 <div className="absolute top-full right-0 left-0 flex flex-col items-center gap-y-2 mt-30 text-white lg:-right-16 lg:-left-16 lg:-mt-2 lg:-translate-y-full lg:flex-row lg:justify-between xl:-mt-3">
                   <p className="footer-detail font-light underline opacity-60 lg:text-lg xl:text-2xl">
-                    <a href="mailto:hello@thefacecraft.com" className="text-white hover:text-[#bf1736]">hello@thefacecraft.com</a>
-                    
+                    <a
+                      href="mailto:hello@thefacecraft.com"
+                      className="text-white hover:text-[#bf1736]"
+                    >
+                      hello@thefacecraft.com
+                    </a>
                   </p>
 
                   <div className="footer-detail h-12 w-36 flex items-center justify-around text-red-500 text-2xl">
-                  <a href="#"><FaFacebook /></a>
-  <a href="#"><FaTwitter /></a>
-  <a href="#"><FaYoutube /></a>
+                    <a href="#">
+                      <FaFacebook />
+                    </a>
+                    <a href="#">
+                      <FaTwitter />
+                    </a>
+                    <a href="#">
+                      <FaYoutube />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -541,9 +574,12 @@ const PageFooter = () => {
 
                 {/* Terms of service */}
                 <div className="footer-detail mt-2 flex w-full items-center justify-center gap-x-4 text-white opacity-90 lg:w-fit lg:flex-col lg:items-start lg:gap-y-2">
-                  <a href="#" className="hover:text-[#bf1736]">Privacy Policy</a>
-                  <a href="#" className="hover:text-[#bf1736]">Terms of Service</a>
-                  
+                  <a href="#" className="hover:text-[#bf1736]">
+                    Privacy Policy
+                  </a>
+                  <a href="#" className="hover:text-[#bf1736]">
+                    Terms of Service
+                  </a>
                 </div>
               </div>
             </div>
@@ -554,7 +590,6 @@ const PageFooter = () => {
               src="/assets/solit/thumb_BG.png"
               className="pointer-events-none absolute top-0 left-0 -z-50 h-full w-full origin-bottom object-cover"
             />
-            
           </div>
         </div>
       </div>

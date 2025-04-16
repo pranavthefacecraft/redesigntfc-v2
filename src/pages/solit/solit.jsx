@@ -191,7 +191,7 @@ const Solit = () => {
             classes="solit-el-1"
           />
           </div>
-          <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[50px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
+          <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[50px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] 2xl:pb-[135px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Design System",
@@ -216,51 +216,43 @@ const Solit = () => {
             </div>
           </Display>
         </div>
-        <div className="h-full w-full">
-          <div className="marquee-container">
+        <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
+          <div className="marquee-container border-0 pt-20">
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+             <TitleMoreProjects
+              content="Explore more projects"
               size="md"
               centered
             />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+             <TitleMoreProjects
+              content="Explore more projects"
               size="md"
               centered
             />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+             <TitleMoreProjects
+              content="Explore more projects"
               size="md"
               centered
             />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+             <TitleMoreProjects
+              content="Explore more projects"
               size="md"
               centered
             />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+             <TitleMoreProjects
+              content="Explore more projects"
               size="md"
               centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
+            />  
+            
+            
           </div>
 
-          <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
+          <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
             <MoreProjects />
           </div>
         </div>
