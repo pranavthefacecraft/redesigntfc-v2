@@ -433,6 +433,25 @@ const PageFooter = () => {
     ScrollTrigger.refresh();
   });
 
+    
+  const [isWhatsappHovering, setIsWhatsappHovering] = useState(false);
+  const [whatsappMousePosition, setWhatsappMousePosition] = useState({ x: 0, y: 0 });
+  
+  
+  const handleWhatsappMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    setWhatsappMousePosition({ x, y });
+  };
+  
+  const handleWhatsappMouseEnter = () => setIsWhatsappHovering(true);
+  const handleWhatsappMouseLeave = () => {
+    setIsWhatsappHovering(false);
+    setWhatsappMousePosition({ x: 0, y: 0 });
+  };
+
+
   return (
     <>
       <div ref={wrapper} className="relative h-screen w-full overflow-hidden">
@@ -488,28 +507,7 @@ const PageFooter = () => {
                   CONTACT
                 </a>
               </div>
-              <div
-                className="cloud-img relative bottom-0 w-full text-right right-0"
-                onMouseMove={handleMouseMove}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <img
-                  src="/assets/cloud.png"
-                  title=""
-                  alt=""
-                  className={`pointer-events-none relative -z-50 w-[400px] origin-bottom -top-10 right-0 transition-transform duration-300 ${
-                    isHovering ? "scale-105" : ""
-                  }`}
-                  style={{
-                    transform: isHovering
-                      ? `translate(${mousePosition.x * 0.1}px, ${
-                          mousePosition.y * 0.1
-                        }px)`
-                      : "translate(0, 0)",
-                  }}
-                />
-              </div>
+
               {/* Title */}
               <div className="relative">
                 <h2 className="Futura-PT-Heavy pointer-events-none relative translate-y-0 text-center text-4xl text-white opacity-0 md:text-4xl lg:text-8xl xl:text-[144px]">
@@ -528,32 +526,67 @@ const PageFooter = () => {
                   </p>
 
                   <div className="footer-detail h-12 w-36 flex items-center justify-around text-red-500 text-2xl">
-                    <a href="#">
-                      <FaFacebook />
-                    </a>
-                    <a href="#">
-                      <FaTwitter />
-                    </a>
-                    <a href="#">
-                      <FaYoutube />
-                    </a>
-                  </div>
+  <a href="#" className="transition-transform duration-200 hover:scale-125">
+    <FaFacebook />
+  </a>
+  <a href="#" className="transition-transform duration-200 hover:scale-125">
+    <FaTwitter />
+  </a>
+  <a href="#" className="transition-transform duration-200 hover:scale-125">
+    <FaYoutube />
+  </a>
+</div>
+                </div>
+                <div
+                  className="cloud-img absolute -top-40 right-0 w-auto border-0 p-8 border-amber-50 z-[2000] overflow-hidden  "
+                  onMouseMove={handleMouseMove}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <img
+                    src="/assets/cloud.png"
+                    title=""
+                    alt=""
+                    className={`pointer-events-none relative  w-[400px]  right-0 transition-transform duration-300 ${
+                      isHovering ? "scale-105" : ""
+                    }`}
+                    style={{
+                      transform: isHovering
+                        ? `translate(${mousePosition.x * 0.1}px, ${
+                            mousePosition.y * 0.1
+                          }px)`
+                        : "translate(0, 0)",
+                    }}
+                  />
                 </div>
               </div>
 
               {/* Details */}
               <div className="flex w-full flex-col items-center justify-center gap-y-4 lg:relative lg:w-[calc(100%+8rem)] lg:flex-row lg:justify-between">
                 {/* Whatsapp */}
-                <div className="footer-detail shrink-0">
-                  <img
-                    src="/assets/solit/thumb_whatsapp.png"
-                    className="h-12 lg:h-16"
-                  />
+                
+<div
+  className="footer-detail shrink-0"
+  onMouseMove={handleWhatsappMouseMove}
+  onMouseEnter={handleWhatsappMouseEnter}
+  onMouseLeave={handleWhatsappMouseLeave}
+>
+  <img
+    src="/assets/solit/thumb_whatsapp.png"
+    className={`cursor-pointer h-12 lg:h-16 pointer-events-none transition-transform duration-300 ${
+      isWhatsappHovering ? "scale-115" : ""
+    }`}
+    style={{
+      transform: isWhatsappHovering
+        ? `translate(${whatsappMousePosition.x * 0.1}px, ${whatsappMousePosition.y * 0.1}px)`
+        : "translate(0, 0)",
+    }}
+  />
+  <p className="text-md absolute bottom-0 left-3/4 w-max font-medium text-white opacity-90">
+    <a href="#">Chat with us </a>
+  </p>
+</div>
 
-                  <p className="text-md absolute bottom-0 left-3/4 w-max font-medium text-white opacity-90">
-                    Chat with us
-                  </p>
-                </div>
 
                 {/* Logo */}
                 <div className="flex w-full flex-col lg:absolute lg:top-1/2 lg:left-1/2 lg:w-fit lg:-translate-x-1/2 lg:-translate-y-1/2 lg:gap-y-2">

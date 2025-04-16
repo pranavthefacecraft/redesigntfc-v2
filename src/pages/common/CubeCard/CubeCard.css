@@ -18,7 +18,21 @@
   --active-color: #b1acf5;
   --inactive-color: #7b76c4;
 }
+/* Mobile styles */
+@media (max-width: 600px) {
+  .cube-faces {
+    transform: scale(0.6); /* Adjust as needed for mobile */
+    perspective: 4000px;   /* Optional: adjust for mobile */
+  }
+}
 
+/* Desktop styles (optional, for clarity) */
+@media (min-width: 601px) {
+  .cube-faces {
+    transform: scale(0.5);
+    perspective: 9700px;
+  }
+}
 /* 
 FRONT
 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
