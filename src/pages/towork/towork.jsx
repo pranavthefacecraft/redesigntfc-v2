@@ -35,7 +35,7 @@ import TitleMoreProjects from "../common/TitleMoreProjects.jsx";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-const Tanda = () => {
+const Towork = () => {
   const imageTimeline = useRef();
   const container = useRef();
   const videoRef = useRef();
@@ -136,7 +136,7 @@ const Tanda = () => {
 
           <Display>
             <div
-              id="main-image-tanda"
+              id="main-image-towork"
               className="parallax pointer-events-none h-full w-full"
             ></div>
           </Display>
@@ -395,4 +395,4 @@ const Tanda = () => {
   );
 };
 
-export default Tanda;
+export default Towork;

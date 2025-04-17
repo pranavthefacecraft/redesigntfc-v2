@@ -8,6 +8,7 @@ import Towork from './pages/towork/towork';
 import HousingSearch from './pages/housing-search/housingsearch';
 import Bhms from './pages/bhms/bhms';
 import StudyEnglish from './pages/studyenglish/studyenglish';
+import LaughingTree from './pages/laughingtree/laughingtree';
 
 
 import './App.css'
@@ -24,6 +25,7 @@ function App() {
       <Route path="/housingsearch" element={<HousingSearch />} />
       <Route path="/bhms" element={<Bhms />} />
       <Route path="/studyenglish" element={<StudyEnglish />} />
+      <Route path="/laughingtree" element={<LaughingTree />} />
     </Routes>
   </Router>
   )
