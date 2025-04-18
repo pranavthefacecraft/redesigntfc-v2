@@ -16,7 +16,7 @@ import ProjectTag from "./ProjectTag.jsx";
 import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
-import MoreProjects from "./MoreProjects.jsx";
+import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./Video.jsx";
 import { useRef, useEffect } from "react";

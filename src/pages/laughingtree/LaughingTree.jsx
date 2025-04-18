@@ -16,7 +16,7 @@ import ProjectTag from "./ProjectTagLaughingTree.jsx";
 import MainText from "./MainTextLaughingTree.jsx";
 import Idea from "./IdeaLaughingTree.jsx";
 import Slider from "./SliderLaughingTree.jsx";
-import MoreProjects from "./MoreProjectsLaughingTree.jsx";
+import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./VideoLaughingTree.jsx";
 import { useRef, useEffect } from "react";

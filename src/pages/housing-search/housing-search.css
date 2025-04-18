@@ -1,4 +1,4 @@
-#main-image-tanda {
+#main-image-housingsearch {
   background-image: url("/assets/hosuing-search/housing-search-hero.png");
   border:1px solid #000000;
 }
@@ -11,7 +11,7 @@
   background-size: cover;
 }
 
-#idea-grid {
+#idea-grid-housing-search {
   width: 100%;
 }
 

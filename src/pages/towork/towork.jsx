@@ -11,7 +11,7 @@ import ProjectTag from "./ProjectTagTowork.jsx";
 import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
-import MoreProjects from "./MoreProjects.jsx";
+import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./Video.jsx";
 import BackgroundImageWithIconText from "./testimonial.jsx"; // Import the new component
@@ -342,53 +342,47 @@ const Towork = () => {
               </h4>
             </div>
           </Display>
-
-          <div className="marquee-container">
+</div>
+          <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
+          <div className="marquee-container border-0 pt-10 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-20 2xl:pt-20">
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
           </div>
 
-          <MoreProjects />
+          <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
+            <MoreProjects />
+          </div>
         </div>
-      </div>
+        </div>
+      
 
       <PageFooter />
     </>

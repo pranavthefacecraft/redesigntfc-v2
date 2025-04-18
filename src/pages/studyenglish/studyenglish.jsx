@@ -16,7 +16,7 @@ import ProjectTag from "./ProjectTagStudyEnglish.jsx";
 import MainText from "./MainTextStudyEnglish.jsx";
 import Idea from "./IdeaStudyEnglish.jsx";
 import Slider from "./SliderStudyEnglish.jsx";
-import MoreProjects from "./MoreProjectsStudyEnglish.jsx";
+import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./VideoStudyEnglish.jsx";
 import { useRef, useEffect } from "react";

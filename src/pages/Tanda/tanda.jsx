@@ -12,7 +12,7 @@ import ProjectTag from "./ProjectTagTanda.jsx";
 import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
-import MoreProjects from "./MoreProjects.jsx";
+import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./Video.jsx";
 import BackgroundImageWithIconText from "./testimonial.jsx"; // Import the new component
@@ -374,45 +374,35 @@ services simply and engagingly. The challenge was to balance simplicity and deta
 
           
         </div>
-        <div className="h-full w-full">
-          <div className="marquee-container">
+        <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
+        <div className="marquee-container border-0 pt-10 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-20 2xl:pt-20">
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />
             <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
-              size="md"
-              centered
-            />
-            <TitleMoreProjects
-              content="Explore more projects&nbsp; . &nbsp;"
+              content="Explore more projects"
               size="md"
               centered
             />

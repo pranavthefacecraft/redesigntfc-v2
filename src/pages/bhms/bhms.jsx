@@ -16,7 +16,7 @@ import ProjectTag from "./ProjectTagBhms.jsx";
 import MainText from "./MainTextBhms.jsx";
 import Idea from "./IdeaBhms.jsx";
 import Slider from "./SliderBhms.jsx";
-import MoreProjects from "./MoreProjectsBhms.jsx";
+import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./VideoBhms.jsx";
 import { useRef, useEffect } from "react";
@@ -29,7 +29,7 @@ import Sectionidea from "../common/SectionIdea.jsx";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-const Solit = () => {
+const Bhms = () => {
   const imageTimeline = useRef();
   const container = useRef();
 
@@ -78,7 +78,7 @@ const Solit = () => {
 
           <Display>
             <div
-              id="main-image-solit"
+              id="main-image-bhms"
               className="parallax pointer-events-none h-full w-full"
             ></div>
           </Display>
@@ -141,24 +141,17 @@ const Solit = () => {
             {/* Image1 */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5] solit-el-1">
               <img
-                src="/assets/solit/row1.jpg"
+                src="/assets/bhms/black-couple.png"
                 className="absolute top-0 left-0 h-full w-full object-cover"
               />
             </div>
 
             {/* Image2 */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-[4/5] xl:aspect-[4/5]">
-              <div className="relative h-full aspect-square w-full bg-[url(/assets/solit/row2.jpg)] p-10 bg-cover">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute top-[106px] sm:top-[242px] md:top-[242px] lg:top-[142px] xl:top-[194px] 2xl:top-[234px] left-[107px] sm:left-[244px] md:left-[244px] lg:left-[143px] xl:left-[196px] 2xl:left-[238px] h-[134px] sm:h-[324px] md:h-[324px] lg:h-[187px] xl:h-[260px] 2xl:h-[324px] w-[132px] sm:w-[303px] md:w-[303px] lg:w-[181px] xl:w-[250px] 2xl:w-[303px] object-cover transform-flat rotate-y-18"
-                  src="/assets/solit/solit_socmediapost_3.mp4"
-                  type="video/mp4"
-                ></video>
-              </div>
+            <img
+                src="/assets/bhms/betheleader.png"
+                className="absolute top-0 left-0 h-full w-full object-cover"
+              />
 
               {/* Icon videos */}
             </div>
@@ -180,17 +173,12 @@ const Solit = () => {
           />
           </div>
           <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-8 md:gap-y-12 lg:gap-y-[35px] xl:gap-y-15 2xl:gap-y-[65px]">
-          <RowDisplay
-            image1="/assets/solit/row3.jpg"
-            image2="/assets/solit/row4.jpg"
-            classes="solit-el-1"
-          />
+          <img
+              src="/assets/bhms/hording.png"
+              className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
+            />
+       
 
-          <RowDisplay
-            image1="/assets/solit/row5.jpg"
-            image2="/assets/solit/row6.jpg"
-            classes="solit-el-1"
-          />
           </div>
           <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[50px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] 2xl:pb-[135px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
@@ -264,4 +252,4 @@ const Solit = () => {
   );
 };
 
-export default Solit;
+export default Bhms;

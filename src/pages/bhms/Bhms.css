@@ -2,8 +2,8 @@ body{
   background-color: #fff;
   background-image: none;
 }
-#main-image-solit {
-  background-image: url("/assets/solit/main.jpg");
+#main-image-bhms {
+  background-image: url("/assets/bhms/main-hero.png");
 }
 
 .parallax {
