@@ -14,7 +14,7 @@ import ProjectTag from "./ProjectTagRafw.jsx";
 import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
-import MoreProjects from "./MoreProjects.jsx";
+import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./Video.jsx";
 import { useRef, useEffect } from "react";
@@ -241,61 +241,45 @@ const Solit = () => {
           </Display>
         </div>
         <div className="w-full mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-30 xl:pb-32 2xl:pt-40">
-          <div className="h-full w-full">
-            <div className="marquee-container">
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-              <TitleMoreProjects
-                content="Explore more projects&nbsp; . &nbsp;"
-                size="md"
-                centered
-                color="white"
-              />
-            </div>
+        <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
+          <div className="marquee-container border-0 pt-10 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-20 2xl:pt-20">
+            <TitleMoreProjects
+              content="Explore more projects"
+              size="md"
+              centered
+            />
+             <TitleMoreProjects
+              content="Explore more projects"
+              size="md"
+              centered
+            />
+             <TitleMoreProjects
+              content="Explore more projects"
+              size="md"
+              centered
+            />
+             <TitleMoreProjects
+              content="Explore more projects"
+              size="md"
+              centered
+            />
+             <TitleMoreProjects
+              content="Explore more projects"
+              size="md"
+              centered
+            />
+             <TitleMoreProjects
+              content="Explore more projects"
+              size="md"
+              centered
+            />  
+            
+            
+          </div>
 
-            <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
-              <MoreProjects />
-            </div>
+            <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
+            <MoreProjects />
+          </div>
           </div>
         </div>
       </div>
