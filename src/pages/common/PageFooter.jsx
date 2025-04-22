@@ -454,7 +454,7 @@ const PageFooter = () => {
 
   return (
     <>
-      <div ref={wrapper} className="relative h-screen w-full overflow-hidden">
+      <div ref={wrapper} className="relative h-screen w-full overflow-hidden hidden sm:block md:block lg:block xl:block 2xl:block">
         <div
           ref={containerRef}
           className="absolute inset-0 flex flex-col items-center gap-4 lg:flex-row lg:justify-between"
