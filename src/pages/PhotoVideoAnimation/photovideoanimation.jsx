@@ -1,4 +1,4 @@
-import "./Solit.css";
+import "./photovideoanimation.css";
 import Display from "../common/Display.jsx";
 import DisplaySlider from "../common/DisplaySlider.jsx";
 
@@ -10,16 +10,16 @@ import Separator from "../common/Separator.jsx";
 import Title from "../common/Title.jsx";
 import TitleMoreProjects from "../common/TitleMoreProjects.jsx";
 import PageHeader from "../common/PageHeader.jsx";
-import PageBreadcrumbs from "./PageBreadcrumbs.jsx";
+import PageBreadcrumbs from "./PageBreadcrumbsphotovideoanimation.jsx";
 
-import ProjectTag from "./ProjectTag.jsx";
-import MainText from "./MainText.jsx";
-import Idea from "./Idea.jsx";
-import Slider from "./Slider.jsx";
+import ProjectTag from "./ProjectTagphotovideoanimation.jsx";
+import MainText from "./MainTextphotovideoanimation.jsx";
+import Idea from "./Ideaphotovideoanimation.jsx";
+import Slider from "./Sliderphotovideoanimation.jsx";
 import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import PageFooterMobile from "../common/PageFooterMobile.jsx";
-import Video from "./Video.jsx";
+import Video from "./Videophotovideoanimation.jsx";
 import { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -79,7 +79,7 @@ const Solit = () => {
 
           <Display>
             <div
-              id="main-image-solit"
+              id="main-image-photovideoanimation"
               className="parallax pointer-events-none h-full w-full"
             ></div>
           </Display>

@@ -10,7 +10,7 @@ const PageHeader = () => {
       </a>
       <div>&gt;</div>
       <a href="/" className="pointer-events-auto">
-      Solit
+      Photography and Animation
       </a>
     </h6>
   );
