@@ -9,6 +9,7 @@ import HousingSearch from './pages/housing-search/housingsearch';
 import Bhms from './pages/bhms/bhms';
 import StudyEnglish from './pages/studyenglish/studyenglish';
 import LaughingTree from './pages/laughingtree/laughingtree';
+import PhotoVideoAnimation from './pages/PhotoVideoAnimation/photovideoanimation';
 
 
 import './App.css'
@@ -26,6 +27,7 @@ function App() {
       <Route path="/bhms" element={<Bhms />} />
       <Route path="/studyenglish" element={<StudyEnglish />} />
       <Route path="/laughingtree" element={<LaughingTree />} />
+      <Route path="/photovideoanimation" element={<PhotoVideoAnimation />} />
     </Routes>
   </Router>
   )
