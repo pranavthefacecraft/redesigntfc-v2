@@ -18,6 +18,7 @@ import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
 import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
+import PageFooterMobile from "../common/PageFooterMobile.jsx";
 import Video from "./Video.jsx";
 import { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
@@ -260,6 +261,7 @@ const Solit = () => {
       </div>
 
       <PageFooter />
+      <PageFooterMobile />
     </>
   );
 };

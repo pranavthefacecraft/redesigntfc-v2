@@ -50,7 +50,7 @@ const Video = () => {
         controls
       >
         <source
-          src="/assets/solit-create-at-solit-thrive-in-luzern.mp4"
+          src="/assets/laughingtree/Showreel.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
