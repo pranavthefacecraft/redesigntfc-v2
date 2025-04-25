@@ -65,6 +65,7 @@ const ProjectCard = ({ name, image }) => {
 const MoreProjects = () => {
   return (
     <>
+    
       <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-0 xl:gap-y-0 xl:pb-0">
         <div className="flex w-full flex-col gap-0 md:flex-row lg:gap-0 xl:gap-0">
           <CubeCard
