@@ -43,27 +43,3 @@ body{
   border-color: red !important;
 }
 
-.marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  width: max-content;
-  font-family: Futura-PT-Heavy, sans-serif;
-}
-.marquee-container h3{
-  color: #d5d5d5 !important;
-}
-.marquee-container > * {
-  display: inline-block;
-  animation: marquee 5s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-  
-}
