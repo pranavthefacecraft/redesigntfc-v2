@@ -138,7 +138,7 @@ const AlternatingGrid = () => {
             data-scroll
             className={`
               flex flex-col items-${idx % 2 === 0 ? "start" : "end"}
-              text-${idx % 2 === 0 ? "left" : "right"}
+              text-${idx % 2 === 0 ? "left" : "left"}
               w-full
             `}
           >
@@ -154,11 +154,11 @@ const AlternatingGrid = () => {
               <img
                 src={item.src}
                 alt={item.title}
-                className="w-150 object-cover rounded-[20px] shadow mb-10 cursor-pointer transition-transform hover:scale-105"
+                className="w-150 object-cover rounded-[20px] shadow mb-0 sm:mb-10 md:mb-10 lg:mb-10 xl:mb-10 2xl:mb-10 cursor-pointer transition-transform hover:scale-105"
                 onClick={() => openLightbox(idx)}
               />
             )}
-            <h3 className="text-[20px] sm:text-[20px] md:text-[20px] lg:text-[20px] xl:text-[40px] 2xl:text-[40px] Futura-PT-Heavy">{item.title}</h3>
+            <h3 className="text-[20px] sm:text-[20px] md:text-[20px] lg:text-[20px] xl:text-[40px] 2xl:text-[40px] Futura-PT-Heavy w-full sm:w-auto md:w-auto lg:w-auto xl:w-auto 2xl:w-auto text-center mb-10 sm:mb-10 md:mb-0 lg:mb-0 xl:mb-0 2xl:mb-0">{item.title}</h3>
           </div>
         ))}
       </div>

@@ -52,7 +52,7 @@ const Idea = () => {
   return (
     <div
       id="idea-grid-photo-video-animation"
-      className="border-0 border-amber-900 h-auto grid gap-4"
+      className="border-0 border-amber-900 h-auto grid gap-0 sm:gap-4 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4"
      
     >
       {/* First Row */}
@@ -104,12 +104,12 @@ const Idea = () => {
         </div>
         <div className="bg-white flex items-center justify-center">
           {/* Second (Middle) Column Content */}
-          <div className="flex flex-col items-center gap-4 w-full h-full">
-            <div className="h-1/2 w-full bg-black border-l-12 border-r-12 border-[#ffffff]">
+          <div className="flex flex-col items-center gap-0 sm:gap-4 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4 w-full h-full">
+            <div className="h-1/2 w-full bg-black border-l-0 sm:border-l-12 md:border-l-12 lg:border-l-12 xl:border-l-12 2xl:border-l-12 border-r-0 sm:border-r-12 md:border-r-12 lg:border-r-12 xl:border-r-12 2xl:border-r-12 border-[#ffffff]">
               <img src="/assets/photovideoanimation/story-board.webp" alt="Sample 1" className="w-full h-full" />
             </div>
             {/* Video with autoplay and loop */}
-            <div className="h-1/2 w-full bg-[#f2f2f2] border-l-12 border-r-12 border-[#ffffff] flex items-center justify-center">
+            <div className="h-1/2 w-full bg-[#f2f2f2] border-l-0 sm:border-l-12 md:border-l-12 lg:border-l-12 xl:border-l-12 2xl:border-l-12 border-r-0 sm:border-r-12 md:border-r-12 lg:border-r-12 xl:border-r-12 2xl:border-r-12 border-[#ffffff] flex items-center justify-center">
               <video src="/assets/photovideoanimation/camera-video-480.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover" />
             </div>
           </div>
@@ -127,7 +127,7 @@ const Idea = () => {
           {/* First Column Content */}
           <img src="/assets/photovideoanimation/studio.png" alt="Sample 2" className="w-full h-full object-cover" />
         </div>
-        <div className="bg-[#e8e8e8] flex items-center justify-center border-0 border-l-12 border-r-12 border-[#ffffff]">
+        <div className="bg-[#e8e8e8] flex items-center justify-center border-l-0 sm:border-l-12 md:border-l-12 lg:border-l-12 xl:border-l-12 2xl:border-l-12 border-r-0 sm:border-r-12 md:border-r-12 lg:border-r-12 xl:border-r-12 2xl:border-r-12 border-[#ffffff]">
           {/* Second Column Content */}
           <div className="p-10 sm:p-30 md:p-30 lg:p-30 xl:p-30 2xl:p-30 text-center">
             <span
