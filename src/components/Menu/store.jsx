@@ -41,3 +41,31 @@ export const useContactStore = create((set) => ({
   isContactusActive: false, 
   setIsContactusActive: (isActive) => set({ isContactusActive: isActive }),
 }));
+
+export const useClickStore = create((set) => ({
+  clickCount: 0,
+  incrementClick: () => set((state) => ({ clickCount: state.clickCount + 1 })),
+  resetClicks: () => set({ clickCount: 0 }),
+}));
+
+export const useProjectsStore = create((set) => ({
+  isProjectsHovered: false,
+  setIsProjectsHovered: (isHovered) => set({ isProjectsHovered: isHovered }),
+}));
+
+export const useServiceStore = create((set) => ({
+  isServiceHovered: false,
+  setIsServiceHovered: (isHovered) => set({ isServiceHovered: isHovered }),
+}));
+
+export const useAboutStore = create((set) => ({
+  isAboutHovered: false,
+  setIsAboutHovered: (isHovered) => set({ isAboutHovered: isHovered }),
+}));
+
+
+export const useRubixStore = create((set) => ({
+  isRubixActive: null, 
+  setIsRubixActive: (isActive) => set({ isRubixActive: isActive }),
+}));
+

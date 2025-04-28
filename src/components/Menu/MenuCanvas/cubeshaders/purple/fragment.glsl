@@ -1,4 +1,7 @@
 uniform vec3 uBaseColor;
+uniform float uOpacity;
+
+
 
 void main()
 {
@@ -8,5 +11,6 @@ void main()
     vec4 bgColor = vec4(modbasecolor, 1.0);
 
     gl_FragColor = bgColor;
+    gl_FragColor.a *= uOpacity;
 
 }

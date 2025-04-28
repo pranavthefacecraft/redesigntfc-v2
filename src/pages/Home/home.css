@@ -1,9 +1,115 @@
-.homewrapper {
-  
-    background-image: url('/Home/Images/BG-new.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+@font-face {
+  font-family: "Futura";
+  src: url("/Fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+  font-family: "Monserrat";
+  src: url("/Fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "FuturaLight";
+  src: url("/Fonts/FuturaCyrillicDemi.ttf");
+}
+
+.futura {
+  font-family: Futura;
+}
+
+.futuralight {
+  font-family: FuturaLight;
 }
 
 
+.monserrat {
+  font-family: Monserrat;
+}
+
+.homewrapper {
+  background-image: url('/Home/Images/BG-new.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.frontlayer {
+  position: relative;
+  animation: animate 200s linear infinite;
+}
+
+.middlelayer {
+  position: relative;
+  animation: animate 300s linear infinite;
+  animation-delay: -25s;
+}
+
+.bottomlayer {
+  position: relative;
+  animation: animate 400s linear infinite;
+  animation-delay: -10s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+.frontlayer img,
+.middlelayer img,
+.bottomlayer img {
+  background-color: transparent;
+}
+
+.frontlayer > div,
+.middlelayer > div,
+.bottomlayer > div {
+  width: auto;
+}
+
+
+.cursor {
+  position: fixed;
+  user-select: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+.cursor2 {
+  position: fixed;
+  user-select: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: azure;
+  pointer-events: none;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease-out;
+}
+
+.brands {
+  box-shadow: inset 0px 0px 11px 5px rgba(255, 255, 255, 0.6);
+  padding: 0.9em 1.5em;
+  border-radius: 1.1em;
+  background-color: transparent; 
+  z-index: 100;
+}
+
+.tooltip-text {
+  font-family: Futura;
+  font-size: 1.3em;
+  letter-spacing: 0.06em;
+  color: #F9E3E7;
+  text-shadow: -1px -1px 0 #bf1736, 1px -1px 0 #bf1736, -1px 1px 0 #bf1736, 1px 1px 0 #bf1736;
+}

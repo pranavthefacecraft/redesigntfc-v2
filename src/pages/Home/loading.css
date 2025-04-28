@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "Futura";
+    src: url("/Fonts/FuturaCyrillicBold.ttf");
+  }
+  
+  @font-face {
+    font-family: "Monserrat";
+    src: url("/Fonts/Montserrat-SemiBold.ttf");
+  }
+
+/* components/Loading/loading.css */
+.loading-screen {
+    background-image: url('/Home/Images/BG-new.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    font-family: Monserrat;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .loading-content {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .loading-bar {
+    transition: width 0.2s ease-out;
+  }
+
+@media screen and (width <= 1536px) {
+
+  .logo {
+    left: 35em;
+    top: 18em;
+    height: 5em;
+    width: 30em;
+  }
+
+  .loading-bar-container {
+    margin-top: 7em;
+    height: 0.8em;
+    margin-left: 4em;
+    width: 20em;
+  }
+    
+    
+    
+}
+
+
+
+@media screen and (width > 1536px) {
+    
+  .logo {
+    left: 42em;
+    top: 21em;
+    height: 6em;
+    width: 35em;
+  }
+
+  .loading-bar-container {
+    margin-top: 2.8em;
+    height: 0.8em;
+    margin-right: 2em;
+    width: 23em;
+  }
+    
+}
+

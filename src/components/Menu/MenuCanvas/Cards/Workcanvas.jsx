@@ -33,7 +33,7 @@ const WorkCanvas = () => {
   <AnimatePresence>
 
     <motion.div
-      className='fixed top-[0em] right-[15em] bg-transparent overflow-hidden h-[100vh] w-[40vw] pointer-events-none'
+      className='fixed 2xl:right-[13em] bg-transparent overflow-hidden h-[100vh] w-[45vw] pointer-events-none select-none'
       variants={canvasVariants}
       initial="hidden"
       animate={ isWorkActive ? "show" : "hidden" }

@@ -94,12 +94,12 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between h-[100vh] pt-[90px] pr-[40px] pb-[50px] pl-[425px] box-border z-[50]">
+    <div className="nav flex flex-col justify-between absolute h-[100vh] pt-[180px] pb-[30px] pl-[140px] 2xl:pt-[70px] 2xl:pb-[15px] 2xl:pl-[227px] box-border z-[50]">
 
-      <div className="flex flex-col text-white text-[6.0em] decoration-none">
+      <div className="nav-one flex flex-col text-white 2xl:text-[5.7em] text-[6.0em] decoration-none">
         {links.map((link, i) => {
           return (
-            <div key={`b_${i}`} className="title">
+            <div key={`b_${i}`} className="title relative 2xl:-mb-[0.23em]">
               <motion.div
                 custom={i}
                 variants={perspective}
@@ -121,14 +121,14 @@ const Nav = () => {
         })}
       </div>
            
-      <div className="flex flex-row gap-[55em]">
+      <div className="nav-gap flex flex-row 2xl:gap-[42.5em]">
 
-        <motion.div className="flex flex-row">
+        <motion.div className="flex flex-row 2xl:-ml-2">
           {footerLinks.map((link, i) => {
             const { title, href } = link;
             return (
               <motion.a 
-                className='footertext text-[0.8em] text-[#151515] decoration-none whitespace-nowrap ml-4 pointer-events-none'
+                className='footertext text-[0.8em] text-[#151515] decoration-none whitespace-nowrap 2xl:ml-4 pointer-events-none'
                 variants={slideIn}
                 custom={i} 
                 initial="initial"
@@ -146,7 +146,7 @@ const Nav = () => {
           {socialIcons.map((social, i) => (
             <motion.a
               key={`social-icon-${i}`}  
-              className={`text-xl relative text-[#BF1736] ${i === 1 ? 'text-[1.5em] top-[-0.09em]' : 'text-[1.5em] top-[0em]'}`}
+              className={`text-xl relative text-[#BF1736] ${i === 1 ? 'text-[1.5em] 2xl:top-[-0.4em]' : 'text-[1.5em] 2xl:top-[-0.3em]'}`}
               href={social.href}
               target="_blank"
               variants={slideIn}
@@ -161,8 +161,6 @@ const Nav = () => {
         </motion.div>
         
       </div>
-
-      {/* Clouds Pop up */}
 
     </div> 
   );

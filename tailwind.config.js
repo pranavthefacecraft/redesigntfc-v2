@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['NeometricBold', 'sans-serif'], // Add your custom font here
-      },
+        custom: ['NeometricBold', 'sans-serif'],
+      }
     },
   },
+  plugins: [ require("tailwind-scrollbar") ],
 };
