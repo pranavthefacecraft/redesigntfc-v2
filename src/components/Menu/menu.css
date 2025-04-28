@@ -20,3 +20,52 @@
     background-color: aliceblue;
 }
 
+@media screen and (width <= 1536px) {
+    
+    .menutext {
+        font-size: 0.9em;
+    }
+
+    .hometitle {
+        top: 21.4em;
+        left: 29.5em;
+    }
+    
+    
+}
+
+
+
+@media screen and (width > 1536px) {
+    
+    .nav {
+
+        padding-top: 95px;
+        padding-left: 280px;
+        padding-bottom: 20px;
+        
+    }
+
+    .nav-one {
+        font-size: 7.5em;
+    }
+
+    .nav-gap {
+        gap : 57em;
+    }
+
+    .menutext {
+        font-size: 1.2em;
+    }
+
+    .crossbutton {
+        top: 1.5em;
+        right: 2.9em;
+        font-size: 4.0em;
+    }
+
+    .hometitle {
+        top: 25.7em;
+        left: 36.7em;
+    }
+}

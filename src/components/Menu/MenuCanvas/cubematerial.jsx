@@ -48,7 +48,8 @@ export const lightpurple_house = new THREE.ShaderMaterial({
     uY: { value: 0.5 }, 
     uScaleX: { value: 6.5 }, 
     uScaleY: { value: 6.6 },
-    uBaseColor: { value: new THREE.Color(0xc1afe1) } 
+    uBaseColor: { value: new THREE.Color(0xb0addc) },
+    uOpacity: { value: 0 } 
   },
   transparent: true
 });
@@ -62,7 +63,8 @@ export const lightpurple_tree = new THREE.ShaderMaterial({
       uY: { value: 0.53 }, 
       uScaleX: { value: 6.3 }, 
       uScaleY: { value: 6.3 },
-      uBaseColor: { value: new THREE.Color(0xc1afe1) } 
+      uBaseColor: { value: new THREE.Color(0xb0addc) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -76,7 +78,8 @@ export const lightpurple_towork = new THREE.ShaderMaterial({
       uY: { value: 1.65 }, 
       uScaleX: { value: 4.2 }, 
       uScaleY: { value: 13 },
-      uBaseColor: { value: new THREE.Color(0xc1afe1) } 
+      uBaseColor: { value: new THREE.Color(0xb0addc) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -90,7 +93,8 @@ export const lightpurple_solit = new THREE.ShaderMaterial({
       uY: { value: 0.8 }, 
       uScaleX: { value: 6.0 }, 
       uScaleY: { value: 7.5 },
-      uBaseColor: { value: new THREE.Color(0xc1afe1) } 
+      uBaseColor: { value: new THREE.Color(0xb0addc) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -104,7 +108,8 @@ export const lightpurple_study = new THREE.ShaderMaterial({
       uY: { value: 0.9 }, 
       uScaleX: { value: 4.4 }, 
       uScaleY: { value: 9.0 },
-      uBaseColor: { value: new THREE.Color(0xc1afe1) } 
+      uBaseColor: { value: new THREE.Color(0xb0addc) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -118,7 +123,8 @@ export const darkpurple_house = new THREE.ShaderMaterial({
       uY: { value: 2.7 }, 
       uScaleX: { value: 6.5 }, 
       uScaleY: { value: 6.6 },
-      uBaseColor: { value: new THREE.Color(0x7767ba) } 
+      uBaseColor: { value: new THREE.Color(0x6863a7) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -132,7 +138,8 @@ export const darkpurple_tree = new THREE.ShaderMaterial({
       uY: { value: 2.6 }, 
       uScaleX: { value: 6.1 }, 
       uScaleY: { value: 6.1 },
-      uBaseColor: { value: new THREE.Color(0x7767ba) } 
+      uBaseColor: { value: new THREE.Color(0x6863a7) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -146,7 +153,8 @@ export const darkpurple_rafw = new THREE.ShaderMaterial({
       uY: { value: 2.6 }, 
       uScaleX: { value: 13.0 }, 
       uScaleY: { value: 6.2 },
-      uBaseColor: { value: new THREE.Color(0x7767ba) } 
+      uBaseColor: { value: new THREE.Color(0x6863a7) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -160,7 +168,8 @@ export const darkpurple_solit = new THREE.ShaderMaterial({
       uY: { value: 3.4 }, 
       uScaleX: { value: 6.0 }, 
       uScaleY: { value: 7.7 },
-      uBaseColor: { value: new THREE.Color(0x7767ba) } 
+      uBaseColor: { value: new THREE.Color(0x6863a7) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -174,7 +183,8 @@ export const darkpurple_towork = new THREE.ShaderMaterial({
       uY: { value: 5.9 }, 
       uScaleX: { value: 4.2 }, 
       uScaleY: { value: 13 },
-      uBaseColor: { value: new THREE.Color(0x7767ba) } 
+      uBaseColor: { value: new THREE.Color(0x6863a7) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -184,7 +194,8 @@ export const purplelight = new THREE.ShaderMaterial({
     vertexShader: purplevert,
     fragmentShader: purplefrag,
     uniforms: {
-      uBaseColor: { value: new THREE.Color(0xc1afe1) } 
+      uBaseColor: { value: new THREE.Color(0xb0addc) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
 });
@@ -193,7 +204,8 @@ export const purpledark = new THREE.ShaderMaterial({
     vertexShader: purplevert,
     fragmentShader: purplefrag,
     uniforms: {
-      uBaseColor: { value: new THREE.Color(0x7767ba) } 
+      uBaseColor: { value: new THREE.Color(0x6863a7) },
+      uOpacity: { value: 0 }  
     },
     transparent: true
   });
@@ -201,7 +213,7 @@ export const purpledark = new THREE.ShaderMaterial({
 
 
 // Basic Materials
-export const white = new THREE.MeshBasicMaterial({ color: 'white' });
+export const white = new THREE.MeshBasicMaterial({ color: 'white', depthWrite: true, opacity: 0, transparent: true });
 export const lightpurplebasic = new THREE.MeshBasicMaterial({ color: '#b1acf5' });
 export const greyish = new THREE.MeshBasicMaterial({ color: '#222222' });
 

@@ -1,6 +1,6 @@
 import './menu.css'
-import { useEffect } from 'react';
-import { motion, AnimatePresence, delay } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Nav from './Nav';
 import { useMenuStore, useCubeStore, useButtonStore } from './store';
 
@@ -27,10 +27,14 @@ const variants = {
 const text = {
   initial: {
     opacity: 1,
-    y: 0
+    y: 0,
+    x: 0,
+    scale: 1
   },
   enter: {
-    y: -19.65,
+    y: window.innerWidth <= 1536 ? -12.5 : -14.4,
+    x: window.innerWidth <= 1536 ? 2.1 : 2.0,
+    scale: window.innerWidth <= 1536 ? 1.15 : 1.1,
     opacity: 0.15,
     transition: {
       delay : 0.5,
@@ -41,7 +45,9 @@ const text = {
   },
   exit: {
     opacity: 1,
+    scale: 1,
     y: 0,
+    x: 0,
     transition: {
       delay : 0.5,
       duration: 0.5,
@@ -88,11 +94,11 @@ const cubeVariants = {
   clicked: {
     rotateX: 0,
     rotateY: -90,
-    x: '-43vw',
+    x: '-47vw',
     y: '40vh',
-    scaleX: 22,
-    scaleY: 22,
-    scaleZ: 32,
+    scaleX: window.innerWidth < 1536 ? 23 : 28,
+    scaleY: window.innerWidth < 1536 ? 23 : 28,
+    scaleZ: window.innerWidth < 1536 ? 23 : 28,
     transition: {
       duration: 3,
       ease: [0.83, 0, 0.17, 1]
@@ -114,17 +120,17 @@ const cubeVariants = {
 };
 
 const faceVariants = {
-  front: { backgroundColor: '#6863a7', rotateX: 0, rotateY: 0, z: 45 },
-  back: { backgroundColor: '#6863a7', rotateY: 180, z: -45 },
-  right: { backgroundColor: '#b0addc', rotateY: 90, x: 45, z: 0 },
-  left: { backgroundColor: '#6863a7', rotateY: -90, x: -45, z: 0 },
-  top: { backgroundColor: '#f0f0f0', rotateX: 90, y: -45, z: 0 },
-  bottom: { backgroundColor: '#6863a7', rotateX: -90, y: 45, z: 0 }
+  front: { backgroundColor: '#6863a7', rotateX: 0, rotateY: 0, z: 35 },
+  back: { backgroundColor: '#6863a7', rotateY: 180, z: -35 },
+  right: { backgroundColor: '#B8B5DF', rotateY: 90, x: 35, z: 0 },
+  left: { backgroundColor: '#6863a7', rotateY: -90, x: -35, z: 0 },
+  top: { backgroundColor: '#f0f0f0', rotateX: 90, y: -35, z: 0 },
+  bottom: { backgroundColor: '#6863a7', rotateX: -90, y: 35, z: 0 }
 };
 
 const CubeFace = ({ variant, isMenuActive }) => (
   <motion.div
-    className="absolute w-full h-full flex items-center justify-center rounded-[0.6em]"
+    className="absolute w-full h-full flex items-center justify-center rounded-[0.5em] select-none"
     style={{
       backfaceVisibility: 'visible',
       transformStyle: 'preserve-3d',
@@ -133,7 +139,7 @@ const CubeFace = ({ variant, isMenuActive }) => (
   >
     {variant === 'right' && (
       <motion.span 
-        className="title text-black text-xl font-bold pointer-events-none"
+        className="menutext title text-black text-md font-bold select-none"
         variants={text}
         animate={isMenuActive ? "enter" : "exit"}
       >
@@ -148,6 +154,23 @@ const Menu = () => {
   const { isMenuActive, setIsMenuActive } = useMenuStore();
   const { isCubeActive, setIsCubeActive } = useCubeStore();
   const { isButtonActive, setIsButtonActive } = useButtonStore();
+
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     
@@ -186,7 +209,7 @@ const Menu = () => {
   return (
     <>
       <motion.div
-        className="fixed w-[90px] h-[90px] top-[4em] right-[5em] cursor-pointer"
+        className="fixed w-[70px] h-[70px] 2xl:top-[2.0em] 2xl:right-[2.5em] cursor-pointer select-none"
         style={{ transformStyle: 'preserve-3d' }}
         variants={cubeVariants}
         initial="initial"
@@ -202,7 +225,7 @@ const Menu = () => {
       </motion.div>
 
       <motion.div 
-        className="fixed top-0 right-0 overflow-hidden"
+        className="fixed top-0 right-0 overflow-hidden select-none"
         variants={variants}
         animate={isMenuActive ? "open" : "closed"}
         initial="closed"
@@ -212,7 +235,7 @@ const Menu = () => {
             <>
               <Nav />
               <motion.button
-                className="fixed top-[0.6em] right-[1.7em] text-[4em] bg-transparent border-none outline-none text-white cursor-pointer"
+                className="crossbutton fixed top-[0.6em] right-[1.7em] text-[4em] bg-transparent border-none outline-none text-white cursor-pointer select-none"
                 variants={perspective}
                 initial="initial"
                 animate="enter"

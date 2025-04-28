@@ -6,6 +6,7 @@ uniform float uY;
 uniform float uScaleX;
 uniform float uScaleY;
 uniform vec3 uBaseColor;
+uniform float uOpacity;
 
 void main()
 {
@@ -35,5 +36,6 @@ void main()
     vec4 finalColor = mix(bgColor, color * 1.5, mask * color.a); 
 
     gl_FragColor = finalColor;
+    gl_FragColor.a *= uOpacity;
 
 }

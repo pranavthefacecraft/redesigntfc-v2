@@ -1,56 +1,156 @@
-import { useRef ,Suspense, useEffect } from 'react'
+import '../../Home/home.css'
+import * as THREE from 'three'
+import { useRef, Suspense, useEffect, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useGLTF, useAnimations, ContactShadows } from '@react-three/drei'
+import { useGLTF, useAnimations } from '@react-three/drei'
+import gsap from 'gsap'
+import { useClickStore, useProjectsStore } from '../../../components/Menu/store'
+
 
 import { 
-     lightpurple_house,
-     lightpurple_tree,
-     lightpurple_towork,
-     lightpurple_solit,
-     lightpurple_study,
-     darkpurple_house,
-     darkpurple_rafw,
-     darkpurple_tree,
-     darkpurple_solit,
-     darkpurple_towork,
-     white,
-     purpledark,
-     purplelight,
-     greyish
-} from '../cubematerial'
+  lightpurple_house,
+  lightpurple_tree,
+  lightpurple_towork,
+  lightpurple_solit,
+  lightpurple_study,
+  darkpurple_house,
+  darkpurple_rafw,
+  darkpurple_tree,
+  darkpurple_solit,
+  darkpurple_towork,
+  white,
+  purpledark,
+  purplelight
+} from '../../../components/Menu/MenuCanvas/cubematerial'
 
-export default function Cube() {
-
+export default function HomeCube() {
   const group = useRef()  
-  const { nodes, animations   } = useGLTF('/Menu/Models/Cube_tfc.glb')  
+  const { nodes, animations } = useGLTF('/Menu/Models/Cube_tfc.glb')
+  const [isHovered, setIsHovered] = useState(false);  
   const { actions, names } = useAnimations(animations, group)
-  
+  const { clickCount } = useClickStore()
+  const { setIsProjectsHovered, isProjectsHovered } = useProjectsStore()
+  const [pointerEventsEnabled, setPointerEventsEnabled] = useState(false)
+
+
+  const allMaterials = [
+    purpledark,
+    white,
+    lightpurple_tree,
+    darkpurple_house,
+    purplelight,
+    darkpurple_solit,
+    lightpurple_house,
+    lightpurple_study,
+    darkpurple_rafw,
+    lightpurple_towork,
+    darkpurple_tree,
+    darkpurple_towork,
+    lightpurple_solit
+  ]
 
   useEffect(() => {
-    actions[names[0]].reset().fadeIn(0.5).play();
-    actions[names[0]].timeScale = 0.6;
-  });
-  
+    if (clickCount === 3) {
+
+      setPointerEventsEnabled(false)
+      
+      const opacityTargets = allMaterials.map(mat => {
+        
+        if (mat instanceof THREE.ShaderMaterial) {
+          return mat.uniforms.uOpacity
+        }
+        
+        return mat
+      })
+
+     
+      opacityTargets.forEach(target => {
+        if (target instanceof THREE.Uniform) {
+          target.value = 0
+        } else {
+          target.transparent = true
+          target.opacity = 0
+        }
+      })
+
+
+      gsap.to(opacityTargets, {
+        value: 1,
+        opacity: 1,
+        duration: 2,
+        stagger: 0.08,
+        ease: "back.out",
+        onUpdate: () => {
+          
+          allMaterials.forEach(mat => {
+            if (mat instanceof THREE.ShaderMaterial) {
+              mat.uniformsNeedUpdate = true
+            }
+          })
+        },
+        onComplete: () => {
+          // Enable pointer events when animation completes
+          setPointerEventsEnabled(true)
+        
+        }
+      })
+  }
+
+
+  }, [clickCount])
+
+
+ 
+  useEffect(() => {
+    if (isHovered) {
+      actions[names[0]].reset().fadeIn(0.5).play();
+      actions[names[0]].timeScale = 0.66;
+    } else {
+      actions[names[0]].fadeOut(0.5);
+    }
+
+}, [isHovered, actions, names]);
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
-    group.current.position.y =- 3.0 + ( 1.0 * Math.cos((t * 2) / 2)) / 2
-
-   
+    group.current.position.y = 0.4 - (0.2 * Math.cos((t * 2) / 2)) / 2
   })
+
+  const handlePointerEnter = () => {
+    
+    setIsHovered(true)
+    setIsProjectsHovered(true)
+    
+
+  }
+
+  const handlePointerLeave = () => {
+    
+    setIsHovered(false)
+    setIsProjectsHovered(false)
+   
+    
+  }
   
   return (
     <>
     <Suspense fallback={null} >
-    <group ref={group} dispose={null} position={[-2.5,-10,0]} scale={1.2} rotation={[0.1,0.1,0]}>
-    <ambientLight intensity={2}/>
+    <group ref={group}
+    dispose={null}
+    position={[10.5,0.5,22]}
+    scale={1.2}
+    rotation={[0.12,0.15,-0.18]}
+    onPointerOver={pointerEventsEnabled ? handlePointerEnter : undefined}
+    onPointerOut={pointerEventsEnabled ? handlePointerLeave : undefined}
+    >
     <group name="Scene">
         <group name="Rubix002" position={[2.52, 0.5, -0.5]} scale={0.5}>
           <mesh
-            name="Cube003"
+            name="Cube003"  
             castShadow
             receiveShadow
             geometry={nodes.Cube003.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube003_1"
@@ -80,7 +180,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube010.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube010_1"
@@ -110,7 +210,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube011.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube011_1"
@@ -140,7 +240,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube015.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube015_1"
@@ -170,7 +270,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube019.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube019_1"
@@ -200,7 +300,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube021.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube021_1"
@@ -230,7 +330,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube023.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube023_1"
@@ -260,7 +360,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube024.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube024_1"
@@ -297,7 +397,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube025.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube025_1"
@@ -327,7 +427,7 @@ export default function Cube() {
             castShadow
             receiveShadow
             geometry={nodes.Cube027.geometry}
-            material={greyish}
+            material={purpledark}
           />
           <mesh
             name="Cube027_1"
@@ -355,8 +455,7 @@ export default function Cube() {
     </group>
 
     </Suspense>
-    
-    <ContactShadows opacity={0.1} scale={30} blur={1.5} far={30} resolution={256} color="#000000" position={[0,-5.0,0]}/>
+
     </>  
   )
 }

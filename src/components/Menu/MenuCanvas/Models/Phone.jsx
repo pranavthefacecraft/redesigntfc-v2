@@ -26,7 +26,7 @@ export default function Phone(props) {
 
   return (
     <>
-    <group {...props} ref={ref} dispose={null} scale={[3,3.3,2.5]} >
+    <group {...props} ref={ref} dispose={null} scale={[3,3.3,2.5]} position={[0.5,0,0]}>
       <ambientLight intensity={3}/>
       <mesh
         name="Plane"

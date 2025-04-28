@@ -33,7 +33,7 @@ const AgencyCanvas = () => {
   <AnimatePresence>
 
     <motion.div
-      className='fixed right-[15em]  bg-transparent overflow-hidden h-[100vh] w-[40vw] pointer-events-none'
+      className='fixed right-[15em]  bg-transparent overflow-hidden h-[100vh] w-[40vw] pointer-events-none select-none'
       variants={canvasVariants}
       initial="hidden"
       animate={isAgencyActive ? "show" : "hidden"}

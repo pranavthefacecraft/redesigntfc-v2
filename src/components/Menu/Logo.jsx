@@ -19,13 +19,13 @@ const perspective = {
 const Logo = () => {
   return (
     <motion.div
-    className="fixed top-[3em] left-[3em] "
+    className="fixed 2xl:top-[1.5em] 2xl:left-[1.5em] pointer-events-none select-none"
     variants={perspective}
     initial="initial"
     animate="enter"
     transition={{ delay: 0.2, duration: 1.0 }}
     >
-    <img src='/Menu/Images/Whitelogo.png' alt="Logo" className="h-12 w-auto" />
+    <img src='/Menu/Images/Whitelogo.png' alt="Logo" className="2xl:h-10 w-auto" />
     </motion.div>
   );
 };

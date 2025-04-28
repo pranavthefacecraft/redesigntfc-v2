@@ -43,13 +43,13 @@ const HomeCanvas = () => {
   return (
     <AnimatePresence>
       <motion.div
-        className='fixed right-[15em] bg-transparent overflow-hidden h-[100vh] w-[40vw] pointer-events-none'
+        className='fixed 2xl:right-[13em] bg-transparent overflow-hidden h-[100vh] w-[45vw] pointer-events-none select-none'
         variants={canvasVariants}
         initial="hidden"
         animate={shouldShow ? "show" : "hidden"}
       >
         <Suspense fallback={null}>
-          <Canvas eventPrefix="client" camera={{ position: [0, 5, 20], fov: 40 }}
+          <Canvas eventPrefix="client" camera={{ position: [0, 5, 20], fov: 35 }}
           dpr={[2.0,3.0]}
            >
             <Suspense fallback={null}>
