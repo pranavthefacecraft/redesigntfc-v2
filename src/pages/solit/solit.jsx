@@ -17,6 +17,7 @@ import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
 import MoreProjects from "../common/MoreProjects.jsx";
+import MoreProjectsMobile from "../common/MoreProjectMobile.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import PageFooterMobile from "../common/PageFooterMobile.jsx";
 import Video from "./Video.jsx";
@@ -26,6 +27,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import GridDistortion from "../common/GridDistortion.jsx";
 import Sectionidea from "../common/SectionIdea.jsx";
+import MoreProjectMobile from "../common/MoreProjectMobile.jsx";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -254,8 +256,11 @@ const Solit = () => {
             
           </div>
 
-          <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
+          <div className="desktopcubeblocks hidden sm:hidden md:hidden lg:hidden xl:block 2xl:block container mx-auto flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
             <MoreProjects />
+          </div>
+          <div className="mobilecubeblock block sm:block md:hidden lg:hidden xl:hidden 2xl:hidden container mx-auto flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
+            <MoreProjectMobile />
           </div>
         </div>
       </div>
