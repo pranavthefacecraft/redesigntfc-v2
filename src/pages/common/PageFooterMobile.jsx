@@ -568,7 +568,7 @@ const PageFooter = () => {
                 {/* Whatsapp */}
                 
 <div
-  className="footer-detail shrink-0 -left-42 relative"
+  className="footer-detail shrink-0 -left-10 relative"
   onMouseMove={handleWhatsappMouseMove}
   onMouseEnter={handleWhatsappMouseEnter}
   onMouseLeave={handleWhatsappMouseLeave}
