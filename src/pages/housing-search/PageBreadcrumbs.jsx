@@ -1,6 +1,6 @@
 const PageHeader = () => {
   return (
-    <h6 className="Futura-PT-Book z-50 flex w-full items-center gap-x-1 p-1 text-[14px] font-light sm:pb-28 sm:text-[14px] md:pb-0 md:text-[14px] lg:pb-10 lg:text-[14px] xl:pb-0 xl:text-[14px] 2xl:pb-0 2xl:text-[18px] xl:pt-32 2xl:pt-32">
+    <h6 className="Futura-PT-Book z-50 flex w-full items-center gap-x-1 p-1 pt-12 sm:pt-12 md:pt-12 lg:pt-12 xl:pt-12 2xl:pt-32 sm:pb-28 md:pb-0 lg:pb-10 xl:pb-0 2xl:pb-0 text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[18px]">
       <a href="/" className="pointer-events-auto">
         Home
       </a>
