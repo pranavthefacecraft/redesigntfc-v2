@@ -41,7 +41,7 @@ const Idea = () => {
   return (
     <div
       id="idea-grid"
-      className="grid grid-cols-[35%_65%] h-full w-full solit-el-1" style={{ minHeight: "100vh" }}
+      className="grid grid-cols-[100%] sm:grid-cols-[35%_65%] md:grid-cols-[35%_65%] lg:grid-cols-[35%_65%] xl:grid-cols-[35%_65%] 2xl:grid-cols-[35%_65%] h-full w-full solit-el-1" style={{ minHeight: "100vh" }}
     >
       <div className="h-full w-full flex flex-col">
         <div className="min-h-1/2 p-18 mb-0 bg-[#0077BE] bg-[url('/assets/studyenglish/se-grid-1bg.png')] bg-auto bg-no-repeat bg-right-bottom">
@@ -62,8 +62,8 @@ const Idea = () => {
       </div>
       <div className="h-full w-full flex flex-col">
         {/* Second column content goes here */}
-        <div className="flex w-full">
-          <div className="w-1/2 bg-[#FFF0CF] p-22 ">
+        <div className="flex flex-col sm:flex-row w-full">
+          <div className="w-full sm:w-1/2 bg-[#FFF0CF] p-22">
             <div className="flex items-center justify-center h-full">
               <img
                 ref={logoRef}
@@ -71,13 +71,11 @@ const Idea = () => {
                 alt="Study English Logo"
               />
             </div>
-            
           </div>
-          <div className="w-1/2 bg-gray-100 p-0 relative">
+          <div className="w-full sm:w-1/2 bg-gray-100 p-0 relative">
             <div className="bg-[99C9E5] p-0 flex items-center justify-center relative min-h-40">
               <div className="relative w-80 h-140">
-                
-              <img
+                <img
                   src="/assets/studyenglish/black-color.png"
                   alt="Stack 4"
                   className="absolute bottom-80 left-0 w-auto z-30"
@@ -87,7 +85,6 @@ const Idea = () => {
                   alt="Stack 3"
                   className="absolute bottom-60 left-0 w-auto z-20"
                 />
-                
                 <img
                   src="/assets/studyenglish/green-color.png"
                   alt="Stack 2"

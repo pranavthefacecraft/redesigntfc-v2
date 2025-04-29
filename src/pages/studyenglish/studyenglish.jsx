@@ -18,6 +18,7 @@ import Idea from "./IdeaStudyEnglish.jsx";
 import Slider from "./SliderStudyEnglish.jsx";
 import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
+import PageFooterMobile from "../common/PageFooterMobile.jsx";
 import Video from "./VideoStudyEnglish.jsx";
 import { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
@@ -132,11 +133,11 @@ const StudyEnglish = () => {
           />
         </div>
         <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[0px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[0px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
-          <div className="mt-0 mb-0 sm:mb-7 md:mb-7 lg:mb-7 xl:mb-7 2xl:mb-0 relative flex w-full items-center justify-center overflow-hidden rounded-2xl h-122 sm:h-102 md:h-122 lg:h-[620px] xl:h-[620px] 2xl:h-[820px] ">
-            <img src="assets/studyenglish/learn-from-expert.png" />
+          <div className="mt-0 mb-10 sm:mb-7 md:mb-7 lg:mb-7 xl:mb-7 2xl:mb-0 relative flex w-full items-center justify-center overflow-hidden rounded-2xl h-[191px] sm:h-102 md:h-122 lg:h-[620px] xl:h-[620px] 2xl:h-[820px] ">
+            <img src="/assets/studyenglish/learn-from-expert-v1.png" className="object-cover h-full w-full" />
           </div>
-          <div className="mt-0 mb-0 sm:mb-7 md:mb-7 lg:mb-7 xl:mb-7 2xl:mb-0 relative flex w-full items-center justify-center overflow-hidden rounded-2xl h-122 sm:h-102 md:h-122 lg:h-[620px] xl:h-[620px] 2xl:h-[820px] ">
-            <img src="assets/studyenglish/blue-website-ss.png" />
+          <div className="mt-0 mb-0 sm:mb-7 md:mb-7 lg:mb-7 xl:mb-7 2xl:mb-0 relative flex w-full items-center justify-center overflow-hidden rounded-2xl h-[191px] sm:h-102 md:h-122 lg:h-[620px] xl:h-[620px] 2xl:h-[820px] ">
+            <img src="assets/studyenglish/blue-website-ss-v1.png" className="object-cover h-full w-full" />
           </div>
         </div>
         
@@ -156,8 +157,8 @@ const StudyEnglish = () => {
           />
         </div>
         <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[0px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[0px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
-          <div className="mt-0 mb-0 sm:mb-7 md:mb-7 lg:mb-7 xl:mb-7 2xl:mb-18 relative flex w-full items-center justify-center overflow-hidden rounded-2xl h-122 sm:h-102 md:h-122 lg:h-[620px] xl:h-[620px] 2xl:h-[820px] ">
-            <img src="assets/studyenglish/green-devices.png" />
+          <div className="mt-0 mb-0 sm:mb-7 md:mb-7 lg:mb-7 xl:mb-7 2xl:mb-18 relative flex w-full items-center justify-center overflow-hidden rounded-2xl h-[191px] sm:h-102 md:h-122 lg:h-[620px] xl:h-[620px] 2xl:h-[820px] ">
+            <img src="assets/studyenglish/green-devices.png" className="object-cover h-full w-full" />
           </div>
           
         </div>
@@ -236,6 +237,7 @@ const StudyEnglish = () => {
       </div>
 
       <PageFooter />
+      <PageFooterMobile />
     </>
   );
 };
