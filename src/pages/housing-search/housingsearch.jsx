@@ -57,7 +57,7 @@ const Solit = () => {
   return (
     <>
       <div ref={container} className="w-full overflow-hidden">
-        <div className="absolute top-0 left-0 w-full  h-[650px] sm:h-[500px] md:h-[500px] lg:h-[900px] xl:h-[800px] 2xl:h-[900px]">
+        <div className="absolute top-0 left-0 w-full  h-[650px] sm:h-[650px] md:h-[650px] lg:h-[900px] xl:h-[800px] 2xl:h-[900px]">
           <div className="absolute inset-0 opacity-100">
             <GridDistortion
               // imageSrc="https://picsum.photos/1920/1080?grayscale"
@@ -66,13 +66,13 @@ const Solit = () => {
               mouse={0.15}
               strength={0.15}
               relaxation={0.9}
-              className="pointer-events-auto"
+              className="pointer-events-auto object-cover"
             />
           </div>
         </div>
 
         {/* First container */}
-        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center p-8 lg:px-10 lg:py-16 lg:pb-12 xl:pb-13 gap-y-8 md:gap-y-16 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-20">
+        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center p-8 lg:px-10 lg:py-16 lg:pb-12 xl:pb-13 gap-y-8 sm:gap-y-8 md:gap-y-8 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-20">
           <PageBreadcrumbs />
 
           <ProjectTag />
