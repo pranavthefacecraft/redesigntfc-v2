@@ -13,6 +13,7 @@ import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
 import MoreProjects from "../common/MoreProjects.jsx";
 import PageFooter from "../common/PageFooter.jsx";
+import PageFooterMobile from "../common/PageFooterMobile.jsx";
 import Video from "./Video.jsx";
 import BackgroundImageWithIconText from "./testimonial.jsx"; // Import the new component
 import { useRef, useEffect } from "react";
@@ -20,6 +21,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import GridDistortion from "../common/GridDistortion.jsx";
+import Sectionidea from "../common/SectionIdea.jsx";
 import { FaQuoteLeft, FaQuoteRight, FaStar } from "react-icons/fa"; // Example icon from react-icons
 import BeforeAfterSlider from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
@@ -64,7 +66,6 @@ const Towork = () => {
     },
     gridItem4: {
       fontFamily: "NeometricBold, sans-serif",
-      
     },
     heading: {
       fontFamily: "NeometricBold, sans-serif",
@@ -114,7 +115,7 @@ const Towork = () => {
   return (
     <>
       <div ref={container} className="w-full overflow-hidden">
-        <div className="absolute top-0 left-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh]">
+        <div className="absolute top-0 left-0 w-full  h-[650px] sm:h-[500px] md:h-[500px] lg:h-[900px] xl:h-[800px] 2xl:h-[900px]">
           <div className="absolute inset-0 opacity-100">
             <GridDistortion
               // imageSrc="https://picsum.photos/1920/1080?grayscale"
@@ -129,7 +130,7 @@ const Towork = () => {
         </div>
 
         {/* First container */}
-        <div className=" pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-20">
+        <div className=" pointer-events-none z-50 container mx-auto flex flex-col items-center p-8 lg:px-10 lg:py-16 lg:pb-12 xl:pb-13 gap-y-8 md:gap-y-16 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-20">
           <PageBreadcrumbs />
 
           <ProjectTag />
@@ -142,7 +143,7 @@ const Towork = () => {
           </Display>
         </div>
 
-        <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        <div className="z-50 container mx-auto flex flex-col items-center pt-10 p-8 sm:p-0 md:p-8 lg:p-8 xl:p-8 2xl:p-0 lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <MainText />
 
           <Display>
@@ -150,13 +151,17 @@ const Towork = () => {
               <Video />
             </div>
           </Display>
-
+</div>
+<div className="z-50 container relative mx-auto flex flex-col items-center p-8 sm:p-0 md:p-8 lg:p-8 xl:p-0 2xl:p-0 pb-[90px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+          <div className=" relative sm:relative md:relative lg:relative xl:relative 2xl:absolute w-[100%] sm:w-[55%] md:w-[55%] lg:w-[55%] xl:w-[55%] 2xl:w-[100%] ">
+            <h4 className="Futura-PT-Medium text-left font-bold text-[#BF1735] text-[28px] sm:text-[28px] md:text-[28px] lg:text-[28px] xl:text-[28px] 2xl:text-[28px]">About The Project.</h4>
+          </div>
           <Section
             title={{
               content: "Challenge",
               size: "md",
             }}
-            text="Finding the right talent for gray-collar jobs can be challenging due to skill gaps, high attrition rates, and the lack of a structured hiring process. Employers often struggle to connect with qualified candidates, while job seekers face difficulties in accessing reliable opportunities."
+            text="We promoted Solit Hub's location in the quieter subur ob Littau, Luzern through creative visuals, engaging the young demographic, and showcasting Littau as part of Luzern to enhance brand awareness in a competitive co-working space market."
             expanded={false}
           />
 
@@ -165,10 +170,11 @@ const Towork = () => {
               content: "Results",
               size: "md",
             }}
-            text="Our job portal addresses these challenges by streamlining recruitment, offering skill-based job matching, and providing a seamless hiring experience. As a result, businesses can quickly fill positions with competent workers, and job seekers gain access to better career opportunities, leading to increased employment rates and workforce stability."
+            text="We improved the brand's digital presence through an integrated approach, including targeted social media campaigns and engaging video content. This resonated well with young, creative businesses, resulting in positive client feedback. The project demonstrates the impact of a well-crafted digital strategy on a brand's image and market position."
             expanded={false}
           />
         </div>
+        
 
         {/* Full-width container with 2x2 grid */}
         <div className="w-full max-w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 p-0 overflow-hidden">
@@ -225,7 +231,6 @@ const Towork = () => {
                 <video
                   ref={videoRef}
                   className="relative top-0 left-0 h-full w-full object-cover"
-                  
                   poster=""
                   muted
                   autoPlay
@@ -242,28 +247,25 @@ const Towork = () => {
           </div>
 
           {/* Grid Item 6 */}
-          <div className="bg-gray-100 p-0 border" >
-          <video
-                  ref={videoRef}
-                  className="relative top-0 left-0 h-[670px] w-full object-cover"
-                  
-                  poster=""
-                  muted
-                  autoPlay
-                  loop
-                >
-                  <source
-                    src="/assets/towork/Colors.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+          <div className="bg-gray-100 p-0 border">
+            <video
+              ref={videoRef}
+              className="relative top-0 left-0 h-[670px] w-full object-cover"
+              poster=""
+              muted
+              autoPlay
+              loop
+            >
+              <source src="/assets/towork/Colors.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
         {/* Second container */}
-        <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px] 2xl:pt-[130px]">
-          <Section
+
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-8 2xl:p-0 lg:px-0 lg:py-0 pt-[80px] sm:pt-[0px] md:pt-[130px] lg:pt-[130px] xl:pt-[130px] 2xl:pt-[130px] pb-[30px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+          <Sectionidea
             title={{
               content: "Amplifying Gray-Collar Hiring, Igniting Growth",
               size: "md",
@@ -271,32 +273,39 @@ const Towork = () => {
             text="In today’s fast-evolving job market, connecting skilled gray-collar workers with the right employers is crucial for business success and workforce stability. Our job portal enhances the hiring process by leveraging digital solutions to bridge the gap between talent and opportunity. With advanced job-matching algorithms, seamless onboarding, and industry-specific listings, we empower both job seekers and employers to achieve their goals efficiently. By revolutionizing gray-collar recruitment, we drive growth, improve workforce retention, and create a more structured and accessible job market."
             expanded={false}
           />
+        </div>
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[0px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
+          
           <Display>
             <img
               src="/assets/towork/laptopwithtowork.png"
-              className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
+              className="solit-el-1 relative top-0 left-0 w-full "
             />
           </Display>
 
-         <RowDisplay
+          <RowDisplay
             image1="/assets/towork/tabwithtowork.png"
             image2="/assets/towork/man-sitting-on-chair.png"
             classes="solit-el-1"
-          /> 
+          />
 
-          
+         
+        </div>
 
-          <Section
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-8 2xl:p-0 lg:px-0 lg:py-0 pt-[80px] sm:pt-[0px] md:pt-[130px] lg:pt-[130px] xl:pt-[130px] 2xl:pt-[130px] pb-[30px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        <Section
             title={{
-              content: "Revolutionizing Gray-Collar Recruitment for a Better Workforce",
+              content:
+                "Revolutionizing Gray-Collar Recruitment for a Better Workforce",
               size: "md",
             }}
             text="The gray-collar job sector often faces challenges like inefficient hiring, skill mismatches, and high turnover rates. Our job portal is designed to solve these issues by providing a seamless and efficient recruitment platform. We connect skilled workers with the right opportunities, ensuring businesses find reliable employees while job seekers secure stable careers. With an intuitive interface, smart job-matching technology, and industry-focused solutions, we are transforming gray-collar hiring, making it faster, smarter, and more effective for everyone involved."
           />
+
         </div>
-        
-        <div className="z-50 container mx-auto flex flex-col items-center p-0 lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] gap-y-8  md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
-        <Display>
+
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-8 md:gap-y-12 lg:gap-y-[35px] xl:gap-y-15 2xl:gap-y-[65px]">
+          <Display>
             <img
               src="/assets/towork/all-device-size.png"
               className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
@@ -309,22 +318,20 @@ const Towork = () => {
               className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
             />
           </Display>
-          
+
           <RowDisplay
             image1="/assets/towork/become-a-seller.png"
             image2="/assets/towork/service-page.png"
             classes="solit-el-1"
-          /> 
+          />
           <Display>
             <img
               src="/assets/towork/Phones.png"
               className="solit-el-1 relative top-0 left-0 h-full w-full object-cover"
             />
           </Display>
-          
-          
         </div>
-        
+
         <div className="container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-32 xl:pb-32">
           <Display>
             <img
@@ -342,8 +349,8 @@ const Towork = () => {
               </h4>
             </div>
           </Display>
-</div>
-          <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
+        </div>
+        <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
           <div className="marquee-container border-0 pt-10 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-20 2xl:pt-20">
             <TitleMoreProjects
               content="Explore more projects"
@@ -381,10 +388,10 @@ const Towork = () => {
             <MoreProjects />
           </div>
         </div>
-        </div>
-      
+      </div>
 
       <PageFooter />
+      <PageFooterMobile />
     </>
   );
 };
