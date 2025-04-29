@@ -8,7 +8,7 @@ import SectionIdea from "../common/SectionIdea.jsx";
 import RowDisplay from "../common/RowDisplay.jsx";
 import Separator from "../common/Separator.jsx";
 import Title from "../common/Title.jsx";
-import TitleMoreProjects from "../common/TitleMoreProjects.jsx";
+import TitleMoreProjects from "../common/TitleMoreProjects.jsx"; 
 import PageHeader from "../common/PageHeader.jsx";
 import PageBreadcrumbs from "./PageBreadcrumbsStudyEnglish.jsx";
 
