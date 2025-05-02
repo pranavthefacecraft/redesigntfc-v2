@@ -15,6 +15,7 @@ import MainText from "./MainText.jsx";
 import Idea from "./Idea.jsx";
 import Slider from "./Slider.jsx";
 import MoreProjects from "../common/MoreProjects.jsx";
+import MoreProjectsMobile from "../common/MoreProjectMobile.jsx";
 import PageFooter from "../common/PageFooter.jsx";
 import Video from "./Video.jsx";
 import { useRef, useEffect } from "react";
@@ -24,6 +25,7 @@ import { ScrollTrigger } from "gsap/all";
 import GridDistortion from "../common/GridDistortion.jsx";
 import TitleMoreProjects from "../common/TitleMoreProjects.jsx";
 
+import MoreProjectMobile from "../common/MoreProjectMobile.jsx";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +56,7 @@ const Solit = () => {
   return (
     <>
       <div ref={container} className="w-full overflow-hidden bg-black">
-        <div className="absolute top-0 left-0 z-0 h-[80vh] w-full sm:h-[80vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh]">
+      <div className="absolute top-0 left-0 w-full  h-[650px] sm:h-[500px] md:h-[500px] lg:h-[900px] xl:h-[800px] 2xl:h-[900px]">
           <div className="absolute inset-0 opacity-100">
             <GridDistortion
               // imageSrc="https://picsum.photos/1920/1080?grayscale"
@@ -69,7 +71,7 @@ const Solit = () => {
         </div>
 
         {/* First container */}
-        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-0 lg:gap-y-16 lg:px-10 lg:py-16 lg:pb-12 xl:gap-y-28 xl:pb-32 2xl:gap-y-20">
+        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center p-8 lg:px-10 lg:py-16 lg:pb-12 xl:pb-13 gap-y-8 sm:gap-y-8 md:gap-y-8 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-20">
           <PageBreadcrumbs />
 
           <ProjectTag />
@@ -185,9 +187,9 @@ const Solit = () => {
                 ></video>
               </div>
             </div>
-            </div>
-            {/* Second Video */}
-            <div className="flex w-full flex-col items-end gap-8 lg:gap-16 xl:gap-16">
+          </div>
+          {/* Second Video */}
+          <div className="flex w-full flex-col items-end gap-8 lg:gap-16 xl:gap-16">
             <div className="relative w-[80%]">
               <div className="">
                 <video
@@ -202,7 +204,6 @@ const Solit = () => {
               </div>
             </div>
           </div>
-          
 
           {/* Images Side by Side */}
           <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:gap-16 xl:gap-16">
@@ -240,7 +241,6 @@ const Solit = () => {
             </div>
           </Display>
         </div>
-        <div className="w-full mx-auto flex flex-col items-center gap-y-8 p-8 md:gap-y-12 lg:gap-y-16 lg:px-0 lg:py-16 lg:pb-12 xl:gap-y-30 xl:pb-32 2xl:pt-40">
         <div className="h-full w-full bg-[#f8f8f8] border-0 border-red-400">
           <div className="marquee-container border-0 pt-10 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-20 2xl:pt-20">
             <TitleMoreProjects
@@ -248,38 +248,38 @@ const Solit = () => {
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
-            />  
-            
-            
+            />
           </div>
 
-            <div className="container mx-auto flex flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
+          <div className="desktopcubeblocks hidden sm:hidden md:block lg:block xl:block 2xl:block container mx-auto flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
             <MoreProjects />
           </div>
+          <div className="mobilecubeblock block sm:block md:hidden lg:hidden xl:hidden 2xl:hidden container mx-auto flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">
+            <MoreProjectMobile />
           </div>
         </div>
       </div>

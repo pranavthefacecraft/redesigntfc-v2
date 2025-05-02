@@ -74,7 +74,7 @@ const Solit = () => {
         </div>
 
         {/* First container */}
-        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center p-8 lg:px-10 lg:py-16 lg:pb-12 xl:pb-13 gap-y-8 md:gap-y-16 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-20">
+        <div className="pointer-events-none z-50 container mx-auto flex flex-col items-center p-8 lg:px-10 lg:py-16 lg:pb-12 xl:pb-13 gap-y-8 sm:gap-y-8 md:gap-y-8 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-20">
           <PageBreadcrumbs />
 
           <ProjectTag />
@@ -95,11 +95,12 @@ const Solit = () => {
               <Video />
             </div>
           </Display>
-
-          </div>
-          <div className="z-50 container relative mx-auto flex flex-col items-center p-8 sm:p-0 md:p-8 lg:p-8 xl:p-0 2xl:p-0 pb-[90px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        </div>
+        <div className="z-50 container relative mx-auto flex flex-col items-center p-8 sm:p-0 md:p-8 lg:p-8 xl:p-0 2xl:p-0 pb-[90px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <div className=" relative sm:relative md:relative lg:relative xl:relative 2xl:absolute w-[100%] sm:w-[55%] md:w-[55%] lg:w-[55%] xl:w-[55%] 2xl:w-[100%] ">
-            <h4 className="Futura-PT-Medium text-left font-bold text-[#BF1735] text-[28px] sm:text-[28px] md:text-[28px] lg:text-[28px] xl:text-[28px] 2xl:text-[28px]">About The Project.</h4>
+            <h4 className="Futura-PT-Medium text-left font-bold text-[#BF1735] text-[28px] sm:text-[28px] md:text-[28px] lg:text-[28px] xl:text-[28px] 2xl:text-[28px]">
+              About The Project.
+            </h4>
           </div>
           <Section
             title={{
@@ -166,8 +167,8 @@ const Solit = () => {
               {/* Icon videos */}
             </div>
           </div>
-            </div>
-            <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-8 2xl:p-0 lg:px-0 lg:py-0 pt-[80px] sm:pt-[0px] md:pt-[130px] lg:pt-[130px] xl:pt-[130px] 2xl:pt-[130px] pb-[30px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
+        </div>
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 sm:p-0 md:p-0 lg:p-0 xl:p-8 2xl:p-0 lg:px-0 lg:py-0 pt-[80px] sm:pt-[0px] md:pt-[130px] lg:pt-[130px] xl:pt-[130px] 2xl:pt-[130px] pb-[30px] sm:pb-[130px] md:pb-[130px] lg:pb-[130px] xl:pb-[130px] 2xl:pb-[130px] gap-y-8 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: (
@@ -181,8 +182,8 @@ const Solit = () => {
             }}
             text="To boost engagement and create a fresh, youthful brand character, we produced six short video posts for social media. These videos featured people answering questions about what Solit means to them, adding an element of fun and personal connection to the brand. This approach not only heightens engagement but also aligns perfectly with the target market of young creative businesses."
           />
-          </div>
-          <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-8 md:gap-y-12 lg:gap-y-[35px] xl:gap-y-15 2xl:gap-y-[65px]">
+        </div>
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 2xl:pt-[0px] lg:px-0 lg:py-0 lg:pb-0 xl:pb-[130px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-8 md:gap-y-12 lg:gap-y-[35px] xl:gap-y-15 2xl:gap-y-[65px]">
           <RowDisplay
             image1="/assets/solit/row3.jpg"
             image2="/assets/solit/row4.jpg"
@@ -194,8 +195,8 @@ const Solit = () => {
             image2="/assets/solit/row6.jpg"
             classes="solit-el-1"
           />
-          </div>
-          <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[50px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] 2xl:pb-[135px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
+        </div>
+        <div className="z-50 container mx-auto flex flex-col items-center p-8 pt-[0px] sm:pt-[0px] md:pt-[0px] lg:pt-[50px] xl:pt-[0px] 2xl:pt-[0px] pb-[35px] sm:pb-[35px] md:pb-[35px] lg:pb-[35px] xl:pb-[35px] 2xl:pb-[135px] pl-8 sm:pl-0 md:pl-0 lg:pl-8 xl:pl-0 2xl:pl-0 pr-8 sm:pr-0 md:pr-0 lg:pr-8 xl:pr-0 2xl:pr-0 gap-y-0 md:gap-y-12 lg:gap-y-28 xl:gap-y-28 2xl:gap-y-[130px]">
           <Sectionidea
             title={{
               content: "Design System",
@@ -227,33 +228,31 @@ const Solit = () => {
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
             />
-             <TitleMoreProjects
+            <TitleMoreProjects
               content="Explore more projects"
               size="md"
               centered
-            />  
-            
-            
+            />
           </div>
 
           <div className="desktopcubeblocks hidden sm:hidden md:hidden lg:hidden xl:block 2xl:block container mx-auto flex-col items-center gap-y-0 p-0 md:gap-y-0 lg:gap-y-0 lg:px-0 lg:py-0 lg:pb-12 xl:gap-y-0 xl:pb-32 border-0">

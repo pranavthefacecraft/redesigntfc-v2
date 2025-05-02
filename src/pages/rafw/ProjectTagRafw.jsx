@@ -13,19 +13,22 @@ const Entry = ({ title, text }) => {
 
 const ProjectTag = () => {
   return (
-    <div className="lg:gap-y-1s pointer-events-none relative flex w-full flex-col sm:gap-y-24 md:gap-y-0 xl:-mb-20 xl:gap-y-14 2xl:gap-y-24 ">
-      <h1 className="Futura-PT-Demi uppercase text-white text-[68px] md:text-[128px] lg:text-8xl xl:text-[128px] 2xl:text-[128px]">
-        Rafw
+    <div className="pointer-events-none relative flex w-full flex-col sm:gap-y-0 md:gap-y-0 lg:gap-y-14 xl:gap-y-14 2xl:gap-y-24 xl:-mb-0">
+      <h1 className="Futura-PT-Demi uppercase text-white text-[68px] sm:text-[68px] md:text-[68px] lg:text-8xl xl:text-[128px] 2xl:text-[128px] leading-[70px] sm:leading-[70px] md:leading-[70px] lg:leading-[90px] xl:leading-[115px] 2xl:leading-[115px] ">
+        RAFW
       </h1>
+      <h4 className="text-customred Futura-PT-Medium mb-15 text-[25px] sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px] 2xl:text-[30px] block sm:block md:block lg:hidden xl:hidden 2xl:hidden"> 
+      Fine Dining Restaurant
+        </h4>
 
-      <div className="flex flex-col gap-y-0 lg:flex-row lg:items-end lg:justify-between 2xl:mb-10">
+        <div className="flex flex-col gap-y-0 lg:flex-row lg:items-end lg:justify-between mb-10 sm:mb-10 md:mb-0 lg:mb-0 xl:mb-10 2xl:mb-10">
         <div className="flex gap-x-10">
-        <Entry title="Client" text="Rafw Restaurent" />
-        <Entry title="Service" text="Branding, Graphic Design, Website" />
+          <Entry title="Client" text="RAFW" />
+          <Entry title="Service" text="Branding, Social Media, Videography" />
         </div>
 
-        <h4 className="text-customred Futura-PT-Medium sm:text-[30px] md:text-[30px] lg:text-[30px] xl:text-[30px] 2xl:text-[30px]">
-        Fine Dining Restaurent
+        <h4 className="text-customred Futura-PT-Medium text-[20px] sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px] 2xl:text-[30px] hidden sm:hidden md:hidden lg:block xl:block 2xl:block">
+        Fine Dining Restaurant
         </h4>
       </div>
     </div>

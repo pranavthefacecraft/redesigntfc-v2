@@ -13,8 +13,8 @@ const Entry = ({ title, text }) => {
 
 const ProjectTag = () => {
   return (
-    <div className="lg:gap-y-1s pointer-events-none relative flex w-full flex-col sm:gap-y-24 md:gap-y-0 xl:-mb-20 lg:gap-y-14 xl:gap-y-14 2xl:gap-y-24 ">
-      <h1 className="Futura-PT-Demi uppercase text-white text-[38px] md:text-[128px] lg:text-8xl xl:text-[128px] 2xl:text-[128px] leading-[45px] sm:leading-[45px] md:leading-[45px] lg:leading-[45px] xl:leading-[45px] 2xl:leading-[130px]">
+    <div className="pointer-events-none relative flex w-full flex-col sm:gap-y-0 md:gap-y-0 lg:gap-y-14 xl:gap-y-14 2xl:gap-y-24 xl:-mb-0">
+      <h1 className="Futura-PT-Demi uppercase text-white text-[68px] sm:text-[68px] md:text-[68px] lg:text-8xl xl:text-[128px] 2xl:text-[128px] leading-[70px] sm:leading-[70px] md:leading-[70px] lg:leading-[90px] xl:leading-[115px] 2xl:leading-[115px] ">
       PHOTO VIDEO AND ANIMATION
       </h1>
       <h4 className="text-customred Futura-PT-Medium mb-15 text-[25px] sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px] 2xl:text-[30px] block sm:block md:block lg:hidden xl:hidden 2xl:hidden">

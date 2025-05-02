@@ -33,13 +33,12 @@ const MainText = () => {
   });
 
   return (
-    <div className="lg:px-8 xl:px-16">
-      <p
-        ref={text}
-        className="font-secondary text-[30px] sm:leading-20 md:text-5xl md:leading-20 lg:text-5xl lg:leading-20 xl:text-text-[70px] xl:leading-20 2xl:text-[70px] 2xl:leading-[98px]"
-        style={{ fontKerning: "none" }}
-      >
-        Finding the perfect home can be overwhelming, whether you're looking to rent or buy. Our housing search website streamlines the process by offering a user-friendly platform with advanced filters, real-time listings, and virtual tours. 
+    <div className="px-8 sm::px-8 md::px-8 lg:px-8 xl:px-8 2xl:px-8 mb-10 sm:mb-10 md:mb-0 lg:mb-0 xl:mb-0 2xl:mb-0 w-full">
+      <p ref={text} className="font-secondary text-[25px] leading-12 sm:text-[35px] sm:leading-15 md:text-[25px] md:leading-16 lg:text-[50px] lg:leading-20 xl:text-[50px] xl:leading-20 2xl:text-[70px] 2xl:leading-[98px]" style={{ fontKerning: "none" }}>
+        Finding the perfect home can be overwhelming, whether you're looking to
+        rent or buy. Our housing search website streamlines the process by
+        offering a user-friendly platform with advanced filters, real-time
+        listings, and virtual tours.{" "}
       </p>
     </div>
   );
