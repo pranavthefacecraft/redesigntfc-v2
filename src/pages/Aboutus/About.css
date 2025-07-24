@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Futura";
+  src: url("/Fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+  font-family: "Monserrat";
+  src: url("/Fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "MonserratLight";
+  src: url("/Fonts/Montserrat-Black.ttf");
+}
+
+
+@font-face {
+  font-family: "FuturaLight";
+  src: url("/Fonts/FuturaCyrillicDemi.ttf");
+}
+
+@font-face {
+  font-family: "Futuraextralight";
+  src: url("/Fonts/FuturaCyrillicLight.ttf");
+}
+
+@font-face {
+    font-family: "MonserratMedium";
+    src: url("/Fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "MonserratBold";
+    src: url("/Fonts/Montserrat-Bold.ttf");
+}
+
+.futura-bold {
+  font-family: Futura;
+}
+
+.futura-light {
+  font-family: FuturaLight;
+}
+
+.futura-extralight {
+  font-size: Futuraextralight;
+}
+
+.monserrat-semibold {
+  font-family: Monserrat;
+}
+
+.monserrat-medium {
+  font-family: MonserratMedium;
+}
+
+.monserrat-light {
+  font-family: MonserratLight;
+}
+
+.monserrat-bold {
+  font-family: MonserratBold;
+}
+
+
+/* Main Page */
+.fixed-canvas {
+  background: linear-gradient(180deg, #f8ada3 0%, #B2ACFB 100%);
+}
+
+
+.panel {
+  width: 100vw;
+  flex: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#mainPath {
+  opacity: 0;
+}
+
+
+
+
+
