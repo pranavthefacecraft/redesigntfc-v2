@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Futura";
+  src: url("/Fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+  font-family: "Monserrat";
+  src: url("/Fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "MonserratLight";
+  src: url("/Fonts/Montserrat-Black.ttf");
+}
+
+
+@font-face {
+  font-family: "FuturaLight";
+  src: url("/Fonts/FuturaCyrillicDemi.ttf");
+}
+
+@font-face {
+  font-family: "Futuraextralight";
+  src: url("/Fonts/FuturaCyrillicLight.ttf");
+}
+
+@font-face {
+    font-family: "MonserratMedium";
+    src: url("/Fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "MonserratBold";
+    src: url("/Fonts/Montserrat-Bold.ttf");
+}
+
+.futura-bold {
+  font-family: Futura;
+}
+
+.futura-light {
+  font-family: FuturaLight;
+}
+
+.futura-extralight {
+  font-size: Futuraextralight;
+}
+
+.monserrat-semibold {
+  font-family: Monserrat;
+}
+
+.monserrat-medium {
+  font-family: MonserratMedium;
+}
+
+.monserrat-light {
+  font-family: MonserratLight;
+}
+
+.monserrat-bold {
+  font-family: MonserratBold;
+}
+
+
+/* ComingSoon.css */
+.coming-soon-bg-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.coming-soon-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 1s cubic-bezier(0.4,0,0.2,1);
+  z-index: 0;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.coming-soon-bg.fade-out {
+  opacity: 0;
+}
+
+.coming-soon-bg.fade-in {
+  opacity: 1;
+  z-index: 1;
+}
+
+.coming-soon-content {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+}
