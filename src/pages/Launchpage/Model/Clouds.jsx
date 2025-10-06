@@ -70,14 +70,14 @@ const Clouds = memo(function Clouds() {
   const blueNoiseTexture = useTexture(blueNoiseTexturePath);
   blueNoiseTexture.wrapS = THREE.RepeatWrapping;
   blueNoiseTexture.wrapT = THREE.RepeatWrapping;
-  blueNoiseTexture.minFilter = THREE.NearestMipmapLinearFilter;
-  blueNoiseTexture.magFilter = THREE.NearestMipmapLinearFilter;
+  blueNoiseTexture.minFilter = THREE.LinearFilter;
+  blueNoiseTexture.magFilter = THREE.LinearFilter;
 
   const noisetexture = useTexture(noiseTexturePath);
   noisetexture.wrapS = THREE.RepeatWrapping;
   noisetexture.wrapT = THREE.RepeatWrapping;
-  noisetexture.minFilter = THREE.NearestMipmapLinearFilter;
-  noisetexture.magFilter = THREE.NearestMipmapLinearFilter;
+  noisetexture.minFilter = THREE.LinearFilter;
+  noisetexture.magFilter = THREE.LinearFilter;
 
   // Animation frame
   useFrame((state) => {
@@ -91,7 +91,8 @@ const Clouds = memo(function Clouds() {
     );
     fullscreenplane.current.material.uniforms.uNoise.value = noisetexture;
     fullscreenplane.current.material.uniforms.uBlueNoise.value = blueNoiseTexture;
-    fullscreenplane.current.material.uniforms.uFrame.value += 0.01;
+    // Use integer frame count for stability
+    fullscreenplane.current.material.uniforms.uFrame.value = Math.floor(clock.elapsedTime * 60.0); // 60 FPS
     fullscreenplane.current.material.uniforms.uScrollOffset.value = scrollOffset;
     fullscreenplane.current.material.uniforms.uCloudSpeed.value = rangevalue;
     fullscreenplane.current.material.uniforms.uCloudsColor.value = new THREE.Color(cloudsColor);
