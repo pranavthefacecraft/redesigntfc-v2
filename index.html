@@ -26,6 +26,89 @@
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="https://chatbotapi.tfcmockup.com/js/chatbot-widget.js"></script>
+
+    <script>
+      // Wait for DOM and script to load completely
+      document.addEventListener('DOMContentLoaded', function() {
+          // Ensure the widget class is available
+          if (typeof AIChatbotWidget !== 'undefined') {
+              try {
+                  const chatbot = new AIChatbotWidget({
+                      // Required settings - ABSOLUTE URLs ONLY
+                      botId: '1',
+                      companyId: '1',
+                      apiEndpoint: 'https://chatbotapi.tfcmockup.com/api/widget/chat',
+                      
+                      // Appearance
+                      position: 'bottom-right', // bottom-right, bottom-left, top-right, top-left
+                      theme: {
+                          primaryColor: '#435ebe',
+                          secondaryColor: '#f8f9fa',
+                          textColor: '#333333',
+                          bubbleColor: '#435ebe',
+                          bubbleTextColor: '#ffffff'
+                      },
+                      size: {
+                          width: '350px',
+                          height: '500px',
+                          bubbleSize: '60px'
+                      },
+                      
+                      // Behavior
+                      autoOpen: false,
+                      showWelcomeMessage: true,
+                      enableFileUpload: true,
+                      enableTypingIndicator: true,
+                      
+                      // Custom messages
+                      messages: {
+                          welcome: "Hi! 👋 How can I help you today?",
+                          placeholder: "Type your message...",
+                          errorMessage: "Sorry, I'm having trouble connecting. Please try again in a moment.",
+                          offlineMessage: "We're currently offline. Please leave a message and we'll get back to you!"
+                      }
+                  });
+                  
+                  console.log('AI Chatbot initialized successfully');
+                  
+              } catch (error) {
+                  console.error('Error initializing AI Chatbot:', error);
+              }
+          } else {
+              console.error('AIChatbotWidget not loaded. Please check the script source.');
+          }
+      });
+    </script>
+
+    <svg style="display: none">
+      <filter
+        id="glass-distortion"
+        x="0%"
+        y="0%"
+        width="100%"
+        height="100%"
+        filterUnits="objectBoundingBox"
+      >
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.01 0.01"
+          numOctaves="1"
+          seed="5"
+          result="turbulence"
+        />
+        <!-- Seeds: 14, 17,  -->
+        <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="softMap"
+          scale="150"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        />
+      </filter>
+    </svg>
     
   </body>
 </html>
