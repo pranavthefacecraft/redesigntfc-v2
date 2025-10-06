@@ -10,8 +10,6 @@ import vertexShader from "../Clouds/vertex.glsl";
 import fragmentShader from "../Clouds/fragment.glsl";
 import { mouseTracker } from "../contexts/cloudmouse";
 
-// Constants
-const resolution = 1.5;
 const noiseTexturePath = "/Launch/images/noise2.png";
 const blueNoiseTexturePath = "/Launch/images/blue-noise.png";
 
@@ -19,6 +17,17 @@ extend({ BicubicUpscaleMaterial });
 
 const Clouds = memo(function Clouds() {
   const { size, viewport } = useThree();
+
+  const resolution = useMemo(() => {
+    const width = size.width;
+    if (width < 768) {
+      return 1.8; // Lower resolution for mobile
+    } else if (width < 1200) {
+      return 1.5; // Medium resolution for tablets
+    } else {
+      return 2.0; // Higher resolution for desktops
+    }
+  }, [size.width]);
   
   // Refs
   const fullscreenplane = useRef();
