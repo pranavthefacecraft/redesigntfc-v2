@@ -11,7 +11,7 @@ import fragmentShader from "../Clouds/fragment.glsl";
 import { mouseTracker } from "../contexts/cloudmouse";
 
 // Constants
-const resolution = 3.0;
+const resolution = 1.5;
 const noiseTexturePath = "/Launch/images/noise2.png";
 const blueNoiseTexturePath = "/Launch/images/blue-noise.png";
 
