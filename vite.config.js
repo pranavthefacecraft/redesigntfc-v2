@@ -6,6 +6,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/', // Change to '/subdirectory/' if deployed in subdirectory
   plugins: [
     react(),
     tailwindcss(),
