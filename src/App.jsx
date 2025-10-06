@@ -26,6 +26,7 @@ function App() {
       <Route path="/Project" element={<Project/>} />
       <Route path="/solit" element={<Solit />} />
       <Route path="/tanda" element={<Tanda />} />
+      <Route path="/Comingsoon" element={<LaunchPage />} />
       <Route path="/comingsoon" element={<LaunchPage />} />
       <Route path="/rafw" element={<Rafw />} />
       <Route path="/towork" element={<Towork />} />
