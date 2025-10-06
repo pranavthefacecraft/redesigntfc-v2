@@ -3,8 +3,6 @@ name: Build and Deploy to Server
 on:
   push:
     branches: [ main, pranav ]  # Deploy when pushing to main or pranav branch
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
