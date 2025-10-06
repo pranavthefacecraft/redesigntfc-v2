@@ -5,6 +5,7 @@ on:
     branches: [ main, pranav ]  # Deploy when pushing to main or pranav branch
   pull_request:
     branches: [ main ]
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
   build-and-deploy:
@@ -75,6 +76,17 @@ jobs:
         </IfModule>
         EOF
         
+    - name: Clean server temporary files (if any)
+      continue-on-error: true
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist/
+        server-dir: ./
+        dry-run: true
+        
     - name: Deploy to Server via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
@@ -87,4 +99,5 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
+        state-name: .ftp-deploy-sync-state.json
         dry-run: false
