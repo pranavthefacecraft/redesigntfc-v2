@@ -90,7 +90,7 @@ float scene(vec3 p) {
 
   float f = fbm(p);
 
-  return -plane + f;
+  return -f;
 }
 
 const vec3 SUN_POSITION = vec3(1.0, 0.0, 0.0);
