@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/home'
 import About from './pages/Aboutus/Aboutus';
 import Project from './pages/Project/Project';
-import ComingSoon from './pages/ComingSoon/ComingSoon';
 import Solit from './pages/solit/solit';
+import LaunchPage from './pages/Launchpage/LaunchPage';
 import Tanda from './pages/Tanda/tanda';
 import Rafw from './pages/rafw/Rafw';
 import Towork from './pages/towork/towork';
@@ -24,9 +24,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/About" element={<About/>} />
       <Route path="/Project" element={<Project/>} />
-      <Route path="/ComingSoon" element={<ComingSoon />} />
       <Route path="/solit" element={<Solit />} />
       <Route path="/tanda" element={<Tanda />} />
+      <Route path="/comingsoon" element={<LaunchPage />} />
       <Route path="/rafw" element={<Rafw />} />
       <Route path="/towork" element={<Towork />} />
       <Route path="/housingsearch" element={<HousingSearch />} />
