@@ -1,9 +1,11 @@
+import './trial.css'
 import { useTexture, useFBO, OrthographicCamera } from "@react-three/drei";
 import { Canvas, useFrame, useThree, createPortal, extend } from "@react-three/fiber";
 import { useControls } from "leva";
 import { useRef, Suspense } from "react";
 import * as THREE from "three";
 import { v4 as uuidv4 } from "uuid";
+
 
 
 import BicubicUpscaleMaterial from './bicubic';
@@ -95,7 +97,7 @@ const Raymarching = () => {
     <>
       {createPortal(
         <mesh ref={mesh} scale={[viewport.width, viewport.height, 1]}>
-          <planeBufferGeometry args={[1, 1]} />
+          <planeGeometry args={[1, 1]} />
           <shaderMaterial
             key={uuidv4()}
             fragmentShader={fragmentShader}
@@ -121,13 +123,14 @@ const Raymarching = () => {
 
 const Scene = () => {
   return (
-    <Canvas camera={{ position: [0, 0, 6] }} dpr={DPR}>
-      <Suspense fallback={null}>
-        <Raymarching />
-      </Suspense>
-    </Canvas>
+    <div className="wrapper w-screen h-screen">
+      <Canvas className="w-full h-full" camera={{ position: [0, 0, 6] }} dpr={DPR}>
+        <Suspense fallback={null}>
+          <Raymarching />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
-
 
 export default Scene;
