@@ -13,9 +13,9 @@ export const Experience = () => {
     () => (
       <>
       <Center>
-        <Camera />
+        {/* <Camera />
         <Common />
-        <Clouds />
+        <Clouds /> */}
       </Center>  
       </>
     ),
