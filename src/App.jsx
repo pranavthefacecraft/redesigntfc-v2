@@ -13,6 +13,7 @@ import Bhms from './pages/bhms/bhms';
 import StudyEnglish from './pages/studyenglish/studyenglish';
 import LaughingTree from './pages/laughingtree/LaughingTree';
 import PhotoVideoAnimation from './pages/PhotoVideoAnimation/photovideoanimation';
+import Scene from './pages/TrialClouds/Trial';
 
 
 import './App.css'
@@ -25,6 +26,7 @@ function App() {
       <Route path="/About" element={<About/>} />
       <Route path="/Project" element={<Project/>} />
       <Route path="/solit" element={<Solit />} />
+      <Route path="/trial" element={<Scene />} />
       <Route path="/tanda" element={<Tanda />} />
       <Route path="/Comingsoon" element={<LaunchPage />} />
       <Route path="/comingsoon" element={<LaunchPage />} />
