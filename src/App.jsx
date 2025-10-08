@@ -14,6 +14,7 @@ import StudyEnglish from './pages/studyenglish/studyenglish';
 import LaughingTree from './pages/laughingtree/LaughingTree';
 import PhotoVideoAnimation from './pages/PhotoVideoAnimation/photovideoanimation';
 import Scene from './pages/TrialClouds/Trial';
+import Page from './pages/Launch/LaunchPage';
 
 
 import './App.css'
@@ -27,6 +28,7 @@ function App() {
       <Route path="/Project" element={<Project/>} />
       <Route path="/solit" element={<Solit />} />
       <Route path="/trial" element={<Scene />} />
+      <Route path="/launch" element={<Page />} />
       <Route path="/tanda" element={<Tanda />} />
       <Route path="/Comingsoon" element={<LaunchPage />} />
       <Route path="/comingsoon" element={<LaunchPage />} />

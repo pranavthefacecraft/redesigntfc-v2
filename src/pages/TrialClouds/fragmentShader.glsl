@@ -50,7 +50,7 @@ float scene(vec3 p) {
 }
 
 const vec3 SUN_POSITION = vec3(1.0, 0.0, 0.0);
-const float MARCH_SIZE = 0.1;
+const float MARCH_SIZE = 0.09;
 
 vec4 raymarch(vec3 rayOrigin, vec3 rayDirection, float offset) {
   float depth = 0.0;
