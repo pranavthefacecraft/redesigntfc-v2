@@ -86,7 +86,6 @@ const Common = memo(function Common() {
       uNoise: new THREE.Uniform(null),
       uBlueNoise: new THREE.Uniform(null),
       uFrame: new THREE.Uniform(0),
-      uBlueNoiseResolution: new THREE.Uniform(new THREE.Vector2(0,0)),
   };
   
   const uniformsCube = {
@@ -117,10 +116,6 @@ const Common = memo(function Common() {
     cloudPlane.current.material.uniforms.uResolution.value = new THREE.Vector2(
       renderTargetA.width,
       renderTargetA.height
-    );
-    cloudPlane.current.material.uniforms.uBlueNoiseResolution.value = new THREE.Vector2(
-      blueNoiseTexture.image.width,
-      blueNoiseTexture.image.height
     );
     cloudPlane.current.material.uniforms.uBlueNoise.value = blueNoiseTexture;
     cloudPlane.current.material.uniforms.uNoise.value = noisetexture;
@@ -178,8 +173,8 @@ const Common = memo(function Common() {
       instanceMeshref.current.material.uniforms.uTexture.value = renderTargetA.texture;
       instanceMeshref.current.material.uniforms.uTime.value = clock.getElapsedTime();
       instanceMeshref.current.material.uniforms.uResolution.value.set(
-        size.width,
-        size.height
+        size.width * viewport.dpr,
+        size.height * viewport.dpr  
       );
       instanceMeshref.current.material.needsUpdate = true;
     }
