@@ -4,7 +4,7 @@ uniform sampler2D uBlueNoise;
 uniform sampler2D uNoise;
 uniform int uFrame;
 
-#define MAX_STEPS 70
+#define MAX_STEPS 65
 
 float sdSphere(vec3 p, float radius) {
   return length(p) - radius;
@@ -26,13 +26,13 @@ float fbm(vec3 p) {
   float g = noise(q);
 
   float f = 0.0;
-  float scale = 0.5;
+  float scale = 0.49;
   float factor = 2.02;
 
   for (int i = 0; i < 6; i++) {
       f += scale * noise(q);
       q *= factor;
-      factor += 0.21;
+      factor += 0.20;
       scale *= 0.5;
   }
 
@@ -42,7 +42,7 @@ float fbm(vec3 p) {
 float scene(vec3 p) {
   float distance = sdSphere(p, 1.2);
 
-  float plane = p.y + 0.0;
+  float plane = p.y - 0.1;
 
   float f = fbm(p);
 
@@ -50,7 +50,7 @@ float scene(vec3 p) {
 }
 
 const vec3 SUN_POSITION = vec3(1.0, 0.0, 0.0);
-const float MARCH_SIZE = 0.06;
+const float MARCH_SIZE = 0.07;
 
 vec4 raymarch(vec3 rayOrigin, vec3 rayDirection, float offset) {
   float depth = 0.0;
@@ -105,7 +105,7 @@ void main() {
   color += 0.5 * vec3(1.0,0.5,0.3) * pow(sun, 10.0);
 
   float blueNoise = texture2D(uBlueNoise, gl_FragCoord.xy / 1024.0).r;
-  float offset = fract(blueNoise + float(uFrame%128) / sqrt(0.5));
+  float offset = fract(blueNoise * 1.618034 + float(uFrame % 64) * 0.005625);
 
   // Cloud
   vec4 res = raymarch(ro, rd, offset);
