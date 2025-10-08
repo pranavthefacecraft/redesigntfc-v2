@@ -29,7 +29,7 @@ float fbm(vec3 p) {
   float scale = 0.5;
   float factor = 2.02;
 
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 6; i++) {
       f += scale * noise(q);
       q *= factor;
       factor += 0.21;
@@ -105,7 +105,7 @@ void main() {
   color += 0.5 * vec3(1.0,0.5,0.3) * pow(sun, 10.0);
 
   float blueNoise = texture2D(uBlueNoise, gl_FragCoord.xy / 1024.0).r;
-  float offset = fract(blueNoise + float(uFrame%32) / sqrt(0.5));
+  float offset = fract(blueNoise * 1.618034 + float(uFrame % 64) * 0.015625);
 
   // Cloud
   vec4 res = raymarch(ro, rd, offset);
