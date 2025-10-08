@@ -86,6 +86,7 @@ const Common = memo(function Common() {
       uNoise: new THREE.Uniform(null),
       uBlueNoise: new THREE.Uniform(null),
       uFrame: new THREE.Uniform(0),
+      uBlueNoiseResolution: new THREE.Uniform(new THREE.Vector2(0,0)),
   };
   
   const uniformsCube = {
@@ -117,9 +118,14 @@ const Common = memo(function Common() {
       renderTargetA.width,
       renderTargetA.height
     );
+    cloudPlane.current.material.uniforms.uBlueNoiseResolution.value = new THREE.Vector2(
+      blueNoiseTexture.image.width,
+      blueNoiseTexture.image.height
+    );
     cloudPlane.current.material.uniforms.uBlueNoise.value = blueNoiseTexture;
     cloudPlane.current.material.uniforms.uNoise.value = noisetexture;
     cloudPlane.current.material.uniforms.uFrame.value += 1;
+
 
     // Update cube uniforms
     if(instanceMeshref.current){
