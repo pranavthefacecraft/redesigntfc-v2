@@ -4,7 +4,7 @@ uniform sampler2D uBlueNoise;
 uniform sampler2D uNoise;
 uniform int uFrame;
 
-#define MAX_STEPS 40
+#define MAX_STEPS 60
 
 float sdSphere(vec3 p, float radius) {
   return length(p) - radius;
@@ -50,7 +50,7 @@ float scene(vec3 p) {
 }
 
 const vec3 SUN_POSITION = vec3(1.0, 0.0, 0.0);
-const float MARCH_SIZE = 0.16;
+const float MARCH_SIZE = 0.08;
 
 vec4 raymarch(vec3 rayOrigin, vec3 rayDirection, float offset) {
   float depth = 0.0;
