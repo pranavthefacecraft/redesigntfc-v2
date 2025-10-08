@@ -8,7 +8,7 @@ import Camera from "./Camera"
 const Scene = memo(function Scene() {
     return (
     <Canvas className="w-screen h-screen fixed top-0 left-0 overflow-hidden" >
-     <color attach="background" args={["#000000"]} />
+     <color attach="background" args={["#ffffff"]} />
      <ScrollControls pages={2.0} damping={0.5} distance={1.5}>
        <Center>
          <Common />
