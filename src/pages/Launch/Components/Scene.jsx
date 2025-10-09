@@ -9,7 +9,7 @@ import BicubicUpscaleMaterial from './Clouds/bicubic';
 import getFullscreenTriangle from './Clouds/Utils';
 import vertexShader from "./Clouds/vertexShader.glsl";
 import fragmentShader from "./Clouds/fragmentShader.glsl";
-import cubeVertex from './cubeVertex.glsl'
+import cubeVertex from './cubevertex.glsl'
 import cubeFragment from './cubeFragment.glsl'
 
 extend({ BicubicUpscaleMaterial });
