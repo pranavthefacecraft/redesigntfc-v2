@@ -42,11 +42,9 @@ float fbm(vec3 p) {
 float scene(vec3 p) {
   float distance = sdSphere(p, 1.2);
 
-  float plane = p.y;
-
   float f = fbm(p);
 
-  return -plane + f;
+  return -distance + f;
 }
 
 const vec3 SUN_POSITION = vec3(1.0, 0.0, 0.0);

@@ -94,7 +94,7 @@ vec4 textureBicubic(sampler2D s, vec2 uv, float lod) {
 
 void main() {
     vec2 uv = vUv;
-    vec4 res = textureBicubic(uTexture, uv, 0.2);
+    vec4 res = textureBicubic(uTexture, uv, 0.5);
 
     vec4 color = res;
     gl_FragColor = color;
