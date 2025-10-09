@@ -5,9 +5,6 @@ import { useFrame, useThree } from "@react-three/fiber";
 import screenvert from './Shaders/Screen/screenvert.glsl'
 import screenfrag from './Shaders/Screen/screenfrag.glsl'
 
-import useStore from "../../Launchpage/contexts/store";
-
-
 
 const ScreenMesh = ({ renderTargetTexture }) => {
 

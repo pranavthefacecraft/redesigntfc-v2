@@ -1,4 +1,4 @@
-import { useTexture, useFBO, PerspectiveCamera } from "@react-three/drei";
+import { useTexture, useFBO, PerspectiveCamera, OrthographicCamera } from "@react-three/drei";
 import { useFrame, useThree, createPortal, extend } from "@react-three/fiber";
 import { useControls } from "leva";
 import { useRef, memo, useMemo } from "react";
@@ -27,7 +27,9 @@ export const Raymarching = memo(() => {
 
   const originalPlane = useRef();
   const portalCamera = useRef();
-  const { renderTexture, setRenderTexture } = useStore();
+  const screenCamera = useRef();
+  const screenMesh = useRef();
+  const upscalerMaterialRef = useRef();
 
   // resolution to control graphics quality
   const {
@@ -45,7 +47,9 @@ export const Raymarching = memo(() => {
   });
 
   const magicScene = useMemo(() => new THREE.Scene(), []);
+  const upscaledScene = useMemo(() => new THREE.Scene(), []);
   const renderTargetA = useFBO(size.width / resolution, size.height / resolution);
+  const renderTargetB = useFBO(size.width, size.height);
 
   // Load textures
   const blueNoiseTexture = useTexture(BLUE_NOISE_TEXTURE_URL);
@@ -91,8 +95,12 @@ export const Raymarching = memo(() => {
     gl.setRenderTarget(renderTargetA);
     gl.render(magicScene, portalCamera.current);
 
-    // Update the global render texture in the store
-    setRenderTexture(renderTargetA.texture);
+    // Upscale render target A to render target B using bicubic upscaler
+    upscalerMaterialRef.current.uniforms.uTexture.value = renderTargetA.texture;
+    screenMesh.current.material = upscalerMaterialRef.current;
+
+    gl.setRenderTarget(renderTargetB);
+    gl.render(upscaledScene, screenCamera.current);
 
     gl.setRenderTarget(null);
   });
@@ -114,7 +122,24 @@ export const Raymarching = memo(() => {
     </>, magicScene)}
 
 
-    <ScreenMesh renderTargetTexture={renderTargetA.texture} />
+    {createPortal(
+    <> 
+    <OrthographicCamera ref={screenCamera} args={[-1, 1, 1, -1, 0, 1]} />
+    <bicubicUpscaleMaterial ref={upscalerMaterialRef} key={uuidv4()} />
+    <mesh
+      ref={screenMesh}
+      geometry={getFullscreenTriangle()}
+      frustumCulled={false}
+    >
+      <meshBasicMaterial />
+    </mesh>   
+    </>, upscaledScene)}
+
+
+
+
+
+    <ScreenMesh renderTargetTexture={renderTargetB.texture} />
 
     </>
   )
