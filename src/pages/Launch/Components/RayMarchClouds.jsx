@@ -49,7 +49,7 @@ export const Raymarching = memo(() => {
   const magicScene = useMemo(() => new THREE.Scene(), []);
   const upscaledScene = useMemo(() => new THREE.Scene(), []);
   const renderTargetA = useFBO(size.width / resolution, size.height / resolution);
-  const renderTargetB = useFBO(size.width, size.height);
+  const renderTargetB = useFBO(size.width * viewport.dpr, size.height * viewport.dpr);
 
   // Load textures
   const blueNoiseTexture = useTexture(BLUE_NOISE_TEXTURE_URL);
@@ -129,7 +129,6 @@ export const Raymarching = memo(() => {
     <mesh
       ref={screenMesh}
       geometry={getFullscreenTriangle()}
-      frustumCulled={false}
     >
       <meshBasicMaterial />
     </mesh>   
