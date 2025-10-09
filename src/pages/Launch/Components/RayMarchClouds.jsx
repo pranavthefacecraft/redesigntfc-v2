@@ -47,9 +47,7 @@ export const Raymarching = memo(() => {
   });
 
   const magicScene = useMemo(() => new THREE.Scene(), []);
-  const upscaledScene = useMemo(() => new THREE.Scene(), []);
   const renderTargetA = useFBO(size.width / resolution, size.height / resolution);
-  const renderTargetB = useFBO(size.width, size.height);
 
   // Load textures
   const blueNoiseTexture = useTexture(BLUE_NOISE_TEXTURE_URL);
