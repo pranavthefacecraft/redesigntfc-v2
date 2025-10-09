@@ -45,8 +45,8 @@ const useStore = create((set) => ({
   setCloudsTexture: (value) => set({ cloudsTexture: value }),
 
 
-  trialcloudTexture: null,
-  setTrialCloudTexture: (value) => set({ trialcloudTexture: value }),
+  renderTexture: null,
+  setRenderTexture: (value) => set({ renderTexture: value }),
 
   scrollOffset: 0,
   setScrollOffset: (value) => set({ scrollOffset: value }),
