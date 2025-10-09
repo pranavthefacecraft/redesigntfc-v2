@@ -49,7 +49,7 @@ export const Raymarching = memo(() => {
   const magicScene = useMemo(() => new THREE.Scene(), []);
   const upscaledScene = useMemo(() => new THREE.Scene(), []);
   const renderTargetA = useFBO(size.width / resolution, size.height / resolution);
-  const renderTargetB = useFBO(size.width / resolution, size.height / resolution);
+  const renderTargetB = useFBO(size.width, size.height);
 
   // Load textures
   const blueNoiseTexture = useTexture(BLUE_NOISE_TEXTURE_URL);
@@ -90,20 +90,23 @@ export const Raymarching = memo(() => {
     originalPlane.current.material.uniforms.uNoise.value = noisetexture;
     originalPlane.current.material.uniforms.uFrame.value += 1;
 
+
     // Render clouds to render target A
     gl.setRenderTarget(renderTargetA);
     gl.render(magicScene, portalCamera.current);
 
-    // Set the texture for upscaling
+    // Upscale render target A to render target B using bicubic upscaler
     upscalerMaterialRef.current.uniforms.uTexture.value = renderTargetA.texture;
+    screenMesh.current.material = upscalerMaterialRef.current;
 
-    // Return to default render target
+    // gl.setRenderTarget(renderTargetB);
+    // gl.render(upscaledScene, portalCamera.current);
+
     gl.setRenderTarget(null);
   });
 
   return (
     <>
-    {/* Only one portal for the cloud generation */}
     {createPortal(
     <>    
       <PerspectiveCamera ref={portalCamera} manual position={[0, 0, 1]} />
@@ -118,15 +121,18 @@ export const Raymarching = memo(() => {
       </mesh>
     </>, magicScene)}
 
-    {/* Upscaler in main scene, like in Trial.jsx */}
     <OrthographicCamera ref={screenCamera} args={[-1, 1, 1, -1, 0, 1]} />
+    <bicubicUpscaleMaterial ref={upscalerMaterialRef} key={uuidv4()} />
     <mesh
       ref={screenMesh}
       geometry={getFullscreenTriangle()}
-      frustumCulled={false}
     >
-      <bicubicUpscaleMaterial ref={upscalerMaterialRef} key={uuidv4()} />
+      <meshBasicMaterial />
     </mesh>   
+   
+
+    {/* <ScreenMesh renderTargetTexture={renderTargetB.texture} /> */}
+
     </>
   )
 })
