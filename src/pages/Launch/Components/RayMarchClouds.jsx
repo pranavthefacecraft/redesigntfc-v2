@@ -90,23 +90,20 @@ export const Raymarching = memo(() => {
     originalPlane.current.material.uniforms.uNoise.value = noisetexture;
     originalPlane.current.material.uniforms.uFrame.value += 1;
 
-
     // Render clouds to render target A
     gl.setRenderTarget(renderTargetA);
     gl.render(magicScene, portalCamera.current);
 
-    // Upscale render target A to render target B using bicubic upscaler
+    // Set the texture for upscaling
     upscalerMaterialRef.current.uniforms.uTexture.value = renderTargetA.texture;
-    screenMesh.current.material = upscalerMaterialRef.current;
 
-    gl.setRenderTarget(renderTargetB);
-    gl.render(upscaledScene, screenCamera.current);
-
+    // Return to default render target
     gl.setRenderTarget(null);
   });
 
   return (
     <>
+    {/* Only one portal for the cloud generation */}
     {createPortal(
     <>    
       <PerspectiveCamera ref={portalCamera} manual position={[0, 0, 1]} />
@@ -121,25 +118,15 @@ export const Raymarching = memo(() => {
       </mesh>
     </>, magicScene)}
 
-
-    {createPortal(
-    <> 
+    {/* Upscaler in main scene, like in Trial.jsx */}
     <OrthographicCamera ref={screenCamera} args={[-1, 1, 1, -1, 0, 1]} />
-    <bicubicUpscaleMaterial ref={upscalerMaterialRef} key={uuidv4()} />
     <mesh
       ref={screenMesh}
       geometry={getFullscreenTriangle()}
+      frustumCulled={false}
     >
-      <meshBasicMaterial />
+      <bicubicUpscaleMaterial ref={upscalerMaterialRef} key={uuidv4()} />
     </mesh>   
-    </>, upscaledScene)}
-
-
-
-
-
-    <ScreenMesh renderTargetTexture={renderTargetB.texture} />
-
     </>
   )
 })
