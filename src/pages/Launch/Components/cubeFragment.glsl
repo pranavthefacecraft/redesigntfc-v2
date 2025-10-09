@@ -1,13 +1,10 @@
-uniform float uTime;
-uniform vec2 uResolution;
 uniform sampler2D uTexture;
+varying vec2 vUv;
 
 
 
 void main(){
-    vec2 uv = gl_FragCoord.xy / uResolution;
-
-    vec4 texColor = texture2D(uTexture, uv);
+    vec4 texColor = texture2D(uTexture, vUv);
   
     gl_FragColor = vec4(texColor.rgb, 1.0);
 }
