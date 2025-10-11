@@ -1,28 +1,28 @@
 varying vec2 vUv;
 varying vec3 vColor;
-varying vec3 vPosition;
-varying float instanceID;
-
-uniform float uTime;
 
 attribute vec3 color;
-attribute vec2 uv1; // black
-attribute vec2 uv2; // grey
-attribute vec2 uv3; // c with grey
-attribute vec2 texcoord_4; // no texture
-attribute vec2 texcoord_5; // t
-attribute vec2 texcoord_6; // no texture
-attribute vec2 texcoord_7; // 
+attribute vec2 uv1; 
+attribute vec2 uv2; 
+attribute vec2 uv3; 
+attribute vec2 texcoord_4; 
+attribute vec2 texcoord_5; 
+attribute vec2 texcoord_6; 
+attribute vec2 texcoord_7; 
 
 
 void main() {
-  
-  vViewPosition = position;
+  vUv = uv;
   vColor = color;
-  vNormal = normal;
-  vPosition = (modelMatrix * vec4(position, 1.0)).xyz;
 
-  // Switch between UV maps based on instance ID
+  vec4 instancePosition = instanceMatrix * vec4(position, 1.0);
+  vec4 modelPosition = modelMatrix * instancePosition;
+  vec4 viewPosition = viewMatrix * modelPosition;
+  vec4 projectedPosition = projectionMatrix * viewPosition;
+
+  vViewPosition = viewPosition.xyz;
+
+   // Switch between UV maps based on instance ID
   int instanceCase = int(gl_InstanceID);
 
   
@@ -55,7 +55,5 @@ void main() {
       break;
   }
 
-  instanceID = float(gl_InstanceID);
-
-
+  gl_Position = projectedPosition;
 }
