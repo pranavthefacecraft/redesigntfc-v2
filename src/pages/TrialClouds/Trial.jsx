@@ -8,10 +8,10 @@ import { v4 as uuidv4 } from "uuid";
 
 
 
-import BicubicUpscaleMaterial from './bicubic';
-import getFullscreenTriangle from './Utils';
-import vertexShader from "./vertexShader.glsl";
-import fragmentShader from "./fragmentShader.glsl";
+import BicubicUpscaleMaterial from './CloudsFile/bicubic';
+import getFullscreenTriangle from './CloudsFile/Utils';
+import vertexShader from "./CloudsFile/vertexShader.glsl";
+import fragmentShader from "./CloudsFile/fragmentShader.glsl";
 
 extend({ BicubicUpscaleMaterial });
 
