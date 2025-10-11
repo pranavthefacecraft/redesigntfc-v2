@@ -16,9 +16,9 @@ import ScreenMesh from "./ScreenMesh";
 extend({ BicubicUpscaleMaterial });
 
 // Blue noise texture
-const BLUE_NOISE_TEXTURE_URL = "/Launch/images/blue-noise.png";
+const BLUE_NOISE_TEXTURE_URL = "https://cdn.maximeheckel.com/noises/blue-noise.png";
 // Noise texture
-const NOISE_TEXTURE_URL = "/Launch/images/noise2.png";
+const NOISE_TEXTURE_URL = "https://cdn.maximeheckel.com/noises/noise2.png";
 
 export const Raymarching = memo(() => {
 
