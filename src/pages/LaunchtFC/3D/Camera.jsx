@@ -1,14 +1,13 @@
-import { memo, useRef, useLayoutEffect } from "react"
+import { useRef, useLayoutEffect } from "react"
 import { useGLTF, useAnimations, useScroll, PerspectiveCamera } from "@react-three/drei";
-import { useThree, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 
 
-const Camera = memo(function Camera() {
+export default function Camera() {
   const group = useRef()
-  const { nodes, animations } = useGLTF('/Launch/models/Cam.glb')
-  const { actions, names } = useAnimations(animations, group)
+  const { animations } = useGLTF('/Launch/models/Cam.glb')
+  const { actions } = useAnimations(animations, group)
   
-  const { size, viewport } = useThree()
   const scroll = useScroll()
 
   useLayoutEffect(() => {
@@ -21,15 +20,14 @@ const Camera = memo(function Camera() {
 
   useFrame(() => {
 
-    const scrollOffset = scroll.offset; // Get the current scroll offset (0 to 1)
+    const scrollOffset = scroll.offset;
     if (actions && actions['Action']) {
       const action = actions['Action'];
       const duration = action.getClip().duration;
       action.time = scrollOffset * duration;
     }
+    
   });
-  
-  
   
   return (
     <>
@@ -48,7 +46,6 @@ const Camera = memo(function Camera() {
     </group>
     </>
   )
-});
+};
 
-export default Camera;
 useGLTF.preload('/Launch/models/Cam.glb')
