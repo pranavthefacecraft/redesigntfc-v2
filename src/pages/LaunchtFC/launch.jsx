@@ -1,4 +1,4 @@
-import './Launch.css';
+import './launch.css';
 
 import Main from './3D/Main';
 
