@@ -14,6 +14,8 @@ import cloudfragment from './Clouds/fragment.glsl'
 import BicubicUpscaleMaterial from './Clouds/BicubicUpscale';
 import getFullscreenTriangle from './Clouds/Utils';
 
+import useStore from "../zustand/store";
+
 const resolution = 2.5;
 // Blue noise texture
 const BLUE_NOISE_TEXTURE_URL = "https://cdn.maximeheckel.com/noises/blue-noise.png";
@@ -38,6 +40,14 @@ const Common = memo(() => {
     const { actions } = useAnimations(animations, group)
     const { size, viewport } = useThree();
     const scroll = useScroll()
+
+    // Store
+    const { 
+      rangevalue,
+      cloudsColor,
+      skyColor,
+      lightColor,
+    } = useStore();
 
     const sceneA = useMemo(() => new THREE.Scene(), []);
     const sceneB = useMemo(() => new THREE.Scene(), []);
@@ -69,6 +79,10 @@ const Common = memo(() => {
       uNoise: new THREE.Uniform(null),
       uBlueNoise: new THREE.Uniform(null),
       uFrame: new THREE.Uniform(0),
+      uCloudSpeed: new THREE.Uniform(0.0),
+      uCloudsColor: new THREE.Uniform(null),
+      uSkyColor: new THREE.Uniform(null),
+      uLightColor: new THREE.Uniform(null),
     };
 
     // load textures
@@ -153,6 +167,10 @@ const Common = memo(() => {
         cloudplaneRef.current.material.uniforms.uFrame.value += 1;
         cloudplaneRef.current.material.uniforms.uNoise.value = noisetexture;
         cloudplaneRef.current.material.uniforms.uBlueNoise.value = blueNoiseTexture;
+        cloudplaneRef.current.material.uniforms.uCloudSpeed.value = rangevalue;
+        cloudplaneRef.current.material.uniforms.uCloudsColor.value = new THREE.Color(cloudsColor);
+        cloudplaneRef.current.material.uniforms.uSkyColor.value = new THREE.Color(skyColor);
+        cloudplaneRef.current.material.uniforms.uLightColor.value = new THREE.Color(lightColor);
       }
 
       // Render Scene A to Render Target A

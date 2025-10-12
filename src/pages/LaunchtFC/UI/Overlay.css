@@ -1,0 +1,367 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "FuturaBold";
+  src: url("/fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+  font-family: "FuturaLight";
+  src: url("/fonts/FuturaCyrillicDemi.ttf");
+}
+
+
+@font-face {
+  font-family: "MonserratMedium";
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "MonserratSemiBold";
+  src: url("/fonts/Montserrat-SemiBold.ttf");
+}
+
+
+.overlay-wrapper {
+  font-family: "MonserratMedium";
+}
+
+.outro-wrapper {
+  opacity: 0; 
+  pointer-events: none; 
+  transition: opacity 1s ease-in-out;
+}
+
+.outro-wrapper {
+  opacity: 0; /* Initial state */
+  pointer-events: none; /* Disable interactions when hidden */
+  transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.outro-wrapper--appear {
+  opacity: 1; /* Final state */
+  pointer-events: auto; /* Enable interactions when visible */
+}
+
+.outro-content {
+  transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275), backdrop-filter 1s ease;
+  transform-style: preserve-3d;
+  /* make a even box shadow on all sides */
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.outro-content--flipped {
+  transform: rotateX(180deg);
+}
+
+.intro-wrapper-disable {
+  pointer-events: none;
+}
+
+.intro-logo {
+  animation: fadeUp 2.4s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+.intro-logo-moveup {
+  top: 5vh;
+  transform: scale(0.4);
+  transform-origin: center top;
+}
+
+.intro-logo-scroll-up {
+  top: -10%;
+  opacity: 0;
+  transform-origin: center top;
+  transition: 1s ease-in-out;
+  transition-delay: 0s;
+}
+
+
+.intro-button-disappear {
+  animation: fadeOut 0.6s ease-in-out forwards;
+}
+
+.front-side,
+.back-side {
+  backface-visibility: hidden;
+}
+ 
+.front-side {
+  color: white;
+}
+
+.back-side {
+  color: white;
+  transform: rotateX(180deg);
+  
+}
+
+.arrow-svg {
+  filter: invert(1);
+  animation: logopulse 2s infinite ease-in-out;
+}
+
+.reset-svg {
+  filter: invert(1);
+  animation: logopulse 2s infinite ease-in-out;
+}
+
+.sound-svg {
+  filter: invert(1);
+  animation: logopulse 2s infinite ease-in-out;
+}
+
+.liquidGlass-effect {
+  backdrop-filter: blur(5px) saturate(1.0) url(#glass-distortion);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+.display-text {
+  animation: textpulseopacity 2s infinite ease-in-out;
+}
+
+.ai-chatbot-bubble {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ai-chatbot-bubble.pulse {
+  animation: chatbotpulse 2s infinite ease-in-out !important;
+}
+
+.ai-chatbot-widget {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  font-family: "MonserratMedium" !important;
+  background: rgba(255, 255, 255, 0) !important;
+}
+
+.ai-chatbot-header {
+  background-color: rgba(191, 23, 54, 1) !important;
+}
+
+.ai-chatbot-window {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ai-chatbot-messages {
+  background: rgba(255, 255, 255, 0.0) !important;
+}
+
+.ai-chatbot-widget.chatbot-visible {
+  opacity: 1;
+  display: inherit;
+  visibility: visible;
+}
+
+.ai-chatbot-widget.chatbot-hidden {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+
+
+/* Keyframe animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(9px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    transform-origin: center;
+    opacity: 0;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+    transform-origin: center;
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    transform-origin: center;
+    opacity: 1;
+  }
+}
+
+@keyframes textpulseopacity {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes logopulse {
+   0%{
+   scale: 1;
+   opacity: 1;
+   }
+   50%{
+    scale: 0.95;
+    opacity: 0.7;
+   }
+   100%{
+    scale: 1;
+    opacity: 1;
+   }
+}
+
+@keyframes scrolldown {
+  0% {
+    transform: translateY(0);
+    scale: 1;
+ 
+  }
+  50% {
+    transform: translateY(10px);
+    scale: 0.9;
+  }
+  100% {
+    transform: translateY(0);
+    scale: 1;
+  }
+}
+
+@keyframes chatbotpulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3), 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* color input styles */
+input[type="color"] {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none; /* Remove default border */
+  border-radius: 0px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+  width: 40px;
+  height: 43px;
+  pointer-events: auto;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 50%; /* Add rounded corners to the color swatch */
+  border: none;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border-radius: 50%; /* Add rounded corners for Firefox */
+  border: none;
+}
+
+input[type="color"]:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}  
+
+input[type="color"]:active {
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Slider */
+
+.range {
+  height: 3px; /* Adjust the height of the track */
+  width: 100px;
+  background: linear-gradient(160deg, #ffffff, #BF1736); /* Gradient color for the track */
+  border-radius: 10px;
+  outline: none;
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none; /* Add standard property for compatibility */
+  pointer-events: auto;
+}
+
+/* Webkit browsers (Chrome, Safari) */
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  height: 10px; /* Size of the thumb */
+  width: 10px;
+  background: #ffffff; /* Thumb color */
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Styling the active state */
+.range:active::-webkit-slider-thumb {
+  transform: scale(1.1); /* Slightly enlarge on drag */
+}
+
+.range:active::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+/* Ultra-thin scrollbar */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}/* Custom Scrollbar Styling */
