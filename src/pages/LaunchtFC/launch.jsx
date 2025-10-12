@@ -8,9 +8,9 @@ export default function ComingSoon() {
     return (
         <>
            
-            <div className="page-wrapper fixed w-full h-screen bg-slate-400 top-0 left-0 z-0">
+            <div className="page-wrapper absolute top-0 left-0 bottom-0 right-0 z-0 overflow-hidden">
 
-                <div className="canvas-wrapper border-4 max-w-[1920px] h-full z-10 mx-auto">
+                <div className="canvas-wrapper max-w-[1920px] h-full mx-auto z-10">
                     <Main />
                 </div>
 
