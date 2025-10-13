@@ -11,7 +11,7 @@ export default function Camera() {
 
   // Device-specific interpolation factor
   const interpolationFactor = useMemo(() => {
-      return window.innerWidth <= 768 ? 0.045 : 0.095;
+      return window.innerWidth <= 768 ? 0.015 : 0.095;
   }, []);
 
   useLayoutEffect(() => {
