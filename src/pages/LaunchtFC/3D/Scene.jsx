@@ -18,8 +18,6 @@ export const Scene = () => {
 
     const scrollY = window.scrollY / window.innerHeight;
 
-    console.log(scrollY);
-
 
     if (lastScroll.current <= 0 && scrollY > 0) {
 

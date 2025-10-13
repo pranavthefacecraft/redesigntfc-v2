@@ -157,7 +157,7 @@ const Overlay = memo(() => {
                 </div>
 
                 <button 
-                    className={`intro-button bg-white text-black text-[11px] md:text-[13px] lg:text-[15px] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-2 rounded-full border-none inline-block relative overflow-hidden absolute top-20 sm:top-25 md:top-35 transform hover:text-white hover:bg-[#BF1736] hover:scale-105 transition-all duration-700 ease-in-out ${play ? "intro-button-disappear" : ""}`}
+                    className={`intro-button bg-white text-black text-[14px] md:text-[13px] lg:text-[15px] px-3 py-2 md:px-3 md:py-1 lg:px-4 lg:py-2 rounded-full border-none inline-block relative overflow-hidden absolute top-20 sm:top-25 md:top-35 transform hover:text-white hover:bg-[#BF1736] hover:scale-105 transition-all duration-700 ease-in-out ${play ? "intro-button-disappear" : ""}`}
                     onClick={() => setPlay(true)}
                 >
                     Begin
