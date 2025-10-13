@@ -122,7 +122,7 @@ const Overlay = memo(() => {
 
             {/* Outro Section */}
             <div className={`outro-wrapper absolute inset-0 w-full h-full perspective-[1500px] justify-center items-center pointer-cursor flex flex-col ${end ? "outro-wrapper--appear" : ""}`}>
-                <div className={`outro-content relative rounded-4xl h-[30%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] 2xl:h-[50%] aspect-[16/9] ${cardFlipped ? "outro-content--flipped" : ""}`}>
+                <div className={`outro-content relative rounded-4xl h-[30%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] 2xl:h-[50%] aspect-[16/9] p-1 ${cardFlipped ? "outro-content--flipped" : ""}`}>
                     <div className={`liquidGlass-overlay absolute inset-0 w-full h-full rounded-4xl liquidGlass-effect ${end ? "liquidGlass-effect--active" : ""}`}/>
 
                     {/* Front Side */}

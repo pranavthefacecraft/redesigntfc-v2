@@ -33,7 +33,7 @@ float fbm(vec3 p) {
   float scale = 0.5;
   float factor = 2.02;
 
-  for (int i = 0; i < 6; i++) {
+  for (int i = 0; i < 5; i++) {
       f += scale * noise(q);
       q *= factor;
       factor += 0.21;
@@ -46,7 +46,7 @@ float fbm(vec3 p) {
 float scene(vec3 p) {
   float distance = sdSphere(p, 1.2);
 
-  float plane = p.y - 0.2;
+  float plane = p.y - 0.0;
 
   float f = fbm(p);
 
@@ -54,7 +54,7 @@ float scene(vec3 p) {
 }
 
 const vec3 SUN_POSITION = vec3(1.0, 0.0, 0.0);
-const float MARCH_SIZE = 0.15;
+const float MARCH_SIZE = 0.16;
 
 vec4 raymarch(vec3 rayOrigin, vec3 rayDirection, float offset) {
   float depth = 0.0;
@@ -71,7 +71,7 @@ vec4 raymarch(vec3 rayOrigin, vec3 rayDirection, float offset) {
     if (density > 0.0) {
       // Directional derivative
       // For fast diffuse lighting
-      float diffuse = clamp((scene(p) - scene(p + 0.3 * sunDirection))/0.3, 0.0, 1.0 );
+      float diffuse = clamp((scene(p) - scene(p + 0.3 * sunDirection))/0.1, 0.0, 1.0 );
       vec3 lin = vec3(0.60,0.60,0.75) * 1.1 + 0.8 * vec3(1.0,0.6,0.3) * diffuse;
       vec4 color = vec4(mix(pow( uCloudsColor, vec3(1.0/2.2)), vec3(0.902, 0.7608, 0.8667), density), density );
       color.rgb *= lin;
