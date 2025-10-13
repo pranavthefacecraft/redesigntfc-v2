@@ -1,10 +1,7 @@
 import * as THREE from "three"
-import { useRef, useLayoutEffect } from "react"
-import { useGLTF, useAnimations, useScroll, PerspectiveCamera } from "@react-three/drei";
+import { useRef, useLayoutEffect, useMemo } from "react"
+import { useGLTF, useAnimations, PerspectiveCamera } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-
-import useStore from "../zustand/store";
-
 
 export default function Camera() {
   const group = useRef()
@@ -12,8 +9,10 @@ export default function Camera() {
   const { animations } = useGLTF('/Launch/models/Cam.glb')
   const { actions } = useAnimations(animations, group)
 
-  const { play, end, setEnd, setHasScroll } = useStore();
-
+  // Device-specific interpolation factor
+  const interpolationFactor = useMemo(() => {
+      return window.innerWidth <= 768 ? 0.045 : 0.095;
+  }, []);
 
   useLayoutEffect(() => {
     const action = actions['Action']; 
@@ -28,7 +27,7 @@ export default function Camera() {
     const currentScroll = window.scrollY / window.innerHeight;
           
     // Smooth scroll interpolation
-    smoothScrollRef.current = THREE.MathUtils.lerp(smoothScrollRef.current, currentScroll, 0.075);
+    smoothScrollRef.current = THREE.MathUtils.lerp(smoothScrollRef.current, currentScroll, interpolationFactor);
     // Update instance cube animations
     if (actions && actions['Action']) {
       const action = actions['Action'];
