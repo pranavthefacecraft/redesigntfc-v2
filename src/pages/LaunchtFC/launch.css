@@ -21,11 +21,54 @@
     src: url("/fonts/Montserrat-SemiBold.ttf");
 }
 
-.page-wrapper {
-  background: radial-gradient(circle at top right, 
-  #3F3862 50%,
-  #7d6fc4 90%  
-  );
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.page {
   font-family: "MonserratMedium";
+  background: radial-gradient(circle at top right, 
+  #3F3862 20%,
+  #7d6fc4 100%  
+  ); 
+}
+
+.canvas-container {
+  pointer-events: none;
+}
+
+.canvas-wrapper {
+  position: relative;
+}
+
+.overlay-container {
+  pointer-events: none;
+}
+
+.overlay-wrapper {
+  position: relative;
+  pointer-events: auto;
+}
+
+.scroll-space {
+  pointer-events: auto;
+}
+
+/* Hide scrollbar but keep functionality */
+.page {
+  scrollbar-width: none;  /* Firefox */
+}
+
+.page::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Ensure proper stacking context */
+.canvas-container {
+  z-index: 1;
+}
+
+.overlay-container {
+  z-index: 2;
 }
 

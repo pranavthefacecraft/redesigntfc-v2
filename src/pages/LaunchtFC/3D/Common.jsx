@@ -35,11 +35,11 @@ const Common = memo(() => {
     const cloudplaneRef = useRef()
     const upscalerMaterialRef = useRef()
     const screenMeshRef = useRef()
+    const smoothScrollRef = useRef(0)
 
     const { nodes, animations } = useGLTF('/Launch/models/Rubby.glb')
     const { actions } = useAnimations(animations, group)
     const { size, viewport } = useThree();
-    const scroll = useScroll()
 
     // Store
     const { 
@@ -126,12 +126,16 @@ const Common = memo(() => {
 
       const { gl, clock, viewport, size } = state;
 
+      const currentScroll = window.scrollY / window.innerHeight;
+      
+      // Smooth scroll interpolation
+      smoothScrollRef.current = THREE.MathUtils.lerp(smoothScrollRef.current, currentScroll, 0.075);
+
       // Update instance cube animations
-      const scrollOffset = scroll.offset;
       if (actions && actions['Animation']) {
         const action = actions['Animation'];
         const duration = action.getClip().duration;
-        action.time = scrollOffset * duration;
+        action.time = smoothScrollRef.current * duration;
       }
 
       // Updating instance meshes Matrix with reusable objects
@@ -156,8 +160,9 @@ const Common = memo(() => {
       if(instanceMeshref.current){
         instanceMeshref.current.material.uniforms.uTime.value = clock.getElapsedTime();
         instanceMeshref.current.material.uniforms.uResolution.value = new THREE.Vector2(size.width * viewport.dpr, size.height * viewport.dpr);
-        instanceMeshref.current.material.uniforms.uScrollOffset.value = scrollOffset;
+        instanceMeshref.current.material.uniforms.uScrollOffset.value = smoothScrollRef.current;
         instanceMeshref.current.material.uniforms.uLogoTexture.value = texture;
+
       }
 
       // Update cloud shader uniforms
