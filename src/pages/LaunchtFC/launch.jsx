@@ -64,7 +64,7 @@ export default function ComingSoon() {
         if (play && !end) {
             timeoutId = setTimeout(() => {
                 lenis.start();
-            }, 3000);
+            }, 500);
         } else {
             lenis.stop();
         }
