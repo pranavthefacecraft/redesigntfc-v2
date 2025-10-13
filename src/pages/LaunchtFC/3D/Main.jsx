@@ -1,8 +1,6 @@
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { ScrollControls, Scroll } from '@react-three/drei';
-
 import { Scene } from './Scene';
-import Overlay from '../UI/Overlay';
 import useStore from '../zustand/store';
 
 export default function Main() {
@@ -12,7 +10,9 @@ export default function Main() {
   return (
     <>
       <Canvas dpr={[1,2]} gl={{ antialias: true }} >
-          <Scene />
+          <Suspense fallback={null}>
+            <Scene />
+          </Suspense>
       </Canvas>
     </>
   );
