@@ -36,7 +36,6 @@ export default function Camera() {
       action.time = smoothScrollRef.current * duration;
     }
 
-    console.log(smoothScrollRef.current);
 
   });
   

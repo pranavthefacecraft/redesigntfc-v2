@@ -16,7 +16,7 @@ import getFullscreenTriangle from './Clouds/Utils';
 
 import useStore from "../zustand/store";
 
-const resolution = 2.5;
+const resolution = 2.2;
 // Blue noise texture
 const BLUE_NOISE_TEXTURE_URL = "https://cdn.maximeheckel.com/noises/blue-noise.png";
 // Noise texture
