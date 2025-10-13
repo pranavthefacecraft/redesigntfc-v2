@@ -131,7 +131,9 @@ const Common = memo(() => {
 
       const { gl, clock, viewport, size } = state;
 
-      const currentScroll = window.scrollY / window.innerHeight;
+      // Calculate normalized scroll progress (0 to 1) for the full 600vh
+      const totalScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const currentScroll = Math.min(window.scrollY / totalScrollHeight, 1);
       
       // Smooth scroll interpolation with device-specific factor
       smoothScrollRef.current = THREE.MathUtils.lerp(smoothScrollRef.current, currentScroll, interpolationFactor);
@@ -140,6 +142,7 @@ const Common = memo(() => {
       if (actions && actions['Animation']) {
         const action = actions['Animation'];
         const duration = action.getClip().duration;
+        // Map the scroll progress to animation time
         action.time = smoothScrollRef.current * duration;
       }
 

@@ -50,9 +50,14 @@
                           bubbleTextColor: '#ffffff'
                       },
                       size: {
-                          width: '350px',
-                          height: '500px',
-                          bubbleSize: '60px'
+                          width: window.innerWidth <= 480 ? '300px' : 
+                                 window.innerWidth <= 768 ? '350px' : 
+                                 window.innerWidth <= 1024 ? '400px' : '450px',
+                          height: window.innerWidth <= 480 ? '400px' : 
+                                  window.innerWidth <= 768 ? '500px' : 
+                                  window.innerWidth <= 1024 ? '550px' : '600px',
+                          bubbleSize: window.innerWidth <= 480 ? '50px' : 
+                                     window.innerWidth <= 768 ? '60px' : '70px'
                       },
                       
                       // Behavior

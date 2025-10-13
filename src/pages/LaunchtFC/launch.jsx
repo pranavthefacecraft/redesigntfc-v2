@@ -96,9 +96,7 @@ export default function ComingSoon() {
 
             {/* Scrollable content */}
             <div className="scroll-space w-full">
-                <div className="h-screen" />
-                <div className="h-[50vh]" />
-                <div className="h-screen" />
+                <div className="h-[600vh]" />
             </div>
         </div>
     );
