@@ -12,7 +12,6 @@ export default function ComingSoon() {
     const rafIdRef = useRef();
     const { play, end} = useStore();
 
-    // Memoized scroll handler to prevent unnecessary re-renders
     const handleBeforeUnload = useCallback(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -24,17 +23,16 @@ export default function ComingSoon() {
         };
     }, [handleBeforeUnload]);
 
-    // Optimized Lenis initialization with stable reference
     useEffect(() => {
         const isMobile = window.innerWidth <= 768;
         
         const lenis = new Lenis({
-            duration: isMobile ? 1.5 : 1,
+            duration: isMobile ? 0.5 : 1,
             easing: (t) => 1 - Math.pow(1 - t, 3),
             smooth: true,
             smoothWheel: true,
             syncTouch: true,
-            touchMultiplier: isMobile ? 1.2 : 2,
+            touchMultiplier: isMobile ? 0.5 : 2,
             wheelMultiplier: isMobile ? 0.8 : 1,
         });
 
@@ -54,9 +52,9 @@ export default function ComingSoon() {
             lenis.destroy();
             lenisRef.current = null;
         };
-    }, []); // Empty dependency array since Lenis doesn't depend on props/state
+    }, []); 
 
-    // Optimized scroll control with proper cleanup
+
     useEffect(() => {
         const lenis = lenisRef.current;
         if (!lenis) return;
