@@ -23,19 +23,20 @@ export default function Camera() {
   }, [actions]);
 
   useFrame(() => {
-
-    const currentScroll = window.scrollY / window.innerHeight;
+    // Calculate normalized scroll progress (0 to 1) for the full 600vh
+    const totalScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const currentScroll = Math.min(window.scrollY / totalScrollHeight, 1);
           
     // Smooth scroll interpolation
     smoothScrollRef.current = THREE.MathUtils.lerp(smoothScrollRef.current, currentScroll, interpolationFactor);
-    // Update instance cube animations
+
+    // Update camera animation
     if (actions && actions['Action']) {
       const action = actions['Action'];
       const duration = action.getClip().duration;
+      // Map the scroll progress to animation time
       action.time = smoothScrollRef.current * duration;
     }
-
-
   });
   
   return (

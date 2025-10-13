@@ -18,11 +18,15 @@ export const Scene = () => {
 
     const scrollY = window.scrollY / window.innerHeight;
 
+    console.log(scrollY);
+
+
     if (lastScroll.current <= 0 && scrollY > 0) {
+
       setHasScroll(true);
     }
 
-    if(scrollY >= 1.48 ){
+    if(scrollY >= 5.0 ){
       setEnd(true);
     }
     else{

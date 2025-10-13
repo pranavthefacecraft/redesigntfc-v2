@@ -48,7 +48,7 @@ void main() {
 
   // Direct transition control without remapping
   float transitionStart = 0.55;
-  float transitionEnd = 1.4;
+  float transitionEnd = 1.01;
   
   // Calculate transition progress directly from uScrollOffset
   float transitionProgress = clamp((uScrollOffset - transitionStart) / (transitionEnd - transitionStart), 0.0, 1.0);

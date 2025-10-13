@@ -28,8 +28,10 @@ const MouseScrollCursor = ({
     } else if (width < 1280) { // xl breakpoint
       return 1.1;
     } else { // 2xl and above
-      return 1.2;
+      return 1.0;
     }
+
+
   }, []);
 
   // Mouse move handler - always active, no dependencies
@@ -175,7 +177,7 @@ const MouseScrollCursor = ({
 
           /* Responsive SVG sizing */
           .cursor-svg {
-            width: calc(20px * min(1.5, ${currentSize}));
+            width: calc(15px * min(1.5, ${currentSize}));
             height: auto;
             transition: all 0.3s ease;
           }
