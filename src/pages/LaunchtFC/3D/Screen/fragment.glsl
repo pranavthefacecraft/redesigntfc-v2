@@ -26,7 +26,6 @@ float exponentialEasing(float x, float a) {
     }
 }
 
-
 void main() {
   vec2 textureUV = vUv;
   vec2 screenUV = gl_FragCoord.xy / uResolution.xy;
@@ -44,13 +43,23 @@ void main() {
   baseColor = mix(baseColor, logoColor.rgb, alpha);
 
   float dist = length(vViewPosition) - uScrollOffset;
-  float fadeOpacity = smoothstep( 40.0 + 500.0 * uScrollOffset, 0.0, dist);
+  float fadeOpacity = smoothstep(40.0 + 500.0 * uScrollOffset, 0.0, dist);
   fadeOpacity = exponentialEasing(fadeOpacity, 0.93);
 
-  // start transition when uScrollOffset is > 0.683
-  float transitionThreshold = 0.683;
-  float normalizedOffset = smoothstep(transitionThreshold, 1.0, uScrollOffset);
-  vec3 transitionColor = mix(baseColor, renderTargetColor.rgb, normalizedOffset);
+  // Direct transition control without remapping
+  float transitionStart = 0.55;
+  float transitionEnd = 1.4;
+  
+  // Calculate transition progress directly from uScrollOffset
+  float transitionProgress = clamp((uScrollOffset - transitionStart) / (transitionEnd - transitionStart), 0.0, 1.0);
+  
+  // Apply smoothstep for smoother edges
+  transitionProgress = smoothstep(0.0, 1.0, transitionProgress);
+  
+  // Apply exponential easing for smooth animation
+  transitionProgress = exponentialEasing(transitionProgress, 0.45);
+
+  vec3 transitionColor = mix(baseColor, renderTargetColor.rgb, transitionProgress);
 
   csm_FragColor = vec4(transitionColor, opacity * fadeOpacity);
 }

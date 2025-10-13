@@ -9,23 +9,27 @@ import Common from "./Common";
 
 export const Scene = () => {
   
-  const scroll = useScroll();
+  // const scroll = useScroll();
   const lastScroll = useRef(0);
 
   const { setHasScroll, setEnd } = useStore();
 
   useFrame((_state, delta) => {
-    
-    if (lastScroll.current <= 0 && scroll.offset > 0) {
+
+    const scrollY = window.scrollY / window.innerHeight;
+
+    if (lastScroll.current <= 0 && scrollY > 0) {
       setHasScroll(true);
     }
 
-    if(scroll.offset >= 0.99 ){
+    if(scrollY >= 1.48 ){
       setEnd(true);
     }
     else{
       setEnd(false);
     }
+
+    lastScroll.current = scrollY;
 
   });
 

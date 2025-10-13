@@ -54,7 +54,7 @@ float scene(vec3 p) {
 }
 
 const vec3 SUN_POSITION = vec3(1.0, 0.0, 0.0);
-const float MARCH_SIZE = 0.12;
+const float MARCH_SIZE = 0.15;
 
 vec4 raymarch(vec3 rayOrigin, vec3 rayDirection, float offset) {
   float depth = 0.0;
@@ -73,7 +73,7 @@ vec4 raymarch(vec3 rayOrigin, vec3 rayDirection, float offset) {
       // For fast diffuse lighting
       float diffuse = clamp((scene(p) - scene(p + 0.3 * sunDirection))/0.3, 0.0, 1.0 );
       vec3 lin = vec3(0.60,0.60,0.75) * 1.1 + 0.8 * vec3(1.0,0.6,0.3) * diffuse;
-      vec4 color = vec4(mix(pow( uCloudsColor, vec3(1.0/2.2)), vec3(0.1765, 0.1765, 0.1765), density), density );
+      vec4 color = vec4(mix(pow( uCloudsColor, vec3(1.0/2.2)), vec3(0.902, 0.7608, 0.8667), density), density );
       color.rgb *= lin;
       color.rgb *= color.a;
       res += color*(1.0-res.a);

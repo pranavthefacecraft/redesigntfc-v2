@@ -7,15 +7,12 @@ import useStore from '../zustand/store';
 
 export default function Main() {
 
+  const { play } = useStore();
+
   return (
     <>
       <Canvas>
-        <ScrollControls pages={2.5} damping={0.5}>
           <Scene />
-          <Scroll  html>
-            <Overlay />
-          </Scroll>
-        </ScrollControls>
       </Canvas>
     </>
   );
