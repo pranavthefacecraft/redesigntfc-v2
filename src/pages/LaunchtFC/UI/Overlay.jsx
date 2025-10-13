@@ -122,7 +122,7 @@ const Overlay = memo(() => {
 
             {/* Outro Section */}
             <div className={`outro-wrapper absolute inset-0 w-full h-full perspective-[1500px] justify-center items-center pointer-cursor flex flex-col ${end ? "outro-wrapper--appear" : ""}`}>
-                <div className={`outro-content relative rounded-4xl h-[30%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] 2xl:h-[50%] aspect-[16/9] p-1 ${cardFlipped ? "outro-content--flipped" : ""}`}>
+                <div className={`outro-content relative rounded-4xl h-[25%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] 2xl:h-[50%] aspect-[16/9] p-1 ${cardFlipped ? "outro-content--flipped" : ""}`}>
                     <div className={`liquidGlass-overlay absolute inset-0 w-full h-full rounded-4xl liquidGlass-effect ${end ? "liquidGlass-effect--active" : ""}`}/>
 
                     {/* Front Side */}
@@ -131,11 +131,11 @@ const Overlay = memo(() => {
                             <img src="/Launch/images/Whitelogo.png" alt="Logo" className="aspect-auto" />
                         </div>
 
-                        <div className="text-svg-wrapper basis-1/2 flex flex-col justify-end items-center">
-                            <div className="text whitespace-nowrap text-[12px] md:text-[18px]">
+                        <div className="text-svg-wrapper basis-1/2 flex flex-col gap-2 sm:gap-0 justify-end items-center">
+                            <div className="text whitespace-nowrap text-[10px] sm:text-[12px] md:text-[18px]">
                                 Our new site's in the clouds for now. Launching soon!
                             </div>
-                            <div className="svg-wrapper h-10 w-10 z-50" onClick={() => setCardFlipped(true)}>
+                            <div className="svg-wrapper h-5 w-5 sm:h-10 sm:w-10 z-50" onClick={() => setCardFlipped(true)}>
                                 <img 
                                     src="/Launch/images/arrow.svg" 
                                     alt="Arrow" 
@@ -148,13 +148,13 @@ const Overlay = memo(() => {
                     {/* Back Side */}
                     <div className="back-side absolute h-full w-full rounded-4xl flex flex-col justify-between p-1 sm:p-3 md:p-3 lg:p-4">
                         <div className="upper-wrapper basis-1/3 flex justify-center items-center">
-                            <div className="display-text text-[12px] md:text-[16px] leading-[24px] text-center">
+                            <div className="display-text text-[10px] sm:text-[12px] md:text-[16px] leading-[14px] sm:leading-[24px] text-center pt-2 sm:pt-0">
                                 Waiting doesn't have to be boring. Our interactive cloud background <br/> 
                                 is all yours to explore while we prepare the full experience
                             </div>
                         </div>
 
-                        <div className="middle-wrapper text-[12px] md:text-[16px] basis-1/3 flex justify-between items-center px-2">
+                        <div className="middle-wrapper text-[10px] sm:text-[12px] md:text-[16px] basis-1/3 flex justify-between items-center px-3 sm:px-2">
                             <div className="cloudSpeed flex flex-col items-center justify-center gap-[8.6px]">
                                 <p className="label">Cloud Speed</p>
                                 <input 
@@ -214,7 +214,7 @@ const Overlay = memo(() => {
                                 <img
                                     src="/Launch/images/sound.png"
                                     alt="Sound"
-                                    className="arrow-svg h-7 w-7 mb-2 ml-2 cursor-pointer"
+                                    className="arrow-svg h-5 w-5 sm:h-7 sm:w-7 mb-2 ml-3 sm:ml-2 cursor-pointer"
                                     onClick={handleSoundClick}
                                 />
                                 <audio ref={audioRef} src="/Launch/audio.mp3" preload="auto" />
@@ -224,7 +224,7 @@ const Overlay = memo(() => {
                                 <img 
                                     src="/Launch/images/arrow.svg" 
                                     alt="Arrow" 
-                                    className="arrow-svg h-10 w-10 cursor-pointer"
+                                    className="arrow-svg h-7 w-7 sm:h-10 sm:w-10 mb-1 sm:mb-0 cursor-pointer"
                                 />
                             </div> 
 
@@ -232,7 +232,7 @@ const Overlay = memo(() => {
                                 <img 
                                     src="/Launch/images/refresh.png" 
                                     alt="Reset" 
-                                    className="reset-svg h-7 w-7 mb-2 mr-2 cursor-pointer"
+                                    className="reset-svg h-5 w-5 sm:h-7 sm:w-7 mb-2 mr-3 sm:mr-2 cursor-pointer"
                                     onClick={handleReset}
                                 />
                             </div>
