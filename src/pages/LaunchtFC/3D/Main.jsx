@@ -11,7 +11,7 @@ export default function Main() {
 
   return (
     <>
-      <Canvas performance={{ min: 0.5 }} dpr={[1,2]} gl={{ antialias: true }} resize={{ debounce: 200 }}>
+      <Canvas dpr={[1,2]} gl={{ antialias: true }} >
           <Scene />
       </Canvas>
     </>
