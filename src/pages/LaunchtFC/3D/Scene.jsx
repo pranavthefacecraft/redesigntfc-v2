@@ -1,4 +1,4 @@
-import { useScroll } from "@react-three/drei";
+import { Center } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import useStore from "../zustand/store";
@@ -36,8 +36,10 @@ export const Scene = () => {
   return useMemo(
     () => (
       <>
-        <Camera />
-        <Common />
+        <Center>
+          <Camera />
+          <Common />
+        </Center>
       </>
     ),
     []
