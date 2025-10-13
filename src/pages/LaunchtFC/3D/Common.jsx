@@ -123,7 +123,7 @@ const Common = memo(() => {
 
     // Device-specific interpolation factor
     const interpolationFactor = useMemo(() => {
-        return window.innerWidth <= 768 ? 0.015 : 0.095;
+        return window.innerWidth <= 768 ? 0.015 : 0.085;
     }, []);
 
     // Render Loop
