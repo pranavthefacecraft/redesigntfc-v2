@@ -121,8 +121,8 @@ const Overlay = memo(() => {
             </div>
 
             {/* Outro Section */}
-            <div className={`outro-wrapper absolute inset-0 w-full h-full perspective-[1500px] justify-center items-center pointer-cursor flex flex-col p-2 sm:p-0 ${end ? "outro-wrapper--appear" : ""}`}>
-                <div className={`outro-content relative rounded-4xl h-[25%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] 2xl:h-[50%] aspect-[16/9] p-1 ${cardFlipped ? "outro-content--flipped" : ""}`}>
+            <div className={`outro-wrapper absolute inset-0 w-full h-full perspective-[1500px] justify-center items-center pointer-cursor flex flex-col p-5 md:p-5 lg:p-0 ${end ? "outro-wrapper--appear" : ""}`}>
+                <div className={`outro-content relative rounded-4xl h-[25%] sm:h-[30%] md:h-[30%] lg:h-[45%] xl:h-[50%] 2xl:h-[50%] aspect-[16/9] p-1 ${cardFlipped ? "outro-content--flipped" : ""}`}>
                     <div className={`liquidGlass-overlay absolute inset-0 w-full h-full rounded-4xl liquidGlass-effect ${end ? "liquidGlass-effect--active" : ""}`}/>
 
                     {/* Front Side */}
@@ -132,7 +132,7 @@ const Overlay = memo(() => {
                         </div>
 
                         <div className="text-svg-wrapper basis-1/2 flex flex-col gap-2 sm:gap-0 justify-end items-center">
-                            <div className="text whitespace-nowrap text-[10px] sm:text-[12px] md:text-[18px]">
+                            <div className="text whitespace-nowrap text-[8px] sm:text-[12px]  md:text-[16px]">
                                 Our new site's in the clouds for now. Launching soon!
                             </div>
                             <div className="svg-wrapper h-5 w-5 sm:h-10 sm:w-10 z-50" onClick={() => setCardFlipped(true)}>
