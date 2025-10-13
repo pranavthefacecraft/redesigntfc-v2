@@ -121,6 +121,11 @@ const Common = memo(() => {
     const tempQuaternion = useMemo(() => new THREE.Quaternion(), []);
     const tempVector = useMemo(() => new THREE.Vector3(), []);
 
+    // Device-specific interpolation factor
+    const interpolationFactor = useMemo(() => {
+        return window.innerWidth <= 768 ? 0.045 : 0.095;
+    }, []);
+
     // Render Loop
     useFrame((state, delta) => {
 
@@ -128,8 +133,8 @@ const Common = memo(() => {
 
       const currentScroll = window.scrollY / window.innerHeight;
       
-      // Smooth scroll interpolation
-      smoothScrollRef.current = THREE.MathUtils.lerp(smoothScrollRef.current, currentScroll, 0.075);
+      // Smooth scroll interpolation with device-specific factor
+      smoothScrollRef.current = THREE.MathUtils.lerp(smoothScrollRef.current, currentScroll, interpolationFactor);
 
       // Update instance cube animations
       if (actions && actions['Animation']) {

@@ -18,19 +18,55 @@ const Overlay = memo(() => {
 
     // Sound logic
     const audioRef = useRef(null);
+    const audioInitializedRef = useRef(false);
+
+    // Initialize audio on mount
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (!audio || audioInitializedRef.current) return;
+
+        audio.volume = 0.05;
+        audio.load(); // Ensure audio is properly loaded
+        audioInitializedRef.current = true;
+
+        // Add error handling
+        audio.addEventListener('error', (e) => {
+            console.error('Audio loading error:', e);
+            setPlaySound(false);
+        });
+
+        // Handle audio loading
+        audio.addEventListener('canplaythrough', () => {
+            audioInitializedRef.current = true;
+        });
+
+        return () => {
+            if (audio) {
+                audio.removeEventListener('error', () => {});
+                audio.removeEventListener('canplaythrough', () => {});
+            }
+        };
+    }, [setPlaySound]);
 
     // Play/pause/reset logic
     const handleSoundClick = useCallback(() => {
         const audio = audioRef.current;
-        if (!audio) return;
+        if (!audio || !audioInitializedRef.current) return;
         
-        audio.volume = 0.05;
         if (audio.paused || audio.currentTime === 0) {
             audio.currentTime = 0;
-            audio.play().catch((err) => {
-                console.error('Audio play error:', err);
-            });
-            setPlaySound(true);
+            const playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        setPlaySound(true);
+                    })
+                    .catch((err) => {
+                        console.error('Audio play error:', err);
+                        setPlaySound(false);
+                    });
+            }
         } else {
             audio.pause();
             audio.currentTime = 0;
@@ -41,19 +77,27 @@ const Overlay = memo(() => {
     // Autoplay when end is true and playSound is true
     useEffect(() => {
         const audio = audioRef.current;
-        if (!audio) return;
+        if (!audio || !audioInitializedRef.current) return;
         
-        audio.volume = 0.05;
         if (end && playSound) {
             audio.currentTime = 0;
-            audio.play().catch((err) => {
-                console.error('Audio play error:', err);
-            });
+            const playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        audio.volume = 0.05;
+                    })
+                    .catch((err) => {
+                        console.error('Audio play error:', err);
+                        setPlaySound(false);
+                    });
+            }
         } else {
             audio.pause();
             audio.currentTime = 0;
         }
-    }, [end, playSound]);
+    }, [end, playSound, setPlaySound]);
 
     useEffect(() => {
         const chatbotWidget = document.querySelector(".ai-chatbot-widget");
@@ -136,7 +180,7 @@ const Overlay = memo(() => {
                                 Our new site's in the clouds for now. Launching soon!
                             </div>
                             <div className="svg-wrapper h-5 w-5 sm:h-10 sm:w-10 z-50" onClick={() => setCardFlipped(true)}>
-                                <img 
+                                <img  
                                     src="/Launch/images/arrow.svg" 
                                     alt="Arrow" 
                                     className="arrow-svg object-contain cursor-pointer"
@@ -217,7 +261,7 @@ const Overlay = memo(() => {
                                     className="arrow-svg h-5 w-5 sm:h-7 sm:w-7 mb-2 ml-3 sm:ml-2 cursor-pointer"
                                     onClick={handleSoundClick}
                                 />
-                                <audio ref={audioRef} src="/Launch/audio.mp3" preload="auto" />
+                                <audio ref={audioRef} src="/Launch/audio.mp3" preload="auto" crossOrigin="anonymous" />
                             </div>
 
                             <div className="svg-wrapper z-50 basis-1/3 flex justify-center" onClick={() => setCardFlipped(!cardFlipped)}>

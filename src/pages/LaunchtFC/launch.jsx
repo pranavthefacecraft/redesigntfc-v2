@@ -26,12 +26,16 @@ export default function ComingSoon() {
 
     // Optimized Lenis initialization with stable reference
     useEffect(() => {
+        const isMobile = window.innerWidth <= 768;
+        
         const lenis = new Lenis({
-            duration: 1,
+            duration: isMobile ? 1.5 : 1,
             easing: (t) => 1 - Math.pow(1 - t, 3),
             smooth: true,
             smoothWheel: true,
             syncTouch: true,
+            touchMultiplier: isMobile ? 1.2 : 2,
+            wheelMultiplier: isMobile ? 0.8 : 1,
         });
 
         lenisRef.current = lenis;
@@ -62,7 +66,7 @@ export default function ComingSoon() {
         if (play && !end) {
             timeoutId = setTimeout(() => {
                 lenis.start();
-            }, 2500);
+            }, 3000);
         } else {
             lenis.stop();
         }
