@@ -26,65 +26,13 @@
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script src="https://chatbotapi.tfcmockup.com/js/chatbot-widget.js"></script>
-
-    <script>
-      // Wait for DOM and script to load completely
-      document.addEventListener('DOMContentLoaded', function() {
-          // Ensure the widget class is available
-          if (typeof AIChatbotWidget !== 'undefined') {
-              try {
-                  const chatbot = new AIChatbotWidget({
-                      // Required settings - ABSOLUTE URLs ONLY
-                      botId: '1',
-                      companyId: '1',
-                      apiEndpoint: 'https://chatbotapi.tfcmockup.com/api/widget/chat',
-                      
-                      // Appearance
-                      position: 'bottom-right', // bottom-right, bottom-left, top-right, top-left
-                      theme: {
-                          primaryColor: '#435ebe',
-                          secondaryColor: '#f8f9fa',
-                          textColor: '#333333',
-                          bubbleColor: '#435ebe',
-                          bubbleTextColor: '#ffffff'
-                      },
-                      size: {
-                          width: window.innerWidth <= 480 ? '300px' : 
-                                 window.innerWidth <= 768 ? '350px' : 
-                                 window.innerWidth <= 1024 ? '400px' : '450px',
-                          height: window.innerWidth <= 480 ? '400px' : 
-                                  window.innerWidth <= 768 ? '500px' : 
-                                  window.innerWidth <= 1024 ? '550px' : '600px',
-                          bubbleSize: window.innerWidth <= 480 ? '50px' : 
-                                     window.innerWidth <= 768 ? '60px' : '70px'
-                      },
-                      
-                      // Behavior
-                      autoOpen: false,
-                      showWelcomeMessage: true,
-                      enableFileUpload: true,
-                      enableTypingIndicator: true,
-                      
-                      // Custom messages
-                      messages: {
-                          welcome: "Hi! 👋 How can I help you today?",
-                          placeholder: "Type your message...",
-                          errorMessage: "Sorry, I'm having trouble connecting. Please try again in a moment.",
-                          offlineMessage: "We're currently offline. Please leave a message and we'll get back to you!"
-                      }
-                  });
-                  
-                  console.log('AI Chatbot initialized successfully');
-                  
-              } catch (error) {
-                  console.error('Error initializing AI Chatbot:', error);
-              }
-          } else {
-              console.error('AIChatbotWidget not loaded. Please check the script source.');
-          }
-      });
-    </script>
+    <!-- AI Chatbot Widget -->
+<script src="https://chatbotapi.tfcmockup.com/js/chatbot-widget.js" 
+        data-bot-id="1"
+        data-company-id="1"
+        data-api-endpoint="https://chatbotapi.tfcmockup.com/api/widget/chat"
+        data-primary-color="#435ebe"
+        data-position="bottom-right"></script>
 
     <svg style="display: none">
       <filter
