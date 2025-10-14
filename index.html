@@ -26,13 +26,18 @@
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="/assets/js/script.js"></script>
-    <!-- AI Chatbot Widget -->
-<script src="https://chatbotapi.tfcmockup.com/js/chatbot-widget.js" 
-        data-bot-id="1"
-        data-company-id="1"
-        data-api-endpoint="https://chatbotapi.tfcmockup.com/api/widget/chat"
-        data-primary-color="#435ebe"
-        data-position="bottom-right"></script>
+    <!-- AI Meta Chatbot Widget - Updated for tfcnew.tfcmockup.com -->
+<script>
+window.chatWidgetConfig = {
+    companyId: 1,
+    apiEndpoint: 'https://chatbotapi.tfcmockup.com/api/widget/v2',
+    primaryColor: '#435ebe',
+    position: 'bottom-right',
+    welcomeMessage: 'Hi! How can I help you today?',
+    collectVisitorInfo: true
+};
+</script>
+<script src="https://chatbotapi.tfcmockup.com/js/widget/chat-widget-v2.js"></script>
 
     <svg style="display: none">
       <filter
