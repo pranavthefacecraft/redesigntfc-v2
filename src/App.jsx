@@ -13,6 +13,7 @@ import StudyEnglish from './pages/studyenglish/studyenglish';
 import LaughingTree from './pages/laughingtree/LaughingTree';
 import PhotoVideoAnimation from './pages/PhotoVideoAnimation/photovideoanimation';
 import ComingSoon from './pages/LaunchtFC/launch';
+import TFCLaunch from './pages/tfc/tfclaunch';
 
 import './App.css'
 
@@ -26,6 +27,7 @@ function App() {
       <Route path="/solit" element={<Solit />} />
       <Route path="/tanda" element={<Tanda />} />
       <Route path="/comingsoon" element={<ComingSoon />} />
+      <Route path="/tfclaunch" element={<TFCLaunch />} />
       <Route path="/rafw" element={<Rafw />} />
       <Route path="/towork" element={<Towork />} />
       <Route path="/housingsearch" element={<HousingSearch />} />

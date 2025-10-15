@@ -1,0 +1,244 @@
+
+
+@font-face {
+  font-family: "FuturaBold";
+  src: url("/fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+  font-family: "FuturaLight";
+  src: url("/fonts/FuturaCyrillicDemi.ttf");
+}
+
+
+@font-face {
+  font-family: "MonserratMedium";
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "MonserratSemiBold";
+  src: url("/fonts/Montserrat-SemiBold.ttf");
+}
+
+.overlay {
+  font-family: "MonserratMedium";
+}
+
+.overlay--scrolled .intro-logo {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+.canvas {
+  transition: fadeIn 2s ease-in-out;
+}
+
+.overlay--disable {
+  pointer-events: none;
+}
+
+.intro-logo {
+  animation: fadeUp 2.4s ease-in-out;
+  transition: transform 2s ease-in-out, top 2s ease-in-out;
+}
+
+.intro--disappear .intro-logo {
+  top: 42px;
+  transform: scale(0.25);
+  transform-origin: center top;
+}
+
+.explore {
+  border: none;
+  background-color: white;
+  color: #272727;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.42s ease-in-out;
+  animation: fadeIn 2.4s ease-in-out 2s forwards;
+  opacity: 0;
+}
+
+.explore:hover {
+  color: #ffffff;
+}
+
+.explore:hover:before {
+  width: 200%;
+  height: 300%;
+  border-radius: 100%;
+}
+
+.explore:before {
+  content: "";
+  background: #BF1736;
+  position: absolute;
+  width: 0%;
+  bottom: 0;
+  left: 50%;
+  height: 0%;
+  transition: 0.42s ease-in-out;
+  z-index: -1;
+  transform: translateX(-50%) translateY(50%);
+}
+
+.intro--disappear .explore {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+.outro--appear {
+  animation: fadeIn 1s ease-in-out forwards;
+  pointer-events: auto;
+}
+
+.outro-card {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(9px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logopulse {
+   0%{
+   opacity: 1;
+   }
+   50%{
+   opacity: 0.6;
+   }
+   100%{
+   opacity: 1;
+   }
+}
+
+@keyframes chatbotpulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3), 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.sound-image {
+  filter: invert(1);
+  animation: logopulse 1.5s infinite;
+}
+
+.arrow-image {
+  filter: invert(1);
+  animation: logopulse 1.5s infinite;
+}
+
+
+#ai-chat-widget-container {
+  opacity: 0 !important;
+  display: none !important;
+  transition: all 1.5s ease-in-out !important;
+  font-family: "MonserratMedium" !important;
+}
+
+#chat-widget-button {
+  background: rgba(255,255,255,0.5) !important;
+  animation: chatbotpulse 4s infinite !important;
+}
+
+#chat-widget {
+  background: rgba(255,255,255,0.3) !important;
+}
+
+
+
+#ai-chat-widget-container.chatbot-visible {
+  opacity: 1 !important;
+  display: inherit !important;
+}
+
+#ai-chat-widget-container.chatbot-hidden {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+
+.liquid {
+  position: absolute;
+  backdrop-filter: blur(5px) saturate(1.2) url(#glass-distortion);
+  -webkit-backdrop-filter: blur(5px) saturate(1.0);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.front-side,
+.back-side {
+  backface-visibility: hidden;
+}
+ 
+.front-side {
+  color: white;
+}
+
+.back-side {
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.outro-card {
+  transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  /* make a even box shadow on all sides */
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.outro-card--flipped {
+  transform: rotateX(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
