@@ -14,6 +14,7 @@ import LaughingTree from './pages/laughingtree/LaughingTree';
 import PhotoVideoAnimation from './pages/PhotoVideoAnimation/photovideoanimation';
 import ComingSoon from './pages/LaunchtFC/launch';
 import TFCLaunch from './pages/tfc/tfclaunch';
+import Test from './pages/testpage/test';
 
 import './App.css'
 
@@ -26,8 +27,9 @@ function App() {
       <Route path="/Project" element={<Project/>} />
       <Route path="/solit" element={<Solit />} />
       <Route path="/tanda" element={<Tanda />} />
-      <Route path="/comingsoon" element={<ComingSoon />} />
-      <Route path="/tfclaunch" element={<TFCLaunch />} />
+      <Route path="/testwidget" element={<ComingSoon />} />
+      <Route path="/comingsoon" element={<TFCLaunch />} />
+      <Route path="/test" element={<Test />} />
       <Route path="/rafw" element={<Rafw />} />
       <Route path="/towork" element={<Towork />} />
       <Route path="/housingsearch" element={<HousingSearch />} />
