@@ -180,7 +180,9 @@
   animation: chatbotpulse 4s infinite !important;
 }
 
-
+#chat-widget {
+  background: rgba(255,255,255,0.3) !important;
+}
 
 
 
