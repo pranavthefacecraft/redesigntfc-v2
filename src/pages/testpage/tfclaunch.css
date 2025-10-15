@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "FuturaBold";
+  src: url("/fonts/FuturaCyrillicBold.ttf");
+}
+
+@font-face {
+  font-family: "FuturaLight";
+  src: url("/fonts/FuturaCyrillicDemi.ttf");
+}
+
+
+@font-face {
+  font-family: "MonserratMedium";
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "MonserratSemiBold";
+  src: url("/fonts/Montserrat-SemiBold.ttf");
+}
+
+.mainpage {
+  background: radial-gradient(circle at top right, 
+  #3F3862 20%,
+  #7d6fc4 100%  
+  ); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
