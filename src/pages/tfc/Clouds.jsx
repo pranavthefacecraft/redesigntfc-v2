@@ -13,7 +13,7 @@ import { usePlay } from "./Contexts/Play";
 
 extend({ BicubicUpscaleMaterial });
 
-const resolution = 2.0;
+const resolution = 2.3;
 // Blue noise texture
 const BLUE_NOISE_TEXTURE_URL = "https://cdn.maximeheckel.com/noises/blue-noise.png";
 // Noise texture
@@ -44,8 +44,8 @@ export default function Raymarching() {
   );
 
   const renderTargetB = useFBO(
-    size.width,
-    size.height
+    size.width * viewport.dpr,
+    size.height * viewport.dpr
   );
 
   const blueNoiseTexture = useTexture(BLUE_NOISE_TEXTURE_URL);
