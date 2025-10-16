@@ -28,7 +28,18 @@
   ); 
   background-repeat: no-repeat;
   background-size: cover;
+
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.9);
 }
 
+@media screen and (min-width: 1921px) {
+  .mainpage {
+    border-radius: 2rem;
+  }
+
+  .intro-logo {
+    top: '10vh';
+  }
+}
 
 

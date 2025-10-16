@@ -14,7 +14,7 @@ function Main() {
       <Canvas 
         gl={{ antialias: true }} 
         dpr={[1, 2]} 
-        className="canvas max-w-[1920px] h-full mx-auto"
+        className="canvas max-w-[1920px] max-h-[945px] my-auto mx-auto"
       >
           <ScrollControls
             pages={ play && !end ? 12 : 0 }
