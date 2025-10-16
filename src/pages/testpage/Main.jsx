@@ -17,7 +17,7 @@ function Main() {
         className="canvas max-w-[1920px] h-full mx-auto"
       >
           <ScrollControls
-            pages={ play && !end ? 8 : 0 }
+            pages={ play && !end ? 12 : 0 }
             damping={0.5}
             style={{
               top: "10px",

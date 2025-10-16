@@ -46,10 +46,10 @@ void main() {
   float fadeOpacity = smoothstep(40.0 + 500.0 * uScrollOffset, 0.0, dist);
   fadeOpacity = exponentialEasing(fadeOpacity, 0.93);
 
-  float transitionStart = 0.66;
-  float transitionEnd = 1.005;
+  float transitionStart = 0.35;
+  float transitionEnd = 1.006;
   float transitionProgress = smoothstep(transitionStart, transitionEnd, uScrollOffset);
-  transitionProgress = exponentialEasing(transitionProgress, 0.23);
+  transitionProgress = exponentialEasing(transitionProgress, 0.9);
 
 
   vec3 transitionColor = mix(baseColor, renderTargetColor.rgb, transitionProgress);

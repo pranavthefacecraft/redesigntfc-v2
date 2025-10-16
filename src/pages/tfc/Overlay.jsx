@@ -133,7 +133,7 @@ export default function Overlay() {
             {/* Outro Section */}
             <div className={`outro-wrapper absolute inset-0 w-full h-full perspective-[1500px] justify-center items-center flex flex-col text-[12px] md:text-[18px] ${end ? "outro-wrapper--appear" : ""}`}>
 
-                <div className={`outro-content relative aspect-[16/9] w-[95%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[50%] 2xl:w-[40%] rounded-3xl sm:rounded-4xl ${cardFlipped ? "outro-content--flipped" : ""}`}>
+                <div className={`outro-content relative aspect-[16/9] w-[90%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[50%] 2xl:w-[40%] rounded-3xl sm:rounded-4xl ${cardFlipped ? "outro-content--flipped" : ""}`}>
 
                     <div className={`liquidGlass-overlay absolute inset-0 w-full h-full rounded-3xl sm:rounded-4xl liquidGlass-effect ${end ? "liquidGlass-effect--active" : ""}`}/>
 
@@ -149,8 +149,8 @@ export default function Overlay() {
                          Our new site's in the clouds for now. <br/> Launching soon!
                         </p>
   
-                        <div className="arrow-tfc cursor-pointer w-3 h-3 sm:w-5 sm:h-5 mt-1 lg:mt-2 sm:mt-0" onClick={() => setCardFlipped(!cardFlipped)}>
-                         <img src="/Launch/images/arrow.png" alt="arrow" className="image-contain arrow-image"/>
+                        <div className="arrow-tfc cursor-pointer w-5 h-5 sm:w-8 sm:h-8 mt-2 lg:mt-3 sm:mt-0" onClick={() => setCardFlipped(!cardFlipped)}>
+                         <img src="/Launch/images/arrow.svg" alt="arrow" className="image-contain arrow-image"/>
                         </div>
                       </div>
 
@@ -165,7 +165,7 @@ export default function Overlay() {
                           <p className="text">Waiting doesn't have to be boring. Our interactive cloud background <br/> is all yours to explore while we prepare the full experience</p>
                        </div>
 
-                       <div className="tfc-panel grid grid-rows-2 w-full">
+                       <div className="tfc-panel grid grid-rows-2 w-full gap-1 md:gap-0">
                           <div className="tfc-upper-panel block md:hidden">
                             <div className="cloudSpeed flex flex-col items-center gap-1">
                                 <p className="label">Cloud Speed</p>
@@ -247,16 +247,16 @@ export default function Overlay() {
 
                        <div className="tfc-options w-full px-2">
                           
-                          <div className="tfc-lower-panel flex flex-row justify-between">
+                          <div className="tfc-lower-panel flex flex-row justify-between px-3 md:px-11">
 
                             <div className="arrow-tfc w-3 h-3 sm:w-5 sm:h-5 mt-1 lg:mt-2 sm:mt-0">
                             </div>
 
-                            <div className="arrow-tfc cursor-pointer w-3 h-3 sm:w-5 sm:h-5 mt-1 lg:mt-2 sm:mt-0" onClick={() => setCardFlipped(!cardFlipped)}>
-                              <img src="/Launch/images/arrow.png" alt="arrow" className="image-contain arrow-image"/>
+                            <div className="arrow-tfc cursor-pointer w-5 h-5 sm:w-8 sm:h-8 mt-2 lg:mt-3 sm:mt-0" onClick={() => setCardFlipped(!cardFlipped)}>
+                              <img src="/Launch/images/arrow.svg" alt="arrow" className="image-contain arrow-image"/>
                             </div>
 
-                            <div className="reset-tfc cursor-pointer w-3 h-3 sm:w-5 sm:h-5 mt-1 lg:mt-2 sm:mt-0" onClick={handleReset}>
+                            <div className="reset-tfc cursor-pointer w-3 h-3 sm:w-6 sm:h-6 mt-3 lg:mt-4 sm:mt-1" onClick={handleReset}>
                               <img src="/Launch/images/refresh.png" alt="arrow" className="image-contain arrow-image"/>
                             </div>
 
