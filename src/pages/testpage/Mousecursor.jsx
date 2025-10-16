@@ -27,8 +27,11 @@ const MouseScrollCursor = ({
       return 1;
     } else if (width < 1280) { // xl breakpoint
       return 1.1;
-    } else { // 2xl and above
+    } else if (width < 1920 ) { // 2xl and above
       return 1.0;
+    }
+    else {
+      return 1.3;
     }
 
 

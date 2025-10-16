@@ -133,7 +133,7 @@ export default function Overlay() {
             {/* Outro Section */}
             <div className={`outro-wrapper absolute inset-0 w-full h-full perspective-[1500px] justify-center items-center flex flex-col text-[12px] md:text-[18px] ${end ? "outro-wrapper--appear" : ""}`}>
 
-                <div className={`outro-content relative aspect-[16/9] w-[90%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[50%] 2xl:w-[40%] rounded-3xl sm:rounded-4xl ${cardFlipped ? "outro-content--flipped" : ""}`}>
+                <div className={`outro-content relative aspect-[16/9] w-[90%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[50%] 2xl:w-[45%] rounded-3xl sm:rounded-4xl ${cardFlipped ? "outro-content--flipped" : ""}`}>
 
                     <div className={`liquidGlass-overlay absolute inset-0 w-full h-full rounded-3xl sm:rounded-4xl liquidGlass-effect ${end ? "liquidGlass-effect--active" : ""}`}/>
 
@@ -165,7 +165,7 @@ export default function Overlay() {
                           <p className="text">Waiting doesn't have to be boring. Our interactive cloud background <br/> is all yours to explore while we prepare the full experience</p>
                        </div>
 
-                       <div className="tfc-panel grid grid-rows-2 w-full gap-1 md:gap-0">
+                       <div className="tfc-panel grid grid-rows-2 w-full sm:gap-2 sm:mt-1 md:gap-0">
                           <div className="tfc-upper-panel block md:hidden">
                             <div className="cloudSpeed flex flex-col items-center gap-1">
                                 <p className="label">Cloud Speed</p>
