@@ -263,7 +263,26 @@
 
 }
 
-@media screen and (min-width: 768px) and (max-width: 1280px) {
+@media screen and (width: 768px) {
+
+  .tfc-text {
+     margin-top: 30px;
+  }
+
+  .tfc-panel {
+    gap: 0px;
+    margin-top: 20px;
+  }
+
+  .tfc-lower-panel {
+    margin-bottom: -15px;
+  }
+
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
 
   .tfc-text {
      margin-top: 25px;
