@@ -35,12 +35,16 @@
 @media screen and (min-width: 1921px) {
   .mainpage {
     border-radius: 2rem;
+    
   }
 
   .intro-logo {
     top: '10vh';
   }
-
+.chatbot-visible{
+  right: 27% !important;
+        bottom: 8% !important;
+}
   
 }
 
