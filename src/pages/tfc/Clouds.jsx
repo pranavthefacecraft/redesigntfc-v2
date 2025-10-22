@@ -13,7 +13,7 @@ import { usePlay } from "./Contexts/Play";
 
 extend({ BicubicUpscaleMaterial });
 
-const resolution = 2.3;
+const resolution = 1.3;
 // Blue noise texture
 const BLUE_NOISE_TEXTURE_URL = "https://cdn.maximeheckel.com/noises/blue-noise.png";
 // Noise texture
