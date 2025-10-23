@@ -45,11 +45,8 @@ float fbm(vec3 p) {
 }
 
 float scene(vec3 p) {
-  float distance = sdSphere(p, 1.2);
   float plane = p.y - 0.0;
-
   float f = fbm(p);
-
   return -plane + f;
 }
 
