@@ -22,13 +22,12 @@ function App() {
   return (
     <Router>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<TFCLaunch />} />
       <Route path="/About" element={<About/>} />
       <Route path="/Project" element={<Project/>} />
       <Route path="/solit" element={<Solit />} />
       <Route path="/tanda" element={<Tanda />} />
       <Route path="/testwidget" element={<ComingSoon />} />
-      <Route path="/comingsoon" element={<TFCLaunch />} />
       <Route path="/test" element={<Test />} />
       <Route path="/rafw" element={<Rafw />} />
       <Route path="/towork" element={<Towork />} />
