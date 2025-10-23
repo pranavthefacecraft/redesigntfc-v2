@@ -44,8 +44,8 @@ export default function Raymarching() {
   );
 
   const renderTargetB = useFBO(
-    size.width * viewport.dpr,
-    size.height * viewport.dpr
+    size.width,
+    size.height
   );
 
   const blueNoiseTexture = useTexture(BLUE_NOISE_TEXTURE_URL);
