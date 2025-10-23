@@ -267,7 +267,7 @@ export default function Overlay() {
                     </div>
                 </div>
 
-                <div className="sound-button absolute left-4 bottom-6 sm:left-6 sm:bottom-6 sm:h-10 sm:w-10 h-8 w-8">
+                <div className="sound-button absolute left-4 bottom-6 sm:left-6 sm:bottom-6 sm:h-10 sm:w-10 2xl:h-12 2xl:w-12 h-8 w-8">
                   <img src="/Launch/images/sound.png" alt="sound" className="sound-image image-contain" onClick={toggleAudio}/>
                 </div>
 

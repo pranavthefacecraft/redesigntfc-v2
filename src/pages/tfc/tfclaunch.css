@@ -41,10 +41,11 @@
   .intro-logo {
     top: '10vh';
   }
-.chatbot-visible{
-  right: 27% !important;
-        bottom: 8% !important;
-}
+  
+  .chatbot-visible{
+  right: 26% !important;
+  bottom: 7% !important;
+  }
   
 }
 
