@@ -281,7 +281,6 @@ body {
   font-style: italic;
 }
 
-<<<<<<< Updated upstream
 .cloud-img img {
   transition: transform 0.3s ease-out;
 }
@@ -361,66 +360,63 @@ background-color: white;
   background-color: white;
   }
 
-
-
-  @media (max-width: 640px) {
-
-    .img {
-      position: relative;
-      margin-bottom: 1em;
-      width: 300px;
-      height: 300px;
-      overflow: hidden;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 30px;
-    }
-    
-    .img:nth-child(1),
-    .img:nth-child(3) {
-      left: 75%;
-    }
-    
-    .img:nth-child(2),
-    .img:nth-child(4) {
-      left: 25%;
-    }
-    
-    .img.reorder {
-      position: absolute;
-      top: 47.5%;
-      left: 50%;
-      transform: translate(-100%, -50%);
-      width: 300px;
-      height: 300px;
-      border-radius: 30px;
-    }
-    
-    .img.reorder:nth-child(1) {
-      transform: translate(-50%, -50%) rotate(10deg);
-    }
-    
-    .img.reorder:nth-child(2) {
-      transform: translate(-50%, -50%) rotate(-5deg);
-    }
-    
-    .img.reorder:nth-child(3) {
-      transform: translate(-50%, -50%) rotate(2deg);
-    }
-    
-    .img.reorder:nth-child(4) {
-      transform: translate(-50%, -50%) rotate(-2deg);
-    }
-    .img-gallery-container {
-      background-color: transparent;
-      }
-      .img-gallery {
-        background-color: transparent;
-        }
-  }
-=======
 html {
   scroll-behavior: smooth;
 }
->>>>>>> Stashed changes
+
+@media (max-width: 640px) {
+
+  .img {
+    position: relative;
+    margin-bottom: 1em;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+  }
+  
+  .img:nth-child(1),
+  .img:nth-child(3) {
+    left: 75%;
+  }
+  
+  .img:nth-child(2),
+  .img:nth-child(4) {
+    left: 25%;
+  }
+  
+  .img.reorder {
+    position: absolute;
+    top: 47.5%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+  }
+  
+  .img.reorder:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  
+  .img.reorder:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  
+  .img.reorder:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(2deg);
+  }
+  
+  .img.reorder:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(-2deg);
+  }
+  .img-gallery-container {
+    background-color: transparent;
+    }
+    .img-gallery {
+      background-color: transparent;
+      }
+}
