@@ -1,0 +1,131 @@
+name: Deploy to Multiple Domains
+
+on:
+  push:
+    branches: [ main, pranav ]  # Deploy when pushing to main or pranav branch
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+          - development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Create .htaccess file
+      run: |
+        cat > dist/.htaccess << 'EOF'
+        Options +FollowSymLinks
+        RewriteEngine On
+        RewriteRule ^[Cc]omingsoon/?$ /index.html [L]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule . /index.html [L]
+        
+        <IfModule mod_deflate.c>
+            AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css
+            AddOutputFilterByType DEFLATE application/xml application/xhtml+xml
+            AddOutputFilterByType DEFLATE application/rss+xml application/javascript
+            AddOutputFilterByType DEFLATE application/x-javascript
+        </IfModule>
+        
+        <IfModule mod_mime.c>
+            AddType application/javascript .js
+            AddType text/css .css
+        </IfModule>
+        
+        <IfModule mod_expires.c>
+            ExpiresActive On
+            ExpiresByType image/jpg "access plus 1 month"
+            ExpiresByType image/jpeg "access plus 1 month"
+            ExpiresByType image/gif "access plus 1 month"
+            ExpiresByType image/png "access plus 1 month"
+            ExpiresByType text/css "access plus 1 month"
+            ExpiresByType application/pdf "access plus 1 month"
+            ExpiresByType application/javascript "access plus 1 month"
+            ExpiresByType application/x-javascript "access plus 1 month"
+            ExpiresByType image/x-icon "access plus 1 year"
+        </IfModule>
+        EOF
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-files
+        path: dist/
+        retention-days: 1
+
+  deploy-domain1:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: build-files
+        path: dist/
+        
+    - name: Deploy to tfcnew.tfcmockup.com
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist/
+        server-dir: ./
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+        state-name: .ftp-deploy-sync-state-domain1.json
+        dry-run: false
+
+  deploy-domain2:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: build-files
+        path: dist/
+        
+    - name: Deploy to thefacecraft.com
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER_DOMAIN2 }}
+        username: ${{ secrets.FTP_USERNAME_DOMAIN2 }}
+        password: ${{ secrets.FTP_PASSWORD_DOMAIN2 }}
+        local-dir: ./dist/
+        server-dir: ${{ secrets.SERVER_DIR_DOMAIN2 || './' }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+        state-name: .ftp-deploy-sync-state-domain2.json
+        dry-run: false
