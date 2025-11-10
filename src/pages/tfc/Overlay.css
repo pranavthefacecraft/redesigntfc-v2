@@ -48,8 +48,10 @@
 
 .intro--disappear .intro-logo {
   top: 42px;
-  transform: scale(0.25);
+  transform: scale(0.55);
   transform-origin: center top;
+  animation: fadeOut 2.4s ease-in-out 2s forwards;
+  animation-delay: 0.5s;
 }
 
 .explore {
@@ -282,6 +284,13 @@
 
 
 
+
+  
+
+
+
+
+
 @media screen and (min-width: 769px) and (max-width: 1280px) {
 
   .tfc-text {
@@ -317,6 +326,10 @@
   .tfc-panel {
     gap: 0px;
     margin-top: 49px;
+  }
+
+  #chat-widget {
+    background: rgba(255, 255, 255, 0.5) !important;
   }
 
 }

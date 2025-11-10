@@ -118,7 +118,7 @@ export default function Overlay() {
         <div className={`overlay select-none absolute top-0 left-0 bottom-0 right-0 ${play ? "overlay--disable" : ""} ${hasScroll ? "overlay--scrolled" : ""}`}>
             <div className={`intro w-full h-full flex flex-col justify-center items-center absolute top-0 left-0 right-0 bottom-0 z-0 ${play ? "intro--disappear" : ""}`}>
                 <div className="intro-logo w-1/2 aspect-auto absolute top-[40vh] sm:top-[32vh]">
-                    <img src="/Launch/images/Whitelogo.png" alt="tfc logo" className="image-contain"/>
+                    <img src="/Launch/Primary_Logo_White.png" alt="tfc logo" className="image-contain"/>
                 </div>
                 <button
                     className="explore text-[12px] px-[0.9rem] py-[0.4rem] sm:px-[1rem] sm:py-[0.5rem] sm:text-[14px] lg:px-[2rem] lg:py-[1rem] lg:text-[18px] rounded-[32px] mt-[200px] sm:mt-[220px] lg:mt-[320px] hover:scale-[1.05] transition-all duration-400 ease-in-out"
@@ -141,7 +141,7 @@ export default function Overlay() {
                     <div className="front-side absolute w-full h-full rounded-3xl sm:rounded-4xl grid place-items-center text-center p-3 lg:p-0 gap-4 sm:gap-0">
 
                       <div className="tfclogo px-3 xl:px-6 2xl:px-9">
-                        <img src="/Launch/images/Whitelogo.png" draggable="false" alt="tfc logo" className="tfc-logo image-contain"/>
+                        <img src="/Launch/Primary_Logo_White.png" draggable="false" alt="tfc logo" className="tfc-logo image-contain"/>
                       </div>
                            
                       <div className="tfc-text-arrow items-center flex flex-col gap-1 sm:gap-2">    
@@ -267,7 +267,7 @@ export default function Overlay() {
                     </div>
                 </div>
 
-                <div className="sound-button absolute left-4 bottom-6 sm:left-6 sm:bottom-6 sm:h-10 sm:w-10 h-8 w-8">
+                <div className="sound-button absolute left-4 bottom-6 sm:left-6 sm:bottom-6 sm:h-10 sm:w-10 2xl:h-12 2xl:w-12 h-8 w-8">
                   <img src="/Launch/images/sound.png" alt="sound" className="sound-image image-contain" onClick={toggleAudio}/>
                 </div>
 

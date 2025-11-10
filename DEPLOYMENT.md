@@ -1,135 +1,150 @@
 # GitHub Actions Deployment Setup Guide
 
-This project now has automated deployment configured with GitHub Actions. Choose the deployment method that best suits your hosting setup.
+This project supports automated deployment to multiple domains/servers using GitHub Actions.
 
 ## 🚀 Available Deployment Options
 
-### Option 1: FTP Deployment (Recommended for cPanel/Shared Hosting)
+### Primary Deployment (tfcnew.tfcmockup.com)
 **File**: `.github/workflows/deploy.yml`
-- Best for: cPanel, shared hosting, traditional web hosts
-- Deploys to: Your FTP server
 - Triggers: Push to `main` or `pranav` branches
+- Deploys to: Your primary FTP server
+- Secrets needed: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`
 
-### Option 2: GitHub Pages Deployment
-**File**: `.github/workflows/github-pages.yml`
-- Best for: Free hosting on GitHub Pages
-- Deploys to: `https://username.github.io/repository-name`
-- Triggers: Push to `main` branch
+### Secondary Domain Deployment
+**File**: `.github/workflows/deploy-secondary.yml`
+- Triggers: Push to `production` or `release` branches, or manual trigger
+- Deploys to: Your secondary domain
+- Secrets needed: `FTP_SERVER_SECONDARY`, `FTP_USERNAME_SECONDARY`, `FTP_PASSWORD_SECONDARY`
 
-### Option 3: SSH Deployment (Most Secure)
-**File**: `.github/workflows/deploy-ssh.yml`
-- Best for: VPS, dedicated servers with SSH access
-- Deploys to: Your server via SSH
-- Triggers: Push to `main` or `pranav` branches
+### Environment-Based Deployment
+**File**: `.github/workflows/deploy-production.yml`
+- Triggers: Manual trigger only (workflow_dispatch)
+- Supports: production, staging, development environments
+- Secrets needed: Environment-specific secrets
 
-## 🔧 Setup Instructions
+## 🔧 How to Deploy to Multiple Domains
 
-### For FTP Deployment (Option 1)
+### Approach 1: Branch-Based Deployment (Recommended)
 
-1. **Add GitHub Secrets** (Go to your repo → Settings → Secrets and variables → Actions):
-   ```
-   FTP_SERVER: your-ftp-server.com
-   FTP_USERNAME: your-ftp-username
-   FTP_PASSWORD: your-ftp-password
-   ```
+1. **Primary domain (tfcnew.tfcmockup.com)**:
+   - Push to `main` or `pranav` branch
+   - Uses existing `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` secrets
+   
+2. **Secondary domain**:
+   - Push to `production` or `release` branch
+   - Add these secrets to your GitHub repo:
+     ```
+     FTP_SERVER_SECONDARY: your-second-domain-server.com
+     FTP_USERNAME_SECONDARY: your-username
+     FTP_PASSWORD_SECONDARY: your-password
+     ```
 
-2. **Modify the workflow** if needed:
-   - Change `server-dir: ./public_html/` to your server's web directory
-   - Update branch names in the `on.push.branches` section
+### Approach 2: Manual Environment Selection
 
-### For GitHub Pages (Option 2)
+1. Go to: `Actions` tab in GitHub
+2. Select: "Deploy to Production Domain"
+3. Click: "Run workflow"
+4. Choose environment: production/staging/development
+5. Each environment uses its own set of secrets
 
-1. **Enable GitHub Pages**:
-   - Go to your repo → Settings → Pages
-   - Source: "GitHub Actions"
+### Approach 3: Multiple Workflow Files
 
-2. **Update Vite config** for GitHub Pages:
-   ```javascript
-   // vite.config.js
-   export default defineConfig({
-     base: '/your-repo-name/', // Important for GitHub Pages
-     // ... rest of config
-   })
-   ```
+Create separate workflow files for each domain:
+- `deploy-domain1.yml`
+- `deploy-domain2.yml`
+- `deploy-domain3.yml`
 
-### For SSH Deployment (Option 3)
+Each with its own triggers and secrets.
 
-1. **Add GitHub Secrets**:
-   ```
-   SSH_HOST: your-server-ip-or-domain.com
-   SSH_USERNAME: your-ssh-username
-   SSH_PRIVATE_KEY: your-private-key-content
-   SSH_PORT: 22 (optional, defaults to 22)
-   ```
+## 📝 Setting Up Secrets for Multiple Domains
 
-2. **Update the deployment path**:
-   - Change `/path/to/your/website` to your actual web directory
-   - Update `/path/to/backup/` to your preferred backup location
-
-## 🎯 Current Configuration
-
-Your project is set up with:
-- ✅ React + Vite build process
-- ✅ Automatic .htaccess generation for SPA routing
-- ✅ Node.js 18 runtime
-- ✅ NPM caching for faster builds
-- ✅ Support for both `main` and `pranav` branches
-
-## 🔄 How It Works
-
-1. **Trigger**: Push code to specified branches
-2. **Build**: 
-   - Install dependencies with `npm ci`
-   - Build project with `npm run build`
-   - Create `.htaccess` file automatically
-3. **Deploy**: Upload files to your chosen destination
-4. **Complete**: Your site is live with the latest changes!
-
-## 🛠️ Customization
-
-### Change Deployment Branches
-Edit the workflow file:
-```yaml
-on:
-  push:
-    branches: [ main, your-branch-name ]
+### For Primary Domain (Already Set):
+```
+FTP_SERVER: 147.93.92.53
+FTP_USERNAME: u706445394.tfcnew
+FTP_PASSWORD: (your password)
 ```
 
-### Add Environment Variables
-Add secrets in GitHub repo settings and reference them:
-```yaml
-env:
-  VITE_API_URL: ${{ secrets.API_URL }}
+### For Secondary Domain:
+Go to: `Settings` → `Secrets and variables` → `Actions` → `New repository secret`
+
+Add these secrets:
+```
+Name: FTP_SERVER_SECONDARY
+Value: your-second-server-ip-or-domain
+
+Name: FTP_USERNAME_SECONDARY
+Value: your-second-username
+
+Name: FTP_PASSWORD_SECONDARY
+Value: your-second-password
+
+Name: SERVER_DIR (optional)
+Value: ./public_html/ or your custom directory
 ```
 
-### Deploy to Subdirectory
-Update the `server-dir` in FTP deployment:
-```yaml
-server-dir: ./public_html/subdirectory/
+### For Environment-Based Deployment:
+1. Go to: `Settings` → `Environments`
+2. Create environments: `production`, `staging`, `development`
+3. For each environment, add:
+   ```
+   FTP_SERVER
+   FTP_USERNAME
+   FTP_PASSWORD
+   SERVER_DIR (optional)
+   ```
+
+## 🎯 Deployment Workflows
+
+### Example 1: Deploy to Primary Domain
+```bash
+git checkout main
+git add .
+git commit -m "Update features"
+git push origin main
+# Automatically deploys to tfcnew.tfcmockup.com
 ```
+
+### Example 2: Deploy to Secondary Domain
+```bash
+git checkout production
+git merge main
+git push origin production
+# Automatically deploys to your secondary domain
+```
+
+### Example 3: Manual Deployment
+1. Go to GitHub → Actions
+2. Select "Deploy to Production Domain"
+3. Click "Run workflow"
+4. Select environment
+5. Click "Run workflow" button
 
 ## 🔍 Monitoring Deployments
 
-- View deployment status: Go to your repo → Actions tab
-- See deployment logs: Click on any workflow run
-- Get deployment URLs: Check the workflow output
+- View status: `https://github.com/pranavthefacecraft/redesigntfc-v2/actions`
+- Check logs: Click on any workflow run
+- Get notifications: Configure in Settings → Notifications
+
+## � Quick Reference
+
+| Deployment Type | Branch | Workflow File | Domain |
+|----------------|--------|---------------|---------|
+| Primary | `main`, `pranav` | `deploy.yml` | tfcnew.tfcmockup.com |
+| Secondary | `production`, `release` | `deploy-secondary.yml` | Your choice |
+| Environment | Manual | `deploy-production.yml` | Based on env |
 
 ## 🚨 Troubleshooting
 
-### Common Issues:
-1. **Build Fails**: Check Node.js version compatibility
-2. **FTP Fails**: Verify FTP credentials and server path
-3. **SSH Fails**: Ensure SSH key is properly formatted
-4. **404 Errors**: Check if .htaccess is being deployed correctly
+### Issue: FTP temporary files error
+**Solution**: The workflow includes cleanup steps. If it persists, manually delete `.in.*` files from your server.
 
-### Getting Help:
-- Check the Actions tab for detailed error logs
-- Verify all secrets are properly configured
-- Ensure your hosting supports the chosen deployment method
+### Issue: Deployment to wrong domain
+**Solution**: Check which branch you're pushing to and verify the corresponding secrets are set correctly.
+
+### Issue: Build fails
+**Solution**: Test locally with `npm run build` first, check error logs in GitHub Actions.
 
 ---
 
-**Next Steps**: 
-1. Choose your preferred deployment method
-2. Configure the required secrets
-3. Push your code to trigger the first deployment!
+**Need Help?** Check the workflow logs in the Actions tab for detailed information.

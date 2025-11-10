@@ -24,7 +24,7 @@
 .mainpage {
   background: radial-gradient(circle at top right, 
   #3F3862 20%,
-  #7d6fc4 100%  
+  #9f9adc 100%  
   ); 
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,11 +35,18 @@
 @media screen and (min-width: 1921px) {
   .mainpage {
     border-radius: 2rem;
+    
   }
 
   .intro-logo {
     top: '10vh';
   }
+  
+  .chatbot-visible{
+  right: 26% !important;
+  bottom: 7% !important;
+  }
+  
 }
 
 
