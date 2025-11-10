@@ -10,6 +10,9 @@ const useStore = create((set) => ({
   hasScroll: false,
   setHasScroll: (value) => set({ hasScroll: value }),
 
+  isScrolling: false,
+  setIsScrolling: (value) => set({ isScrolling: value }),
+
   playSound: true,
   setPlaySound: (value) => set({ playSound: value }),
 

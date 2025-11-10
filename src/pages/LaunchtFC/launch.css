@@ -21,9 +21,7 @@
     src: url("/fonts/Montserrat-SemiBold.ttf");
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
+
 
 .page {
   font-family: "MonserratMedium";
@@ -54,13 +52,7 @@
   pointer-events: auto;
 }
 
-.page {
-  scrollbar-width: none; 
-}
 
-.page::-webkit-scrollbar {
-  display: none; 
-}
 
 /* Ensure proper stacking context */
 .canvas-container {

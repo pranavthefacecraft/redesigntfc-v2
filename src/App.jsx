@@ -15,6 +15,7 @@ import PhotoVideoAnimation from './pages/PhotoVideoAnimation/photovideoanimation
 import ComingSoon from './pages/LaunchtFC/launch';
 import TFCLaunch from './pages/tfc/tfclaunch';
 import Test from './pages/testpage/test';
+import NewHome from './pages/NewHomePage/NewHome';
 
 import './App.css'
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/Project" element={<Project/>} />
       <Route path="/solit" element={<Solit />} />
       <Route path="/tanda" element={<Tanda />} />
+      <Route path="/tfchome" element={<NewHome/>} />
       <Route path="/testwidget" element={<ComingSoon />} />
       <Route path="/test" element={<Test />} />
       <Route path="/rafw" element={<Rafw />} />
